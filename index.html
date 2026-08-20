@@ -1691,10 +1691,9 @@ body:before{opacity:.35}
 </style>
 
 
-<style id="single-name-cleanup-v2">
-/* Sidebar identity: tampilkan nama pengguna, departemen hanya sebagai metadata */
-.sidebar-user-info b{display:block!important;font-size:13.5px!important;color:var(--esg-dark)!important;font-weight:900!important;line-height:1.25!important}
-.sidebar-user-info span{display:block!important;margin-top:3px!important;font-size:9.5px!important;color:#789087!important;text-transform:none!important;letter-spacing:.2px!important}
+<style id="single-name-cleanup">
+.sidebar-user-info b{display:block!important}
+.sidebar-user-info span{margin-top:2px!important}
 </style>
 
 
@@ -2555,21 +2554,239 @@ html,body{overflow-x:hidden!important}
 </style>
 
 
-<style id="ranking-podium-spacing-fix">
-.ranking-podium-card{padding-right:112px!important;min-width:0!important}
-.ranking-podium-card strong,.ranking-podium-card span,.ranking-podium-card b{min-width:0;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.ranking-podium-card em{right:12px;top:12px;max-width:92px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ranking-podium-card .podium-medal{z-index:1}
-@media(max-width:900px){.ranking-podium-card{padding-right:105px!important}}
+<style id="v10-lively-visual-refresh">
+/* =========================================================
+   V10 — LIVELY, FRESH, PROFESSIONAL VISUAL SYSTEM
+   ========================================================= */
+
+/* Animated dashboard hero */
+#dashboard .nature-banner{
+  --hero-bg:url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2000&q=88");
+  background:#063d2d!important;
+  isolation:isolate!important;
+}
+#dashboard .nature-banner::before{
+  content:"";
+  position:absolute;inset:-5%;
+  z-index:-2;
+  background-image:var(--hero-bg);
+  background-size:cover;
+  background-position:center;
+  transform:scale(1.06);
+  animation:heroKenBurns 15s ease-in-out infinite alternate;
+  transition:opacity .8s ease,filter .8s ease;
+  will-change:transform,background-position;
+}
+#dashboard .nature-banner::after{
+  content:"";
+  position:absolute;inset:0;z-index:-1;
+  background:
+    radial-gradient(circle at 78% 22%,rgba(105,255,207,.16),transparent 18%),
+    linear-gradient(115deg,rgba(0,42,31,.18),transparent 55%);
+  pointer-events:none;
+}
+#dashboard .nature-banner.hero-changing::before{
+  animation:heroCrossFade .9s ease both,heroKenBurns 15s 0.9s ease-in-out infinite alternate;
+}
+@keyframes heroKenBurns{
+  0%{transform:scale(1.05) translate3d(-1%,0,0);background-position:48% 50%}
+  100%{transform:scale(1.12) translate3d(1.5%,-1%,0);background-position:54% 46%}
+}
+@keyframes heroCrossFade{
+  0%{opacity:.25;filter:saturate(.75) blur(1px)}
+  100%{opacity:1;filter:none}
+}
+#dashboard .nature-banner-overlay{
+  background:
+    linear-gradient(92deg,rgba(1,44,32,.94) 0%,rgba(2,76,55,.76) 43%,rgba(2,64,47,.18) 100%),
+    linear-gradient(0deg,rgba(1,30,22,.26),transparent 65%)!important;
+  z-index:0;
+}
+#dashboard .nature-banner-content,
+#dashboard .hero-top-meta,
+#dashboard .nature-stat,
+#dashboard .nature-leaf{z-index:3!important}
+#dashboard .nature-stat{
+  border-color:rgba(160,255,220,.24)!important;
+  background:linear-gradient(135deg,rgba(255,255,255,.15),rgba(255,255,255,.07))!important;
+  box-shadow:0 16px 40px rgba(0,0,0,.16),inset 0 1px 0 rgba(255,255,255,.15)!important;
+  animation:floatStat 5s ease-in-out infinite;
+}
+@keyframes floatStat{50%{transform:translateY(-5px)}}
+
+/* News: one clean carousel, richer cards, no visual duplication */
+.dashboard-news-bottom{
+  position:relative;
+  padding-top:2px;
+}
+.dashboard-news-bottom::before{
+  content:"";
+  position:absolute;left:0;right:0;top:-10px;height:1px;
+  background:linear-gradient(90deg,transparent,#bcebd9 20%,#16b981 50%,#bcebd9 80%,transparent);
+}
+.dashboard-news-bottom .sustainability-news-head{
+  align-items:center!important;
+  margin:22px 2px 14px!important;
+}
+.dashboard-news-bottom .section-kicker{
+  box-shadow:0 5px 14px rgba(8,127,91,.08);
+}
+.news-controls{gap:7px!important}
+.news-live{
+  display:inline-flex!important;align-items:center;gap:6px;
+  padding:7px 10px;border-radius:999px;
+  background:#e9fbf3;color:#087f5b!important;
+  border:1px solid #c9f1df;
+  font-size:9px!important;font-weight:900!important;
+  box-shadow:0 5px 16px rgba(8,127,91,.06);
+}
+.news-live i{
+  width:7px;height:7px;border-radius:50%;background:#10b981!important;
+  box-shadow:0 0 0 4px rgba(16,185,129,.12);
+  animation:pulseDot 1.5s infinite;
+}
+.news-carousel-grid{
+  gap:16px!important;
+  min-height:300px!important;
+  perspective:1100px;
+}
+.news-carousel-grid .news-card{
+  min-width:0!important;
+  border-radius:22px!important;
+  border:1px solid rgba(8,127,91,.10)!important;
+  box-shadow:0 12px 32px rgba(8,60,44,.07)!important;
+  transform:translateY(0);
+  animation:newsReveal .5s cubic-bezier(.16,1,.3,1) both;
+}
+.news-carousel-grid .news-card:nth-child(2){animation-delay:.06s}
+.news-carousel-grid .news-card:nth-child(3){animation-delay:.12s}
+.news-carousel-grid .news-card:hover{
+  transform:translateY(-7px) rotateX(.5deg)!important;
+  box-shadow:0 22px 48px rgba(8,60,44,.13)!important;
+}
+@keyframes newsReveal{
+  from{opacity:0;transform:translateY(12px) scale(.985)}
+  to{opacity:1;transform:none}
+}
+.news-image{
+  height:158px!important;min-height:158px!important;
+  background-color:#dff5ea!important;
+}
+.news-card.is-feature .news-image{height:158px!important;min-height:158px!important}
+.news-image::before{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(120deg,rgba(255,255,255,.08),transparent 45%);
+  opacity:.9;
+}
+.news-category{
+  border-radius:999px!important;
+  padding:6px 9px!important;
+  box-shadow:0 5px 14px rgba(0,0,0,.12);
+}
+.news-read{
+  border-radius:999px!important;
+  padding:7px 10px!important;
+  background:rgba(2,44,34,.82)!important;
+}
+.news-body{
+  padding:15px 16px 17px!important;
+  min-height:132px;
+}
+.news-body small{
+  font-size:8px!important;
+  color:#6e8b80!important;
+}
+.news-body h4{
+  font-size:14px!important;
+  line-height:1.38!important;
+  margin:7px 0 6px!important;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.news-body p{
+  font-size:10.5px!important;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.news-dots{
+  margin-top:13px!important;
+  align-items:center;
+}
+.news-dot-btn{
+  width:7px!important;height:7px!important;
+  background:#cbded5!important;
+  box-shadow:none!important;
+}
+.news-dot-btn.active{
+  width:24px!important;height:7px!important;
+  background:linear-gradient(90deg,#079568,#38d39b)!important;
+  box-shadow:0 4px 12px rgba(8,127,91,.20)!important;
+}
+
+/* Ranking: distinct identity for each user, no duplicate ranks */
+#ranking_data .rank-table-wrapper{
+  background:linear-gradient(180deg,#fff,rgba(248,253,250,.96))!important;
+}
+#ranking_data .rank-table tbody tr{
+  position:relative;
+}
+#ranking_data .rank-table tbody tr:hover{
+  background:linear-gradient(90deg,#f0fbf6,#fff)!important;
+}
+#ranking_data .rank-table td:first-child{
+  width:58px;
+}
+#ranking_data .rank-table td:nth-child(2){
+  min-width:220px;
+}
+#ranking_data .rank-table td:last-child{
+  white-space:nowrap;
+}
+.ranking-podium{
+  gap:16px!important;
+  margin:0 0 20px!important;
+}
+.ranking-podium-card{
+  min-width:0!important;
+  min-height:112px!important;
+  grid-template-columns:auto 52px minmax(0,1fr)!important;
+  grid-template-rows:auto auto auto!important;
+  column-gap:11px!important;
+  padding:18px 17px!important;
+  border-radius:22px!important;
+  box-shadow:0 12px 30px rgba(8,60,44,.08)!important;
+}
+.ranking-podium-card strong{
+  min-width:0!important;
+  max-width:100%!important;
+}
+.ranking-podium-card em{
+  right:11px!important;top:11px!important;
+  max-width:92px!important;
+  white-space:nowrap!important;overflow:hidden;text-overflow:ellipsis;
+}
+.ranking-podium-card.rank-1{
+  box-shadow:0 18px 40px rgba(8,127,91,.14)!important;
+}
+.rank-badge,.badge-status{
+  white-space:nowrap!important;
+}
+#rt_performance_body td{
+  vertical-align:middle;
+}
+#rt_performance_body td:nth-child(2)>div{
+  min-width:0;
+}
+#rt_performance_body td:nth-child(2)>div>div:last-child{
+  min-width:0;
+}
+@media(max-width:900px){
+  .news-carousel-grid{min-height:0!important}
+  .news-carousel-grid .news-card{display:block!important}
+  .news-body{min-height:0}
+  .ranking-podium-card{grid-template-columns:auto 48px minmax(0,1fr)!important}
+}
 </style>
 
-<style id="contrib-clean-v2">
-#contrib .impact-action-hero{min-height:205px!important;margin-top:0!important;margin-bottom:14px!important;padding:25px 28px!important;border-radius:22px!important}
-#contrib .impact-action-copy h2{font-size:clamp(24px,2.7vw,34px)!important}
-#contrib .impact-action-copy p{max-width:600px!important}
-#contrib .impact-action-total{top:24px!important;right:24px!important}
-@media(max-width:900px){#contrib .impact-action-hero{min-height:200px!important;padding:22px 20px!important}#contrib .impact-action-total{position:relative;top:auto;right:auto;margin-top:16px;width:max-content}}
-</style>
 </head>  
 <body>  
 
@@ -3341,6 +3558,12 @@ html,body{overflow-x:hidden!important}
         </div>  
       </div>  
         
+      <div class="card" style="background: var(--esg-dark); color: white; border: none; text-align: center; padding: 32px 24px; margin-bottom: 24px;">  
+        <div style="font-size: 13.5px; color: #a7f3d0; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">Total Pengurangan Karbon (Offset)</div>  
+        <div style="font-size: 44px; font-weight: 900; margin: 12px 0; letter-spacing: -1px;"><span id="offsetTotal">0.00</span> <small style="font-size: 20px; font-weight: 700;">kgCO₂e</small></div>  
+        <div style="font-size: 15px; font-weight: 500;">Setara penyerapan hingga <strong style="color: #34d399;"><span id="offsetTreeEq">0.00</span> pohon</strong>/tahun</div>  
+      </div>  
+
 
       <div class="impact-action-hero">
         <div class="impact-action-copy">
@@ -3999,8 +4222,8 @@ function renderLeaderboardUI() {
     const rankIcon = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : `#${rank}`;
     
     let badgeHtml = '<span class="rank-badge normal">Peserta</span>';
-    if (rank === 1 && sortMode === 'lowest') badgeHtml = '<span class="rank-badge top">🥇 Paling Hemat</span>';
-    else if (rank === 1 && sortMode === 'highest') badgeHtml = '<span class="rank-badge third">🔥 Paling Boros</span>';
+    if (rank === 1 && sortMode === 'lowest') badgeHtml = '<span class="rank-badge top">🥇 Terhemat</span>';
+    else if (rank === 1 && sortMode === 'highest') badgeHtml = '<span class="rank-badge third">🔥 Tertinggi</span>';
     else if (rank === 2) badgeHtml = '<span class="rank-badge runner">🥈 Posisi 2</span>';
     else if (rank === 3) badgeHtml = '<span class="rank-badge third">🥉 Posisi 3</span>';
 
@@ -4750,9 +4973,14 @@ function renderTeamDashboardView() {
       categoryBreakdown['Lampu Bersama'] += lampu; categoryBreakdown['Handphone'] += hp; categoryBreakdown['Mobil'] += mobil;
       categoryBreakdown['TV Bersama'] += tv;
 
-      if(!userTotals[rec.userId]) userTotals[rec.userId] = { userId: rec.userId, name: rec.userName, photo: rec.photo, total: 0, dept: rec.department, days: new Set() };
-      userTotals[rec.userId].total += total;
-      userTotals[rec.userId].days.add(rec.tanggalEmisi || rec.date);
+      const normalizedTeamUserId = String(rec.userId || '').trim().toLowerCase();
+      if(!normalizedTeamUserId) return;
+      if(!userTotals[normalizedTeamUserId]) userTotals[normalizedTeamUserId] = { userId: rec.userId, name: rec.userName, photo: rec.photo, total: 0, dept: rec.department, days: new Set() };
+      if(rec.userName) userTotals[normalizedTeamUserId].name = rec.userName;
+      if(rec.photo) userTotals[normalizedTeamUserId].photo = rec.photo;
+      if(rec.department) userTotals[normalizedTeamUserId].dept = rec.department;
+      userTotals[normalizedTeamUserId].total += total;
+      userTotals[normalizedTeamUserId].days.add(rec.tanggalEmisi || rec.date);
   });
 
   // Tampilkan Ringkasan Angka Utama
@@ -4822,11 +5050,17 @@ function renderRankingDataView() {
       const total = indiv + shared;
       const dateStr = rec.tanggalEmisi || rec.date;
 
-      if(!userStats[rec.userId]) userStats[rec.userId] = { id: rec.userId, name: rec.userName, photo: rec.photo, dept: rec.department, total: 0, indiv: 0, shared: 0, days: new Set() };
-      userStats[rec.userId].total += total;
-      userStats[rec.userId].indiv += indiv;
-      userStats[rec.userId].shared += shared;
-      userStats[rec.userId].days.add(dateStr);
+      const normalizedUserId = String(rec.userId || '').trim().toLowerCase();
+      if(!normalizedUserId) return;
+      if(!userStats[normalizedUserId]) userStats[normalizedUserId] = { id: rec.userId, name: rec.userName, photo: rec.photo, dept: rec.department, total: 0, indiv: 0, shared: 0, days: new Set() };
+      userStats[normalizedUserId].id = rec.userId || userStats[normalizedUserId].id;
+      if(rec.userName) userStats[normalizedUserId].name = rec.userName;
+      if(rec.photo) userStats[normalizedUserId].photo = rec.photo;
+      if(rec.department) userStats[normalizedUserId].dept = rec.department;
+      userStats[normalizedUserId].total += total;
+      userStats[normalizedUserId].indiv += indiv;
+      userStats[normalizedUserId].shared += shared;
+      userStats[normalizedUserId].days.add(dateStr);
 
       dailyRows.push({
           date: dateStr, name: rec.userName, photo: rec.photo, id: rec.userId, dept: rec.department, total, indiv, shared, motor, mobil, ac, lampu, tv, laptop, hp
@@ -4870,7 +5104,7 @@ function renderRankingDataView() {
         <strong>${esc(u.name||'Anonim')}</strong>
         <span>${esc(u.dept||'Lainnya')}</span>
         <b>${fmt(u.total)} <small>kgCO₂e</small></b>
-        <em>${i===0 ? (isLowest ? '🥇 Paling Hemat' : isHighest ? '🔥 Paling Boros' : '🥇 Peringkat 1') : i===1 ? '🥈 Posisi 2' : '🥉 Posisi 3'}</em>
+        <em>${i===0?'Paling hemat':i===1?'Posisi 2':'Posisi 3'}</em>
       </div>`;
     }).join('') : '<div class="ranking-empty">Belum ada data ranking.</div>';
   }
@@ -4883,10 +5117,10 @@ function renderRankingDataView() {
       let rankBg = '#f1f5f9', rankColor = '#64748b', rankIcon = `#${rank}`;
       
       if (rank === 1 && isLowest) { 
-          badge = '<span class="badge-status top">🥇 Paling Hemat</span>'; 
+          badge = '<span class="badge-status top">🥇 Terhemat</span>'; 
           rankBg = '#059669'; rankColor = 'white'; rankIcon = rank; 
       } else if (rank === 1 && isHighest) {
-          badge = '<span class="badge-status third">🔥 Paling Boros</span>';
+          badge = '<span class="badge-status third">🔥 Tertinggi</span>';
           rankBg = '#9a3412'; rankColor = 'white'; rankIcon = rank; 
       } else if (rank === 2) { 
           badge = '<span class="badge-status runner">🥈 Posisi 2</span>'; 
@@ -5001,57 +5235,46 @@ function toggleSort(type) {
 /* ===== DASHBOARD FRESH V3 BEHAVIOR ===== */
 let currentNewsIndex = 0;
 let newsRotationTimer = null;
+let newsHeroRotationTimer = null;
 
 let DASHBOARD_NEWS = [
   {
-    category:'ENERGI TERBARUKAN',
-    source:'ANTARA NEWS',
-    date:'16 Mei 2026',
+    category:'ENERGI TERBARUKAN', source:'ANTARA NEWS', date:'16 Mei 2026',
     title:'Indonesia terus mempercepat pengembangan energi terbarukan.',
     desc:'Perkembangan energi bersih, PLTS, hidrogen, dan transisi energi Indonesia.',
     image:'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85',
     url:'https://www.antaranews.com/tag/renewable-energy-sources'
   },
   {
-    category:'CLEAN ENERGY',
-    source:'UN CLIMATE CHANGE',
-    date:'14 Juli 2026',
+    category:'CLEAN ENERGY', source:'UN CLIMATE CHANGE', date:'14 Juli 2026',
     title:'Energi terbarukan mencatat pertumbuhan pembangkitan yang sangat cepat.',
     desc:'Ikuti perkembangan energi terbarukan dan arah transisi energi global.',
     image:'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=900&q=85',
     url:'https://unfccc.int/news/renewable-power-generation-records-its-fastest-growth-ever'
   },
   {
-    category:'CLIMATE ACTION',
-    source:'UNEP',
-    date:'Insight',
+    category:'CLIMATE ACTION', source:'UNEP', date:'Insight',
     title:'Climate action: dari kebijakan hingga solusi nyata di lapangan.',
     desc:'Solusi iklim, resilience, finance, dan inovasi hijau dari berbagai belahan dunia.',
     image:'https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=900&q=85',
     url:'https://www.unep.org/news-and-stories/news/spotlight-climate-action'
   },
   {
-    category:'IKLIM & ENERGI',
-    source:'GREENPEACE INDONESIA',
-    date:'Insight',
+    category:'IKLIM & ENERGI', source:'GREENPEACE INDONESIA', date:'Insight',
     title:'Melihat perkembangan isu iklim dan energi di Indonesia.',
     desc:'Berita, riset, kampanye, dan perspektif tentang transisi energi serta lingkungan.',
     image:'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=900&q=85',
     url:'https://www.greenpeace.org/indonesia/news-stories/?category=iklim-dan-energi'
   },
   {
-    category:'NATURE & ENERGY',
-    source:'MONGABAY',
-    date:'Insight',
+    category:'NATURE & ENERGY', source:'MONGABAY', date:'Insight',
     title:'Energi bersih, konservasi, dan tantangan lingkungan global.',
     desc:'Eksplorasi berita tentang energi, biodiversitas, hutan, dan solusi berbasis alam.',
     image:'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=900&q=85',
     url:'https://news.mongabay.com/list/renewable-energy/'
   },
   {
-    category:'SUSTAINABILITY',
-    source:'ANTARA',
-    date:'Insight',
+    category:'SUSTAINABILITY', source:'ANTARA', date:'Insight',
     title:'Praktik keberlanjutan semakin dekat dengan aktivitas sehari-hari.',
     desc:'Green office, transportasi, energi, dan aksi lingkungan yang bisa diterapkan bersama.',
     image:'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=900&q=85',
@@ -5059,12 +5282,21 @@ let DASHBOARD_NEWS = [
   }
 ];
 let newsPeriod='week';
+
 const LIVE_NEWS_FEEDS=[
  {name:'Google News · Energi',url:'https://news.google.com/rss/search?q=energi%20terbarukan%20OR%20efisiensi%20energi&hl=id&gl=ID&ceid=ID:id'},
  {name:'Google News · Iklim',url:'https://news.google.com/rss/search?q=perubahan%20iklim%20OR%20climate%20action&hl=id&gl=ID&ceid=ID:id'},
  {name:'Google News · Sustainability',url:'https://news.google.com/rss/search?q=sustainability%20OR%20keberlanjutan&hl=id&gl=ID&ceid=ID:id'},
  {name:'Google News · Teknologi Hijau',url:'https://news.google.com/rss/search?q=teknologi%20hijau%20OR%20green%20technology&hl=id&gl=ID&ceid=ID:id'}
 ];
+
+const NEWS_HERO_IMAGES=[
+ 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2000&q=88',
+ 'https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=2000&q=88',
+ 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=2000&q=88',
+ 'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=2000&q=88'
+];
+
 function newsPeriodStart(period){
  const now=new Date(),s=new Date(now);
  if(period==='day') s.setHours(0,0,0,0);
@@ -5074,7 +5306,38 @@ function newsPeriodStart(period){
 }
 function stripHtml(v){return String(v||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim()}
 function newsImageForCategory(key){
- return ({energi:'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85',iklim:'https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=1200&q=85',sustainability:'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=85',teknologi:'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1200&q=85'})[key];
+ return ({energi:'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85',
+ iklim:'https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=1200&q=85',
+ sustainability:'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=85',
+ teknologi:'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1200&q=85'})[key];
+}
+function newsCanonicalTitle(title){
+ return stripHtml(title||'')
+   .toLowerCase()
+   .replace(/\s*[-|–—]\s*(google news|antaranews|antara|detik|kompas|tempo|cnn|cnbc|liputan6|tribun.*|kontan|bisnis\.com|reuters|unep|unfccc).*$/i,'')
+   .replace(/[^\p{L}\p{N}\s]/gu,' ')
+   .replace(/\s+/g,' ').trim();
+}
+function newsTokens(title){
+ return new Set(newsCanonicalTitle(title).split(/\s+/).filter(w=>w.length>2));
+}
+function newsSimilarity(a,b){
+ const A=newsTokens(a),B=newsTokens(b);
+ if(!A.size||!B.size)return 0;
+ let common=0; A.forEach(x=>{if(B.has(x))common++});
+ return common/Math.min(A.size,B.size);
+}
+function dedupeNews(items){
+ const unique=[];
+ const seenExact=new Set();
+ items.sort((a,b)=>(b.pubTime||0)-(a.pubTime||0)).forEach(n=>{
+   const key=newsCanonicalTitle(n.title);
+   if(!key||seenExact.has(key))return;
+   if(unique.some(x=>newsSimilarity(x.title,n.title)>=0.72))return;
+   seenExact.add(key);
+   unique.push(n);
+ });
+ return unique;
 }
 async function fetchLiveNews(){
  const start=newsPeriodStart(newsPeriod),all=[];
@@ -5084,23 +5347,55 @@ async function fetchLiveNews(){
    if(!res.ok) continue;
    const json=await res.json();
    (json.items||[]).forEach(item=>{
-    const pub=new Date(item.pubDate||item.isoDate||0); if(isNaN(pub)||pub<start)return;
+    const pub=new Date(item.pubDate||item.isoDate||0);
+    if(isNaN(pub)||pub<start)return;
     const title=stripHtml(item.title),desc=stripHtml(item.description||item.content||''),low=(title+' '+desc).toLowerCase();
     let cat='SUSTAINABILITY',key='sustainability';
-    if(/energi|listrik|renewable|terbarukan|efisiensi/.test(low)){cat='ENERGI & EFISIENSI';key='energi'}
+    if(/energi|listrik|renewable|terbarukan|efisiensi|solar/.test(low)){cat='ENERGI & EFISIENSI';key='energi'}
     else if(/iklim|climate|emisi|karbon/.test(low)){cat='IKLIM & KARBON';key='iklim'}
-    else if(/teknologi|technology|solar|hidrogen|green tech/.test(low)){cat='TEKNOLOGI HIJAU';key='teknologi'}
-    all.push({category:cat,source:feed.name,date:pub.toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'}),title:title.replace(/\s+-\s+[^-]+$/,''),desc:(desc.slice(0,180)+(desc.length>180?'…':'')),image:newsImageForCategory(key),url:item.link||'#',pubTime:pub.getTime()});
+    else if(/teknologi|technology|hidrogen|green tech/.test(low)){cat='TEKNOLOGI HIJAU';key='teknologi'}
+    all.push({
+      category:cat,source:feed.name,
+      date:pub.toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'}),
+      title:title.replace(/\s+[-|–—]\s+[^-|–—]+$/,'').trim(),
+      desc:(desc.slice(0,180)+(desc.length>180?'…':'')),
+      image:newsImageForCategory(key),url:item.link||'#',pubTime:pub.getTime()
+    });
    });
   }catch(e){console.warn('Live news feed error',feed.name,e)}
  }
- const unique=new Map(); all.sort((a,b)=>b.pubTime-a.pubTime).forEach(n=>{if(!unique.has(n.title))unique.set(n.title,n)});
- const live=Array.from(unique.values()).slice(0,18);
- if(live.length){DASHBOARD_NEWS=live;currentNewsIndex=0;renderFreshNews();restartNewsRotation();const el=document.querySelector('.news-live');if(el)el.innerHTML='<i></i> LIVE · diperbarui otomatis'}
+ const live=dedupeNews(all).slice(0,18);
+ if(live.length){
+   DASHBOARD_NEWS=live;
+   currentNewsIndex=0;
+   renderFreshNews();
+   restartNewsRotation();
+   const el=document.querySelector('.news-live');
+   if(el)el.innerHTML='<i></i> LIVE · diperbarui otomatis';
+ }
 }
 function setNewsPeriod(period){newsPeriod=period||'week';fetchLiveNews()}
-function scheduleLiveNews(){fetchLiveNews();clearInterval(window.liveNewsRefreshTimer);window.liveNewsRefreshTimer=setInterval(fetchLiveNews,6*60*60*1000)}
-
+function scheduleLiveNews(){
+ fetchLiveNews();
+ clearInterval(window.liveNewsRefreshTimer);
+ window.liveNewsRefreshTimer=setInterval(fetchLiveNews,6*60*60*1000);
+}
+function startNewsHeroMotion(){
+ const banner=document.querySelector('#dashboard .nature-banner');
+ if(!banner)return;
+ let idx=0;
+ const apply=()=>{
+   banner.classList.add('hero-changing');
+   setTimeout(()=>{
+     banner.style.setProperty('--hero-bg',`url("${NEWS_HERO_IMAGES[idx]}")`);
+     banner.classList.remove('hero-changing');
+   },120);
+   idx=(idx+1)%NEWS_HERO_IMAGES.length;
+ };
+ banner.style.setProperty('--hero-bg',`url("${NEWS_HERO_IMAGES[0]}")`);
+ clearInterval(newsHeroRotationTimer);
+ newsHeroRotationTimer=setInterval(apply,9000);
+}
 
 function navigateToPage(pageId){
   const page = document.getElementById(pageId);
@@ -5211,17 +5506,29 @@ function drawCategoryDonut(records){
 function renderFreshNews(){
   const grid=$('newsGrid'), dots=$('newsDots');
   if(!grid || !dots) return;
-  const total=DASHBOARD_NEWS.length, visible=3;
+  const total=DASHBOARD_NEWS.length;
+  if(!total){
+    grid.innerHTML='<div class="ranking-empty">Belum ada berita terbaru.</div>';
+    dots.innerHTML='';
+    return;
+  }
+  const visible=Math.min(3,total);
   const items=[];
-  for(let i=0;i<visible;i++) items.push(DASHBOARD_NEWS[(currentNewsIndex+i)%total]);
+  const used=new Set();
+  for(let i=0;i<total && items.length<visible;i++){
+    const n=DASHBOARD_NEWS[(currentNewsIndex+i)%total];
+    const key=newsCanonicalTitle(n.title);
+    if(used.has(key))continue;
+    used.add(key);items.push(n);
+  }
   grid.innerHTML=items.map((n,i)=>`
     <a class="news-card ${i===0?'is-feature':''}" href="${n.url}" target="_blank" rel="noopener noreferrer">
       <div class="news-image" style="background-image:url('${n.image}')">
-        <span class="news-category">${n.category}</span>
+        <span class="news-category">${esc(n.category)}</span>
         <span class="news-read">Baca ↗</span>
       </div>
       <div class="news-body">
-        <small>${n.source} · ${n.date}</small>
+        <small>${esc(n.source)} · ${esc(n.date)}</small>
         <h4>${esc(n.title)}</h4>
         <p>${esc(n.desc)}</p>
       </div>
@@ -5232,6 +5539,7 @@ function setNewsIndex(index){
   currentNewsIndex=(index+DASHBOARD_NEWS.length)%DASHBOARD_NEWS.length;
   renderFreshNews();
   restartNewsRotation();
+  startNewsHeroMotion();
 }
 function changeNews(step){ setNewsIndex(currentNewsIndex+step); }
 function restartNewsRotation(){
@@ -5339,7 +5647,7 @@ function updateContribLabel() {
 function renderContribUI() {
   const contribs = state.contributions || []; let totalOffset = 0;
   contribs.forEach(c => { totalOffset += (num(c.value) * (CONTRIB_FACTORS[c.type] || 1)); });
-  if($('impactHeroOffset')) $('impactHeroOffset').textContent = fmt(totalOffset); if($('offsetTreeEq')) $('offsetTreeEq').textContent = fmt(totalOffset / FACTORS.treeKgPerYear);
+  $('offsetTotal').textContent = fmt(totalOffset); $('offsetTreeEq').textContent = fmt(totalOffset / FACTORS.treeKgPerYear);
   const rows = [...contribs].sort((a, b) => b.date.localeCompare(a.date));
   const typeNames = { tree: 'Penanaman Pohon', renewable: 'Energi Bersih', transport: 'Transportasi Rendah Emisi', waste: 'Daur Ulang Tersetifikasi', custom: 'Aksi Berkelanjutan Lain' };
   $('contribHistoryBox').innerHTML = rows.length ? 
@@ -5561,7 +5869,7 @@ function loadProfile() {
 
 function updateAvatarsUI() {
   const p = state.profile, photo = p.photo;
-  $('sbName').textContent = p.userName ? p.userName : 'Nama Pengguna'; $('sbRole').textContent = p.department ? p.department : 'Departemen';
+  $('sbName').textContent = p.userName ? p.userName : ''; $('sbRole').textContent = p.department ? p.department : '';
   if(photo) {
     $('profAvatarImg').src = $('sbAvatarImg').src = $('moAvatarImg').src = photo;
     $('profAvatarImg').style.display = $('sbAvatarImg').style.display = $('moAvatarImg').style.display = 'block';
@@ -5670,8 +5978,8 @@ function bind() {
     if(confirm('Logout dan putuskan jembatan data lokal?')) { localStorage.removeItem(BASE_KEY); localStorage.removeItem(SESSION_AUTH_KEY); location.reload(); }
   };
 
-  $('userName').addEventListener('input', function() { const val = this.value.trim(); $('sbName').textContent = val ? val : 'Nama Pengguna'; $('dashName').textContent = val ? val : 'Ivo Audio'; });
-  $('department').addEventListener('input', function() { const val = this.value.trim(); $('sbRole').textContent = val ? val : 'Departemen'; });
+  $('userName').addEventListener('input', function() { const val = this.value.trim(); $('sbName').textContent = val ? val : ''; $('dashName').textContent = val ? val : ''; });
+  $('department').addEventListener('input', function() { const val = this.value.trim(); $('sbRole').textContent = val ? val : ''; });
   $('refreshLeaderboardBtn').onclick = fetchLeaderboard;
   setupSwipeListener();
 }  
@@ -5877,8 +6185,9 @@ document.addEventListener('DOMContentLoaded', init);
     document.querySelectorAll('.impact-action-card').forEach(card=>{
       card.classList.toggle('active',card.getAttribute('data-contrib-action')===select.value);
     });
+    const total=document.getElementById('offsetTotal');
     const hero=document.getElementById('impactHeroOffset');
-    if(hero && !hero.textContent.trim()) hero.textContent='0.00';
+    if(total && hero) hero.textContent=total.textContent || '0.00';
   }
 
   document.addEventListener('DOMContentLoaded',function(){
@@ -5887,6 +6196,14 @@ document.addEventListener('DOMContentLoaded', init);
     setInterval(syncContributionCards,1200);
   });
 })();
+</script>
+
+
+<script id="v10-init">
+document.addEventListener('DOMContentLoaded',function(){
+  try{startNewsHeroMotion();}catch(e){}
+  try{restartNewsRotation();}catch(e){}
+});
 </script>
 
 </body>  
