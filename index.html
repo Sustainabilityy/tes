@@ -2095,6 +2095,190 @@ button,.quick-card,.lb-item,.chat-room-item,.rank-tab,.news-card{
 }
 </style>
 
+
+<style id="dashboard-fresh-v3">
+/* ===== DASHBOARD FRESH / LIVING UI ===== */
+.dashboard-filter-card{
+  border-radius:20px!important;
+  padding:16px 18px!important;
+  margin-bottom:18px!important;
+  background:rgba(255,255,255,.84)!important;
+  backdrop-filter:blur(12px);
+}
+.dashboard-insights-grid{
+  display:grid;
+  grid-template-columns:minmax(240px,.88fr) minmax(360px,1.42fr) minmax(240px,.9fr);
+  gap:16px;
+  margin:18px 0;
+}
+.dashboard-panel{
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(15,54,43,.08);
+  border-radius:22px;
+  box-shadow:0 12px 34px rgba(8,60,44,.065);
+  overflow:hidden;
+  min-width:0;
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.dashboard-panel:hover{transform:translateY(-2px);box-shadow:0 20px 44px rgba(8,60,44,.10)}
+.dashboard-panel-head{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:12px;
+  padding:18px 18px 10px;
+}
+.dashboard-panel-head h3{
+  margin:7px 0 0!important;font-size:16px!important;letter-spacing:-.4px;
+}
+.panel-link-btn{
+  flex:0 0 auto;background:#eefaf5;color:#087f5b;border:1px solid #d5f2e6;
+  border-radius:10px;padding:7px 9px;font-size:10px;font-weight:900;
+}
+.panel-link-btn:hover{background:#dff7ec;transform:translateX(2px)}
+.panel-status,.news-live{
+  display:inline-flex;align-items:center;gap:5px;padding:6px 8px;border-radius:999px;
+  background:#ecfdf5;color:#087f5b;font-size:8px;font-weight:900;letter-spacing:.7px;
+}
+.panel-status:before,.news-live i,.team-live i{
+  content:"";width:6px;height:6px;border-radius:50%;background:#10b981;
+  box-shadow:0 0 0 4px rgba(16,185,129,.12);
+}
+.team-pulse-summary{
+  margin:4px 18px 12px;padding:12px;border-radius:16px;
+  background:linear-gradient(135deg,#effbf6,#e1f8ee);
+  display:flex;align-items:center;gap:10px;border:1px solid #d9f2e6;
+}
+.team-pulse-icon{
+  width:40px;height:40px;border-radius:13px;display:grid;place-items:center;
+  background:white;font-size:20px;box-shadow:0 5px 14px rgba(8,60,44,.08);
+}
+.team-pulse-summary strong{display:block;color:#063c2d;font-size:20px;line-height:1}
+.team-pulse-summary span{display:block;color:#6d8179;font-size:9px;margin-top:3px;font-weight:700}
+.team-live{margin-left:auto;font-size:8px;font-weight:900;color:#087f5b;display:flex;align-items:center;gap:5px}
+.team-preview-list{padding:2px 18px 18px;display:flex;flex-direction:column;gap:7px}
+.team-preview-item{
+  display:flex;align-items:center;gap:9px;padding:8px 9px;border:1px solid #edf2ef;
+  border-radius:12px;background:#fbfdfc;
+}
+.team-preview-rank{width:22px;text-align:center;font-size:11px;font-weight:900;color:#087f5b}
+.team-preview-avatar{
+  width:30px;height:30px;border-radius:50%;object-fit:cover;background:#e9f3ef;border:2px solid white;
+  box-shadow:0 2px 6px rgba(0,0,0,.08);
+}
+.team-preview-name{flex:1;min-width:0;font-size:10.5px;font-weight:800;color:#18382e;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.team-preview-value{font-size:10px;font-weight:900;color:#087f5b;text-align:right}
+.team-preview-value small{display:block;color:#83928c;font-size:7px}
+.dashboard-empty{padding:16px 4px;color:#91a09a;text-align:center;font-size:10px;line-height:1.6}
+.trend-mini-toolbar{padding:0 18px 8px;display:flex;justify-content:flex-end}
+.trend-mode-pills{display:flex;gap:3px;background:#f3f7f5;border:1px solid #e6eeea;padding:3px;border-radius:10px}
+.trend-mode{
+  border:0;background:transparent;color:#74847e;padding:6px 9px;border-radius:8px;
+  font-size:9px;font-weight:800;cursor:pointer;
+}
+.trend-mode.active{background:#087f5b;color:white;box-shadow:0 4px 10px rgba(8,127,91,.18)}
+.trend-filter-compact{
+  margin:0 18px 8px;padding:8px;background:#f8fbf9;border:1px solid #edf2ef;border-radius:12px;
+  display:flex;gap:8px;align-items:end;
+}
+.trend-filter-compact>div{flex:1;min-width:0}
+.trend-filter-compact label{display:block;font-size:7.5px;text-transform:uppercase;letter-spacing:.6px;font-weight:900;color:#84938d;margin-bottom:4px}
+.trend-filter-compact select{
+  width:100%;background:white;border:1px solid #dfe9e4;border-radius:8px;padding:6px 8px;
+  font-size:9px;font-weight:700;color:#334e43;
+}
+.chart-subtitle{
+  padding:0 18px;margin:2px 0 0;font-size:8px;font-weight:800;color:#81908a;
+  text-transform:uppercase;letter-spacing:.7px;min-height:12px;
+}
+.trend-panel .chart{height:190px!important;margin:2px 10px 12px;width:calc(100% - 20px)!important}
+.donut-wrap{
+  position:relative;width:185px;height:185px;margin:3px auto 4px;display:grid;place-items:center;
+}
+#categoryDonut{width:185px!important;height:185px!important}
+.donut-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none}
+.donut-center strong{font-size:23px;line-height:1;color:#083b2d;letter-spacing:-.8px}
+.donut-center span{font-size:8px;color:#83918c;font-weight:800;margin-top:4px}
+.category-legend{padding:5px 18px 18px;display:flex;flex-direction:column;gap:7px}
+.category-row{display:grid;grid-template-columns:8px 1fr auto;gap:7px;align-items:center;font-size:9px}
+.category-dot{width:8px;height:8px;border-radius:3px}
+.category-row b{font-weight:700;color:#52665e}
+.category-row strong{font-size:9px;color:#1e3d32}
+.dashboard-detail-panel{padding-bottom:17px;margin-bottom:18px}
+.dashboard-detail-panel .dashboard-panel-head{padding-bottom:13px}
+.detail-switch{font-size:8px;color:#82918b;font-weight:800;display:flex;align-items:center;gap:5px}
+.detail-dot{width:6px;height:6px;background:#10b981;border-radius:50%}
+.dashboard-breakdown-split{padding:0 18px}
+.dashboard-breakdown-split>div{
+  background:#f8fbf9;border:1px solid #edf2ef;border-radius:14px;padding:13px;
+}
+.dashboard-breakdown-split h4{margin:0 0 9px;font-size:10px;color:#365247}
+.dashboard-breakdown-split .break-row{grid-template-columns:100px 1fr 65px;margin:8px 0;gap:8px}
+.dashboard-breakdown-split .break-row b,.dashboard-breakdown-split .break-row em{font-size:9px}
+.dashboard-breakdown-split .bar{height:6px}
+.dashboard-news-bottom{margin-top:24px}
+.news-controls{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.news-control-btn{
+  width:31px;height:31px;border-radius:10px;background:white;border:1px solid #dfe9e4;
+  color:#087f5b;font-weight:900;cursor:pointer;box-shadow:0 4px 12px rgba(8,60,44,.05)
+}
+.news-control-btn:hover{background:#ecfdf5;transform:translateY(-1px)}
+.news-carousel-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;min-height:245px}
+.news-carousel-grid .news-card{animation:newsCardIn .45s ease both}
+@keyframes newsCardIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.news-card.is-feature{grid-column:span 1;display:block}
+.news-card.is-feature .news-image{min-height:150px}
+.news-card.is-feature .news-body{padding:14px 15px 16px}
+.news-card.is-feature .news-body h4{font-size:14px}
+.news-dots{display:flex;justify-content:center;gap:5px;margin-top:12px}
+.news-dot-btn{width:6px;height:6px;border-radius:99px;background:#cbd8d2;border:0;padding:0;cursor:pointer;transition:.25s}
+.news-dot-btn.active{width:20px;background:#10b981}
+.news-live{margin-right:2px}
+.news-live i{display:inline-block}
+#dashboardLeaderboardCompat{display:none!important}
+@media(max-width:1180px){
+  .dashboard-insights-grid{grid-template-columns:1fr 1fr}
+  .distribution-panel{grid-column:1/-1}
+  .donut-wrap{margin-left:auto;margin-right:auto}
+}
+@media(max-width:760px){
+  .dashboard-insights-grid{grid-template-columns:1fr;gap:11px}
+  .distribution-panel{grid-column:auto}
+  .dashboard-panel-head{padding:15px 15px 9px}
+  .team-pulse-summary{margin:4px 15px 10px}
+  .team-preview-list{padding:2px 15px 15px}
+  .trend-mini-toolbar{padding:0 15px 7px}
+  .trend-filter-compact{margin:0 15px 8px}
+  .trend-panel .chart{height:180px!important}
+  .dashboard-breakdown-split{padding:0 15px}
+  .dashboard-breakdown-split{grid-template-columns:1fr!important}
+  .sustainability-news-head{margin-bottom:10px}
+  .news-controls{justify-content:flex-start}
+  .news-carousel-grid{grid-template-columns:1fr!important;min-height:0}
+  .news-carousel-grid .news-card:nth-child(n+3){display:none}
+  .news-card.is-feature{grid-column:auto}
+}
+</style>
+
+
+.hero-top-meta{
+  position:absolute;z-index:4;right:20px;top:18px;display:flex;align-items:center;gap:8px;
+}
+.hero-top-meta>span{
+  display:inline-flex;align-items:center;min-height:30px;padding:0 11px;border-radius:999px;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.16);
+  backdrop-filter:blur(12px);font-size:9px;font-weight:800;color:rgba(255,255,255,.86);
+}
+.hero-notification{gap:5px!important}
+.hero-notification b{color:#fff}
+.hero-avatar-btn{
+  width:32px;height:32px;padding:0;border-radius:50%;overflow:hidden;
+  border:2px solid rgba(255,255,255,.8);background:rgba(255,255,255,.15);
+  box-shadow:0 5px 14px rgba(0,0,0,.16);
+}
+.hero-avatar-btn img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:760px){
+  .hero-top-meta{right:12px;top:12px}
+  .hero-top-meta>span:first-child{display:none}
+}
+
 </head>  
 <body>  
 
@@ -2386,12 +2570,20 @@ button,.quick-card,.lb-item,.chat-room-item,.rank-tab,.news-card{
       <div class="dashboard-hero-wrap">
 <div class="nature-banner">
     <div class="nature-banner-overlay"></div>
+
+    <div class="hero-top-meta">
+      <span id="dashboardTodayLabel">Hari ini</span>
+      <span class="hero-notification">🔔 <b id="chatMetaCount">0</b></span>
+      <button type="button" class="hero-avatar-btn" onclick="navigateToPage('profile')" aria-label="Buka profil">
+        <img id="heroAvatarImg" src="" alt="Profil">
+      </button>
+    </div>
     <div class="nature-banner-content">
       <div class="nature-eyebrow"><span class="nature-dot"></span> JEJAKKARBONKU · IMPACT DASHBOARD</div>
       <h2>Let’s make<br><em>impact visible.</em></h2>
       <p>Setiap aktivitas yang kamu catat membantu mengubah data menjadi aksi nyata untuk energi, lingkungan, dan masa depan.</p>
       <div class="nature-actions">
-        <button type="button" class="nature-btn primary" onclick="document.querySelector('[data-page="input"]')?.click()">⚡ Catat Aktivitas</button>
+        <button type="button" class="nature-btn primary" onclick="navigateToPage('input')">⚡ Catat Aktivitas</button>
         <button type="button" class="nature-btn ghost" onclick="document.getElementById('sustainabilityNews')?.scrollIntoView({behavior:'smooth'})">📰 Baca Insight</button>
       </div>
     </div>
@@ -2455,35 +2647,7 @@ button,.quick-card,.lb-item,.chat-room-item,.rank-tab,.news-card{
         </div>  
       </div>
 
-      <section class="quick-access-section" aria-label="Akses cepat">
-        <div class="section-heading-row">
-          <div>
-            <span class="section-kicker">Quick Actions</span>
-            <h3>Akses cepat</h3>
-            <p>Jalankan aktivitas utama JejakKarbonKu tanpa harus mencari menu.</p>
-          </div>
-        </div>
-        <div class="quick-access-grid">
-          <button class="quick-card" type="button" onclick="document.querySelector('[data-page="input"]')?.click()">
-            <span class="quick-icon">📝</span><span><b>Catat Aktivitas</b><small>Tambah aktivitas & hitung emisi</small></span><i>→</i>
-          </button>
-          <button class="quick-card" type="button" onclick="document.querySelector('[data-page="input"]')?.click()">
-            <span class="quick-icon">⚡</span><span><b>Kalkulator Emisi</b><small>Hitung dampak aktivitas harian</small></span><i>→</i>
-          </button>
-          <button class="quick-card" type="button" data-target="team_dashboard" onclick="document.querySelector('[data-page="team_dashboard"]')?.click()">
-            <span class="quick-icon">👥</span><span><b>Team Dashboard</b><small>Pantau performa tim</small></span><i>→</i>
-          </button>
-          <button class="quick-card" type="button" data-target="ranking_data" onclick="document.querySelector('[data-page="ranking_data"]')?.click()">
-            <span class="quick-icon">🏆</span><span><b>Ranking Data</b><small>Lihat peringkat & performa</small></span><i>→</i>
-          </button>
-          <button class="quick-card" type="button" data-target="contrib" onclick="document.querySelector('[data-page="contrib"]')?.click()">
-            <span class="quick-icon">🌱</span><span><b>Aksi Kontribusi</b><small>Catat aksi untuk bumi</small></span><i>→</i>
-          </button>
-        </div>
-      </section>
-
-
-      <div class="card" style="background: white; border: 1px solid #e2e8f0; margin-bottom: 24px;">
+      <div class="card dashboard-filter-card" style="background: white; border: 1px solid #e2e8f0; margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
           <h3 style="margin: 0; font-size: 16px;">🎛️ Analisis Berdasarkan Aktivitas</h3>
           <select id="globalFilterMode" style="background: #f8fafc; padding: 8px 14px; border-radius: 10px; font-size: 13px; font-weight: 700; border: 1px solid #e2e8f0; color: var(--esg-dark); cursor: pointer;" onchange="updateGlobalFilterModeUI()">
@@ -2523,171 +2687,132 @@ button,.quick-card,.lb-item,.chat-room-item,.rank-tab,.news-card{
         </div>  
       </div>  
 
-      <div class="card" style="margin-top: 24px; padding-bottom: 24px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
-          <h3 style="margin: 0;">🏆 Peringkat Penghematan Komunitas</h3>
-          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-            <select id="lbModeSelect" style="background: #f8fafc; padding: 6px 12px; border-radius: 10px; font-size: 12.5px; font-weight: 700; border: 1px solid #e2e8f0; color: var(--esg-dark);" onchange="updateLeaderboardModeUI()">
-              <option value="month">🗓️ Bulanan</option>
-              <option value="day">📅 Harian</option>
-              <option value="week">📆 Mingguan</option>
-            </select>
-            <select id="lbSortSelect" style="background: #f8fafc; padding: 6px 12px; border-radius: 10px; font-size: 12.5px; font-weight: 700; border: 1px solid #e2e8f0; color: var(--esg-dark);" onchange="renderLeaderboardUI()">
-              <option value="lowest">🌱 Emisi Terendah (Terbaik)</option>
-              <option value="highest">🔥 Emisi Tertinggi</option>
-            </select>
+      
+      <div class="dashboard-insights-grid">
+        <section class="dashboard-panel team-pulse-panel">
+          <div class="dashboard-panel-head">
+            <div>
+              <span class="section-kicker">Team Pulse</span>
+              <h3>Performa Tim</h3>
+            </div>
+            <button type="button" class="panel-link-btn" onclick="navigateToPage('team_dashboard')">Lihat detail <span>→</span></button>
           </div>
-        </div>
-        <p style="font-size: 13px; color: var(--text-muted); margin-top: -6px; margin-bottom: 16px;">💡 <i>Sentuh kartu anggota untuk membedah rincian komponen emisi mereka.</i></p>
-
-        <div id="lbFilterDateContainer" style="margin-bottom: 16px; background: #f8fafc; padding: 12px 16px; border-radius: 12px; border: 1px solid #e2e8f0;">
-          <div id="lbBoxDay" style="display: none; align-items: center; gap: 10px;">
-            <label style="font-size: 11.5px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Pilih Tanggal:</label>
-            <input type="date" id="lbInputDate" style="background: white; padding: 6px 10px; border-radius: 8px; font-size: 13px; font-weight: 600; border: 1px solid #cbd5e1; flex: 1;" onchange="renderLeaderboardUI()">
+          <div class="team-pulse-summary">
+            <div class="team-pulse-icon">👥</div>
+            <div>
+              <strong id="dashTeamMembers">0</strong>
+              <span>anggota terpantau</span>
+            </div>
+            <div class="team-live"><i></i> LIVE</div>
           </div>
-          <div id="lbBoxWeek" style="display: none; display: flex; gap: 10px; align-items: center;">
-            <select id="lbInputMonthForWeek" style="background: white; padding: 6px 10px; border-radius: 8px; font-size: 13px; font-weight: 600; border: 1px solid #cbd5e1; flex: 1;" onchange="renderLeaderboardUI()"></select>
-            <select id="lbInputWeekNum" style="background: white; padding: 6px 10px; border-radius: 8px; font-size: 13px; font-weight: 600; border: 1px solid #cbd5e1; width: 120px;" onchange="renderLeaderboardUI()">
-              <option value="1">Minggu 1</option><option value="2">Minggu 2</option><option value="3">Minggu 3</option><option value="4">Minggu 4</option>
-            </select>
+          <div id="dashboardTeamPreview" class="team-preview-list">
+            <div class="dashboard-empty">Belum ada data tim. Mulai catat aktivitas untuk melihat performa.</div>
           </div>
-          <div id="lbBoxMonth" style="display: flex; align-items: center; gap: 10px;">
-            <label style="font-size: 11.5px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Pilih Bulan:</label>
-            <select id="lbInputMonth" style="background: white; padding: 6px 10px; border-radius: 8px; font-size: 13px; font-weight: 600; border: 1px solid #cbd5e1; flex: 1;" onchange="renderLeaderboardUI()"></select>
+        </section>
+
+        <section class="dashboard-panel trend-panel">
+          <div class="dashboard-panel-head">
+            <div>
+              <span class="section-kicker">Carbon Trend</span>
+              <h3>Emisi 7 Hari Terakhir</h3>
+            </div>
+            <button type="button" class="panel-link-btn" onclick="navigateToPage('ranking_data')">Lihat data <span>→</span></button>
           </div>
-        </div>
-        
-        <div id="leaderboardBox" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; max-height: 400px; overflow-y: auto; padding-right: 4px;">
-          <div style="text-align:center; padding: 20px; color:var(--text-muted); font-size: 13px;">Memuat data komunitas...</div>
-        </div>
-        
-        <button class="btn outline" id="refreshLeaderboardBtn" style="width: 100%; margin-top: 16px;">🔄 Segarkan Data Peringkat</button>
-      </div>
-
-      <div class="split" style="margin-top: 24px;">  
-        <div class="card" style="margin-bottom: 0;">  
-          <h3>🎯 Komponen Hari Ini</h3>  
-          <div id="breakdownBoxToday"></div>  
-        </div>  
-        <div class="card" style="margin-bottom: 0;">  
-          <h3>📦 Komponen Akumulasi</h3>  
-          <div id="breakdownBoxGrand"></div>  
-        </div>  
-      </div>  
-
-
-      <div class="card" style="margin-top: 24px;">  
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">  
-          <h3 style="margin: 0;">📊 Tren Performa Keberlanjutan</h3>  
-          <div style="display: flex; gap: 4px; background: #f8fafc; padding: 4px; border-radius: 12px; border: 1px solid #e2e8f0; flex-wrap: wrap; align-items:center;">  
-            <button type="button" id="modeDayBtn" class="btn" style="padding: 6px 12px; font-size: 12.5px; border-radius: 10px; background: var(--esg-primary); color: white; width: auto;" onclick="setTrendMode('day')">Harian</button>  
-            <button type="button" id="modeWeekBtn" class="btn" style="padding: 6px 12px; font-size: 12.5px; border-radius: 10px; background: transparent; color: var(--text-muted); width: auto; border: none;" onclick="setTrendMode('week')">Mingguan</button>  
-            <button type="button" id="modeMonthBtn" class="btn" style="padding: 6px 12px; font-size: 12.5px; border-radius: 10px; background: transparent; color: var(--text-muted); width: auto; border: none;" onclick="setTrendMode('month')">Bulanan</button>  
-          </div>  
-        </div>  
-
-        <div id="trendFilterBox" style="display: flex; gap: 12px; margin-bottom: 16px; background: #f8fafc; padding: 12px 16px; border-radius: 12px; border: 1px solid #e2e8f0; align-items:center; flex-wrap:wrap;">
-           <div style="flex: 1; min-width: 140px;">
-              <label style="font-size: 11.5px; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Pilih Bulan:</label>
-              <select id="trendMonthSelect" style="width:100%; background:white; padding:6px 10px; border-radius:8px; font-size:13px; font-weight:600; border:1px solid #cbd5e1; margin-top:4px;" onchange="renderDashboard()"></select>
-           </div>
-           <div id="trendWeekWrapper" style="flex: 1; min-width: 140px; display:none;">
-              <label style="font-size: 11.5px; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Pilih Minggu:</label>
-              <select id="trendWeekSelect" style="width:100%; background:white; padding:6px 10px; border-radius:8px; font-size:13px; font-weight:600; border:1px solid #cbd5e1; margin-top:4px;" onchange="renderDashboard()">
-                 <option value="1">Minggu ke-1</option><option value="2">Minggu ke-2</option><option value="3">Minggu ke-3</option><option value="4">Minggu ke-4</option>
+          <div class="trend-mini-toolbar">
+            <div class="trend-mode-pills">
+              <button type="button" id="modeDayBtn" class="trend-mode active" onclick="setTrendMode('day')">Harian</button>
+              <button type="button" id="modeWeekBtn" class="trend-mode" onclick="setTrendMode('week')">Mingguan</button>
+              <button type="button" id="modeMonthBtn" class="trend-mode" onclick="setTrendMode('month')">Bulanan</button>
+            </div>
+          </div>
+          <div id="trendFilterBox" class="trend-filter-compact">
+            <div>
+              <label>Pilih Bulan</label>
+              <select id="trendMonthSelect" onchange="renderDashboard()"></select>
+            </div>
+            <div id="trendWeekWrapper">
+              <label>Pilih Minggu</label>
+              <select id="trendWeekSelect" onchange="renderDashboard()">
+                <option value="1">Minggu ke-1</option>
+                <option value="2">Minggu ke-2</option>
+                <option value="3">Minggu ke-3</option>
+                <option value="4">Minggu ke-4</option>
               </select>
-           </div>
+            </div>
+          </div>
+          <div id="chartSubtitle" class="chart-subtitle"></div>
+          <canvas class="chart" id="trendChart"></canvas>
+        </section>
+
+        <section class="dashboard-panel distribution-panel">
+          <div class="dashboard-panel-head">
+            <div>
+              <span class="section-kicker">Emission Mix</span>
+              <h3>Distribusi Emisi</h3>
+            </div>
+            <span class="panel-status">Live</span>
+          </div>
+          <div class="donut-wrap">
+            <canvas id="categoryDonut" width="190" height="190"></canvas>
+            <div class="donut-center">
+              <strong id="categoryDonutTotal">0.00</strong>
+              <span>kgCO₂e</span>
+            </div>
+          </div>
+          <div id="categoryLegend" class="category-legend"></div>
+        </section>
+      </div>
+
+      <section class="dashboard-panel dashboard-detail-panel">
+        <div class="dashboard-panel-head">
+          <div>
+            <span class="section-kicker">Emission Detail</span>
+            <h3>Komponen Emisi</h3>
+          </div>
+          <div class="detail-switch">
+            <span class="detail-dot"></span> Berdasarkan aktivitas
+          </div>
         </div>
+        <div class="split dashboard-breakdown-split">
+          <div>
+            <h4>Hari Ini</h4>
+            <div id="breakdownBoxToday"></div>
+          </div>
+          <div>
+            <h4>Akumulasi</h4>
+            <div id="breakdownBoxGrand"></div>
+          </div>
+        </div>
+      </section>
 
-        <div id="chartSubtitle" style="font-size: 12.5px; font-weight: 700; color: var(--text-muted); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px;"></div>
-        <canvas class="chart" id="trendChart"></canvas>  
-      </div>  
-    
-<div class="dashboard-news-bottom">
-<div class="sustainability-news-head" id="sustainabilityNews">
-    <div>
-      <span class="section-kicker">Sustainability Feed</span>
-      <h3>Berita & Insight Keberlanjutan</h3>
-      <p>Update energi bersih, iklim, teknologi hijau, dan aksi keberlanjutan.</p>
-    </div>
-    <a class="news-all-link" href="https://unfccc.int/news" target="_blank" rel="noopener noreferrer">Lihat semua ↗</a>
-  </div>
+      <!-- Elemen kompatibilitas ranking lama: tetap ada agar sinkronisasi server tidak rusak. -->
+      <div id="dashboardLeaderboardCompat" aria-hidden="true">
+        <select id="lbModeSelect"><option value="month">Bulanan</option><option value="day">Harian</option><option value="week">Mingguan</option></select>
+        <select id="lbSortSelect"><option value="lowest">Terendah</option><option value="highest">Tertinggi</option></select>
+        <div id="lbBoxDay"><input id="lbInputDate" type="date"></div>
+        <div id="lbBoxWeek"><select id="lbInputMonthForWeek"></select><select id="lbInputWeekNum"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select></div>
+        <div id="lbBoxMonth"><select id="lbInputMonth"></select></div>
+        <div id="leaderboardBox"></div>
+        <button type="button" id="refreshLeaderboardBtn">Refresh</button>
+      </div>
 
-  <div class="news-grid">
-    <a class="news-card news-feature" href="https://www.antaranews.com/tag/renewable-energy-sources" target="_blank" rel="noopener noreferrer">
-      <div class="news-image" style="background-image:url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85')">
-        <span class="news-category">ENERGI TERBARUKAN</span>
-        <span class="news-read">Baca ↗</span>
-      </div>
-      <div class="news-body">
-        <small>ANTARA · Renewable Energy</small>
-        <h4>Indonesia terus mempercepat pengembangan energi terbarukan.</h4>
-        <p>Ikuti perkembangan potensi energi bersih, hidrogen, PLTS, dan transisi energi Indonesia.</p>
-      </div>
-    </a>
-
-    <a class="news-card" href="https://unfccc.int/news/renewable-power-generation-records-its-fastest-growth-ever" target="_blank" rel="noopener noreferrer">
-      <div class="news-image" style="background-image:url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=900&q=85')">
-        <span class="news-category">CLEAN ENERGY</span>
-        <span class="news-read">Baca ↗</span>
-      </div>
-      <div class="news-body">
-        <small>UN CLIMATE CHANGE · 14 JUL 2026</small>
-        <h4>Energi terbarukan mencatat pertumbuhan pembangkitan yang sangat cepat.</h4>
-        <p>Renewables menyumbang 31,7% pembangkitan listrik global pada 2024.</p>
-      </div>
-    </a>
-
-    <a class="news-card" href="https://www.unep.org/news-and-stories/news/spotlight-climate-action" target="_blank" rel="noopener noreferrer">
-      <div class="news-image" style="background-image:url('https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=900&q=85')">
-        <span class="news-category">CLIMATE ACTION</span>
-        <span class="news-read">Baca ↗</span>
-      </div>
-      <div class="news-body">
-        <small>UNEP · CLIMATE ACTION</small>
-        <h4>Climate action: dari kebijakan hingga solusi nyata di lapangan.</h4>
-        <p>Ikuti perkembangan solusi iklim, resilience, finance, dan inovasi hijau.</p>
-      </div>
-    </a>
-
-    <a class="news-card" href="https://www.greenpeace.org/indonesia/news-stories/?category=iklim-dan-energi" target="_blank" rel="noopener noreferrer">
-      <div class="news-image" style="background-image:url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=900&q=85')">
-        <span class="news-category">IKLIM & ENERGI</span>
-        <span class="news-read">Baca ↗</span>
-      </div>
-      <div class="news-body">
-        <small>GREENPEACE INDONESIA</small>
-        <h4>Melihat perkembangan isu iklim dan energi di Indonesia.</h4>
-        <p>Berita, riset, kampanye, dan perspektif tentang transisi energi serta lingkungan.</p>
-      </div>
-    </a>
-
-    <a class="news-card" href="https://news.mongabay.com/list/renewable-energy/" target="_blank" rel="noopener noreferrer">
-      <div class="news-image" style="background-image:url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=900&q=85')">
-        <span class="news-category">NATURE & ENERGY</span>
-        <span class="news-read">Baca ↗</span>
-      </div>
-      <div class="news-body">
-        <small>MONGABAY · RENEWABLE ENERGY</small>
-        <h4>Energi bersih, konservasi, dan tantangan lingkungan global.</h4>
-        <p>Eksplorasi berita tentang energi, biodiversitas, hutan, dan solusi berbasis alam.</p>
-      </div>
-    </a>
-
-    <a class="news-card" href="https://www.antaranews.com/tag/isu-keberlanjutan" target="_blank" rel="noopener noreferrer">
-      <div class="news-image" style="background-image:url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=900&q=85')">
-        <span class="news-category">SUSTAINABILITY</span>
-        <span class="news-read">Baca ↗</span>
-      </div>
-      <div class="news-body">
-        <small>ANTARA · ISU KEBERLANJUTAN</small>
-        <h4>Praktik keberlanjutan semakin dekat dengan aktivitas sehari-hari.</h4>
-        <p>Temukan perkembangan green office, transportasi, energi, dan aksi lingkungan.</p>
-      </div>
-    </a>
-  </div>
-</div>
-
+      <section class="dashboard-news-bottom" id="sustainabilityNews">
+        <div class="sustainability-news-head">
+          <div>
+            <span class="section-kicker">Sustainability Feed</span>
+            <h3>Berita & Insight Keberlanjutan</h3>
+            <p>Insight energi, iklim, teknologi hijau, dan aksi keberlanjutan yang berganti otomatis.</p>
+          </div>
+          <div class="news-controls">
+            <span class="news-live"><i></i> AUTO ROTATE</span>
+            <button type="button" class="news-control-btn" onclick="changeNews(-1)" aria-label="Berita sebelumnya">←</button>
+            <button type="button" class="news-control-btn" onclick="changeNews(1)" aria-label="Berita berikutnya">→</button>
+            <a class="news-all-link" href="https://unfccc.int/news" target="_blank" rel="noopener noreferrer">Lihat semua ↗</a>
+          </div>
+        </div>
+        <div id="newsGrid" class="news-grid news-carousel-grid"></div>
+        <div id="newsDots" class="news-dots" aria-label="Navigasi berita"></div>
+      </section>
 </section>  
 
     <!-- TAB TEAM DASHBOARD -->
@@ -3460,6 +3585,7 @@ async function fetchLeaderboard() {
       rawLeaderboardData = resData.data || [];
       populateTeamDeptFilter();
       renderLeaderboardUI();
+      renderDashboardTeamPreview();
       renderChatRoomsList();
     } else {
       $('leaderboardBox').innerHTML = '<div style="text-align:center; padding: 24px; color:var(--text-muted); font-size: 13.5px;">Belum ada data terekam di sistem.</div>';
@@ -4525,6 +4651,214 @@ function toggleSort(type) {
   renderRankingDataView();
 }
 
+
+/* ===== DASHBOARD FRESH V3 BEHAVIOR ===== */
+let currentNewsIndex = 0;
+let newsRotationTimer = null;
+
+const DASHBOARD_NEWS = [
+  {
+    category:'ENERGI TERBARUKAN',
+    source:'ANTARA NEWS',
+    date:'16 Mei 2026',
+    title:'Indonesia terus mempercepat pengembangan energi terbarukan.',
+    desc:'Perkembangan energi bersih, PLTS, hidrogen, dan transisi energi Indonesia.',
+    image:'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85',
+    url:'https://www.antaranews.com/tag/renewable-energy-sources'
+  },
+  {
+    category:'CLEAN ENERGY',
+    source:'UN CLIMATE CHANGE',
+    date:'14 Juli 2026',
+    title:'Energi terbarukan mencatat pertumbuhan pembangkitan yang sangat cepat.',
+    desc:'Ikuti perkembangan energi terbarukan dan arah transisi energi global.',
+    image:'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=900&q=85',
+    url:'https://unfccc.int/news/renewable-power-generation-records-its-fastest-growth-ever'
+  },
+  {
+    category:'CLIMATE ACTION',
+    source:'UNEP',
+    date:'Insight',
+    title:'Climate action: dari kebijakan hingga solusi nyata di lapangan.',
+    desc:'Solusi iklim, resilience, finance, dan inovasi hijau dari berbagai belahan dunia.',
+    image:'https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=900&q=85',
+    url:'https://www.unep.org/news-and-stories/news/spotlight-climate-action'
+  },
+  {
+    category:'IKLIM & ENERGI',
+    source:'GREENPEACE INDONESIA',
+    date:'Insight',
+    title:'Melihat perkembangan isu iklim dan energi di Indonesia.',
+    desc:'Berita, riset, kampanye, dan perspektif tentang transisi energi serta lingkungan.',
+    image:'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=900&q=85',
+    url:'https://www.greenpeace.org/indonesia/news-stories/?category=iklim-dan-energi'
+  },
+  {
+    category:'NATURE & ENERGY',
+    source:'MONGABAY',
+    date:'Insight',
+    title:'Energi bersih, konservasi, dan tantangan lingkungan global.',
+    desc:'Eksplorasi berita tentang energi, biodiversitas, hutan, dan solusi berbasis alam.',
+    image:'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=900&q=85',
+    url:'https://news.mongabay.com/list/renewable-energy/'
+  },
+  {
+    category:'SUSTAINABILITY',
+    source:'ANTARA',
+    date:'Insight',
+    title:'Praktik keberlanjutan semakin dekat dengan aktivitas sehari-hari.',
+    desc:'Green office, transportasi, energi, dan aksi lingkungan yang bisa diterapkan bersama.',
+    image:'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=900&q=85',
+    url:'https://www.antaranews.com/tag/isu-keberlanjutan'
+  }
+];
+
+function navigateToPage(pageId){
+  const page = document.getElementById(pageId);
+  const buttons = document.querySelectorAll('.nav button, .mobile-nav button');
+  if(!page){
+    console.warn('Halaman tidak ditemukan:', pageId);
+    return false;
+  }
+  buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.page === pageId));
+  document.querySelectorAll('.page').forEach(section => section.classList.remove('active'));
+  page.classList.add('active');
+  try { renderDashboard(); } catch(err) { console.warn('renderDashboard:', err); }
+  if(pageId === 'chat'){
+    try{
+      state.lastChatReadTimestamp = new Date().toISOString();
+      saveLocal();
+      if($('deskChatBadge')) $('deskChatBadge').style.display='none';
+      if($('mobChatBadge')) $('mobChatBadge').style.display='none';
+      fetchChatMessages(); renderChatRoomsList();
+      currentActiveRecipient = null;
+      if($('activeChatTitle')) $('activeChatTitle').textContent='🌍 Pilih Ruang Obrolan';
+      if($('activeChatActionBtn')) $('activeChatActionBtn').style.display='none';
+      renderChatMessages();
+      if(typeof toggleMobileChatList==='function') toggleMobileChatList();
+    }catch(e){ console.warn('chat navigation:',e); }
+  }
+  if(pageId === 'team_dashboard'){
+    try{ renderTeamDashboardView(); loadTeamData(); }catch(e){ console.warn('team navigation:',e); }
+  }
+  if(pageId === 'ranking_data'){
+    try{ renderRankingDataView(); loadTeamData(); }catch(e){ console.warn('ranking navigation:',e); }
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+  return true;
+}
+
+function renderDashboardTeamPreview(){
+  const box=$('dashboardTeamPreview');
+  if(!box) return;
+  const data=Array.isArray(rawLeaderboardData)?rawLeaderboardData:[];
+  const users={};
+  data.forEach(item=>{
+    if(!item || !item.userId) return;
+    const id=String(item.userId);
+    if(!users[id]) users[id]={userId:id,userName:item.userName||'Anonim',photo:item.photo||'',totalEmission:0};
+    users[id].totalEmission += Math.max(0,num(item.emission));
+    if(item.userName) users[id].userName=item.userName;
+    if(item.photo) users[id].photo=item.photo;
+  });
+  const sorted=Object.values(users).sort((a,b)=>a.totalEmission-b.totalEmission);
+  const totalUsers=sorted.length;
+  if($('dashTeamMembers')) $('dashTeamMembers').textContent=String(totalUsers);
+  if(!sorted.length){
+    box.innerHTML='<div class="dashboard-empty">Belum ada data tim. Mulai catat aktivitas untuk melihat performa.</div>';
+    return;
+  }
+  const fallback="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2394a3b8' d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E";
+  box.innerHTML=sorted.slice(0,4).map((u,i)=>{
+    const photo=(u.photo&&u.photo.startsWith('data:image'))?u.photo:fallback;
+    return `<div class="team-preview-item">
+      <div class="team-preview-rank">${i<3?['🥇','🥈','🥉'][i]:`#${i+1}`}</div>
+      <img class="team-preview-avatar" src="${photo}" alt="">
+      <div class="team-preview-name">${esc(u.userName||'Anonim')}</div>
+      <div class="team-preview-value">${fmt(u.totalEmission)}<small>kgCO₂e</small></div>
+    </div>`;
+  }).join('');
+}
+
+function drawCategoryDonut(records){
+  const canvas=$('categoryDonut'), legend=$('categoryLegend');
+  if(!canvas || !legend) return;
+  const aggregate={};
+  (records||[]).forEach(r=>{
+    Object.entries(r.breakdown||{}).forEach(([k,v])=>{
+      const value=num(v); if(value>0) aggregate[k]=(aggregate[k]||0)+value;
+    });
+  });
+  const entries=Object.entries(aggregate).sort((a,b)=>b[1]-a[1]);
+  const total=entries.reduce((s,[,v])=>s+v,0);
+  if($('categoryDonutTotal')) $('categoryDonutTotal').textContent=fmt(total);
+  const ctx=canvas.getContext('2d'), dpr=window.devicePixelRatio||1, size=190;
+  canvas.width=size*dpr; canvas.height=size*dpr; canvas.style.width=size+'px'; canvas.style.height=size+'px';
+  ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,size,size);
+  const cx=size/2,cy=size/2,r=68,ring=23;
+  const palette=['#10b981','#2f80ed','#f5b52e','#d977a7','#58a6c9','#7c68d9','#14b8a6'];
+  if(!total){
+    ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.strokeStyle='#e6efeb';ctx.lineWidth=ring;ctx.stroke();
+    legend.innerHTML='<div class="dashboard-empty">Belum ada komponen emisi.</div>';
+    return;
+  }
+  let angle=-Math.PI/2;
+  entries.slice(0,7).forEach(([name,value],i)=>{
+    const sweep=value/total*Math.PI*2;
+    ctx.beginPath();ctx.arc(cx,cy,r,angle,angle+sweep);
+    ctx.strokeStyle=palette[i%palette.length];ctx.lineWidth=ring;ctx.lineCap='butt';ctx.stroke();
+    angle+=sweep;
+  });
+  legend.innerHTML=entries.slice(0,7).map(([name,value],i)=>{
+    const pct=(value/total*100);
+    return `<div class="category-row"><span class="category-dot" style="background:${palette[i%palette.length]}"></span><b>${esc(name)}</b><strong>${pct.toFixed(0)}%</strong></div>`;
+  }).join('');
+}
+
+function renderFreshNews(){
+  const grid=$('newsGrid'), dots=$('newsDots');
+  if(!grid || !dots) return;
+  const total=DASHBOARD_NEWS.length, visible=3;
+  const items=[];
+  for(let i=0;i<visible;i++) items.push(DASHBOARD_NEWS[(currentNewsIndex+i)%total]);
+  grid.innerHTML=items.map((n,i)=>`
+    <a class="news-card ${i===0?'is-feature':''}" href="${n.url}" target="_blank" rel="noopener noreferrer">
+      <div class="news-image" style="background-image:url('${n.image}')">
+        <span class="news-category">${n.category}</span>
+        <span class="news-read">Baca ↗</span>
+      </div>
+      <div class="news-body">
+        <small>${n.source} · ${n.date}</small>
+        <h4>${esc(n.title)}</h4>
+        <p>${esc(n.desc)}</p>
+      </div>
+    </a>`).join('');
+  dots.innerHTML=DASHBOARD_NEWS.map((_,i)=>`<button type="button" class="news-dot-btn ${i===currentNewsIndex?'active':''}" onclick="setNewsIndex(${i})" aria-label="Berita ${i+1}"></button>`).join('');
+}
+function setNewsIndex(index){
+  currentNewsIndex=(index+DASHBOARD_NEWS.length)%DASHBOARD_NEWS.length;
+  renderFreshNews();
+  restartNewsRotation();
+}
+function changeNews(step){ setNewsIndex(currentNewsIndex+step); }
+function restartNewsRotation(){
+  clearInterval(newsRotationTimer);
+  newsRotationTimer=setInterval(()=>changeNews(1),8000);
+}
+
+function syncDashboardMeta(){
+  const now=new Date();
+  const label=now.toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'});
+  if($('dashboardTodayLabel')) $('dashboardTodayLabel').textContent=label;
+  const photo=state?.profile?.photo||'';
+  if($('heroAvatarImg')){
+    $('heroAvatarImg').src=photo || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23dff8ee'/%3E%3Ccircle cx='32' cy='25' r='10' fill='%23087f5b'/%3E%3Cpath d='M15 53c2-12 10-18 17-18s15 6 17 18' fill='%23087f5b'/%3E%3C/svg%3E";
+  }
+  const unread=(typeof allChatMessages!=='undefined' && Array.isArray(allChatMessages) && state?.profile?.userId)
+    ? allChatMessages.filter(m=>m.timestamp>state.lastChatReadTimestamp && String(m.senderId).trim()!==String(state.profile.userId).trim()).length : 0;
+  if($('chatMetaCount')) $('chatMetaCount').textContent=unread>99?'99+':String(unread);
+}
+
 function renderDashboard() {  
   if(!$('dashDateFilter').value) $('dashDateFilter').value = todayISO();
   if(!$('gInputDate').value) $('gInputDate').value = todayISO();
@@ -4574,9 +4908,13 @@ function renderDashboard() {
   $('personalTotalDash').textContent = fmt(filteredPersonalTotal); $('collectiveTotalDash').textContent = fmt(filteredCollectiveTotal);  
   $('personalLabelSub').textContent = labelSubText; $('collectiveLabelSub').textContent = labelSubText;
 
-  renderBreakdownToday($('breakdownBoxToday'), r?.breakdown || {});  
-  renderBreakdownGrand($('breakdownBoxGrand'), filteredGrandRecords);
-  drawChart($('trendChart'), state.records);  
+  if($('breakdownBoxToday')) renderBreakdownToday($('breakdownBoxToday'), r?.breakdown || {});  
+  if($('breakdownBoxGrand')) renderBreakdownGrand($('breakdownBoxGrand'), filteredGrandRecords);
+  if($('trendChart')) drawChart($('trendChart'), state.records);
+  renderDashboardTeamPreview();
+  drawCategoryDonut(filteredGrandRecords);
+  syncDashboardMeta();
+  if($('newsGrid') && !$('newsGrid').children.length) { renderFreshNews(); restartNewsRotation(); }
   renderHistory(); renderContribUI(); updateAvatarsUI();
 }  
   
@@ -4884,33 +5222,14 @@ function setupSwipeListener() {
 }
 
 window.goToProfilePage = function() {
-  document.querySelectorAll('.nav button, .mobile-nav button, .page').forEach(x => x.classList.remove('active'));  
-  document.querySelectorAll('[data-page="profile"]').forEach(btn => btn.classList.add('active'));  
-  $('profile').classList.add('active'); renderDashboard(); window.scrollTo({ top: 0, behavior: 'smooth' });  
+  navigateToPage('profile');
 };
   
 function bind() {  
   document.querySelectorAll('.nav button, .mobile-nav button').forEach(b => {
-    b.onclick = () => {  
-      document.querySelectorAll('.nav button, .mobile-nav button, .page').forEach(x => x.classList.remove('active'));  
-      document.querySelectorAll(`[data-page="${b.dataset.page}"]`).forEach(btn => btn.classList.add('active'));  
-      $(b.dataset.page).classList.add('active'); renderDashboard(); 
-      if(b.dataset.page === 'chat') { 
-          state.lastChatReadTimestamp = new Date().toISOString(); 
-          saveLocal();
-          $('deskChatBadge').style.display = 'none'; 
-          $('mobChatBadge').style.display = 'none';
-          fetchChatMessages(); 
-          renderChatRoomsList(); 
-          currentActiveRecipient = null;
-          $('activeChatTitle').textContent = '🌍 Pilih Ruang Obrolan';
-          $('activeChatActionBtn').style.display = 'none';
-          renderChatMessages();
-          toggleMobileChatList();
-      }
-      if(b.dataset.page === 'team_dashboard') { renderTeamDashboardView(); loadTeamData(); }
-      if(b.dataset.page === 'ranking_data') { renderRankingDataView(); loadTeamData(); }
-      window.scrollTo({ top: 0, behavior: 'smooth' });  
+    b.onclick = (event) => {
+      if(event) event.preventDefault();
+      navigateToPage(b.dataset.page);
     }
   });  
   
@@ -5078,7 +5397,9 @@ function init() {
   if (!isSessionAuth) { $('authModal').style.display = 'flex'; }
   else { $('authModal').style.display = 'none'; fetchLeaderboard(); fetchChatMessages(); }
 
-  loadProfile(); setForm({ date: tIso }); bind(); 
+  loadProfile(); setForm({ date: tIso }); bind();
+  renderDashboard();
+  restartNewsRotation();
   const r = state.records.find(x => x.date === tIso);
   if(r) $('saveRecordBtn').innerHTML = '☁️ Timpa/Update Data Terdaftar';
   else $('saveRecordBtn').innerHTML = '☁️ Hitung & Simpan ke Server';
