@@ -2258,7 +2258,7 @@ button,.quick-card,.lb-item,.chat-room-item,.rank-tab,.news-card{
 </style>
 
 
-<style id="hero-meta-fixed">
+<style id="hero-meta-fix">
 .hero-top-meta{
   position:absolute;z-index:4;right:20px;top:18px;display:flex;align-items:center;gap:8px;
 }
@@ -2282,223 +2282,214 @@ button,.quick-card,.lb-item,.chat-room-item,.rank-tab,.news-card{
 </style>
 
 
-
-<style id="final-polish-v5">
-/* ===== FINAL POLISH: CLEAN, ALIVE, NO RAW CSS / NO OVERLAP ===== */
+<style id="jejak-clean-fix-v6">
+/* ===== SAFETY / LAYOUT FIX ===== */
 html,body{overflow-x:hidden!important}
 .main{min-width:0!important}
 .page{min-width:0!important}
+.quick-access-section{display:none!important}
+.quick-access-grid,.quick-card{display:none!important}
 
-/* Dashboard hero: calm landscape, clear hierarchy */
-#dashboard .dashboard-hero-wrap{margin-bottom:18px!important}
-#dashboard .dashboard-hero-wrap .nature-banner{
-  min-height:305px!important;
-  border-radius:26px!important;
-  background:
-    linear-gradient(98deg,rgba(1,47,35,.94) 0%,rgba(2,79,57,.76) 43%,rgba(2,61,45,.18) 100%),
-    url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=2000&q=88") center/cover!important;
-  box-shadow:0 24px 55px rgba(2,71,51,.17)!important;
-}
-#dashboard .dashboard-hero-wrap .nature-banner-overlay{
-  background:linear-gradient(98deg,rgba(1,47,35,.25),rgba(1,47,35,.02))!important;
-}
-#dashboard .dashboard-hero-wrap .nature-banner-content{
-  padding:34px 36px!important;
-  max-width:720px!important;
-}
-#dashboard .dashboard-hero-wrap .nature-banner h2{
-  font-size:clamp(34px,3.8vw,52px)!important;
-  letter-spacing:-2.3px!important;
-}
-#dashboard .dashboard-hero-wrap .nature-banner p{
-  max-width:580px!important;font-size:13px!important;
-}
-#dashboard .dashboard-hero-wrap .nature-stat{
-  width:215px!important;right:28px!important;bottom:25px!important;
-}
-#dashboard .dashboard-hero-wrap .nature-btn{
-  min-width:130px!important;
-  padding:11px 16px!important;
-  border-radius:13px!important;
-}
-#dashboard .dashboard-hero-wrap .nature-btn.primary{
-  background:linear-gradient(135deg,#ecfff8,#baf5dd)!important;
-  color:#075c44!important;
-}
-#dashboard .dashboard-hero-wrap .nature-btn.ghost{
-  background:rgba(255,255,255,.13)!important;
-  color:#fff!important;
-}
-
-/* Make KPI row feel like a premium control center */
-#dashboard .grid-kpi{
-  grid-template-columns:repeat(3,minmax(0,1fr))!important;
-  gap:14px!important;
-}
-#dashboard .kpi-main,#dashboard .kpi-box{
-  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease!important;
-}
-#dashboard .kpi-main:hover,#dashboard .kpi-box:hover{
-  transform:translateY(-3px)!important;
-}
-
-/* Hide obsolete quick-access remnants even if old markup is present */
-#dashboard .quick-access-section,
-#dashboard .quick-access-grid,
-#dashboard .quick-card{display:none!important}
-
-/* More visual dashboard analytics */
-#dashboard .dashboard-insights-grid{margin-top:18px!important}
-#dashboard .dashboard-panel{background:rgba(255,255,255,.94)!important}
-
-/* ===== ACTION CONTRIBUTION ===== */
-#contrib .topline{margin-bottom:18px!important}
-#contrib .action-hero{
-  position:relative;overflow:hidden;
-  min-height:230px;padding:28px 30px;
-  border-radius:25px;
+/* ===== IMPACT ACTION CENTER ===== */
+#contrib .impact-action-hero{
+  position:relative;
+  min-height:225px;
+  margin:0 0 16px;
+  padding:28px 30px;
+  border-radius:24px;
+  overflow:hidden;
   color:#fff;
   background:
-    linear-gradient(105deg,rgba(2,55,40,.96),rgba(4,117,83,.78) 55%,rgba(3,74,54,.48)),
-    url("https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1500&q=85") center/cover;
-  box-shadow:0 20px 48px rgba(4,90,64,.17);
-  margin-bottom:17px;
+    radial-gradient(circle at 86% 28%,rgba(103,255,199,.22),transparent 26%),
+    linear-gradient(120deg,#022c22 0%,#075c44 55%,#0b8060 100%);
+  box-shadow:0 20px 48px rgba(2,44,34,.18);
+  isolation:isolate;
 }
-#contrib .action-hero:before{
-  content:"";position:absolute;width:220px;height:220px;border-radius:50%;
-  right:-65px;top:-75px;background:rgba(123,255,203,.13);
-  box-shadow:0 0 0 25px rgba(123,255,203,.035);
+#contrib .impact-action-hero:before{
+  content:"";
+  position:absolute;
+  width:310px;height:310px;
+  right:-110px;bottom:-170px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 0 0 28px rgba(255,255,255,.025),0 0 0 58px rgba(255,255,255,.018);
 }
-#contrib .action-hero-content{position:relative;z-index:2;max-width:650px}
-#contrib .action-kicker{
+#contrib .impact-action-copy{position:relative;z-index:2;max-width:620px}
+#contrib .impact-kicker{
   display:inline-flex;align-items:center;gap:7px;
-  padding:6px 10px;border-radius:999px;
-  background:rgba(255,255,255,.12);
-  border:1px solid rgba(255,255,255,.16);
-  font-size:9px;font-weight:900;letter-spacing:1px;text-transform:uppercase;
-}
-#contrib .action-hero h2{
-  margin:12px 0 7px;font-size:clamp(27px,3vw,40px);
-  line-height:1.03;letter-spacing:-1.5px;
-}
-#contrib .action-hero h2 em{font-style:normal;color:#8ff3cf}
-#contrib .action-hero p{
-  margin:0;max-width:570px;color:rgba(255,255,255,.78);
-  font-size:12.5px;line-height:1.6;
-}
-#contrib .action-hero-stats{
-  position:absolute;z-index:2;right:25px;bottom:22px;
-  display:flex;gap:9px;
-}
-#contrib .action-stat-mini{
-  min-width:110px;padding:11px 13px;border-radius:14px;
+  padding:6px 9px;border-radius:999px;
   background:rgba(255,255,255,.11);
+  border:1px solid rgba(255,255,255,.15);
+  font-size:8.5px;font-weight:900;letter-spacing:1.2px;
+}
+#contrib .impact-kicker:before{
+  content:"";width:6px;height:6px;border-radius:50%;
+  background:#5eead4;box-shadow:0 0 0 5px rgba(94,234,212,.10);
+}
+#contrib .impact-action-copy h2{
+  margin:12px 0 7px;
+  font-size:clamp(25px,3vw,37px);
+  line-height:1.04;letter-spacing:-1.3px;
+}
+#contrib .impact-action-copy h2 em{font-style:normal;color:#7ff0c4}
+#contrib .impact-action-copy p{
+  margin:0;max-width:560px;
+  color:rgba(255,255,255,.72);
+  font-size:11.5px;line-height:1.6;
+}
+#contrib .impact-action-total{
+  position:absolute;right:28px;top:28px;z-index:3;
+  min-width:145px;padding:13px 15px;border-radius:16px;
+  background:rgba(255,255,255,.10);
   border:1px solid rgba(255,255,255,.16);
   backdrop-filter:blur(12px);
 }
-#contrib .action-stat-mini span{
-  display:block;font-size:8px;font-weight:800;letter-spacing:.8px;
-  color:rgba(255,255,255,.65);text-transform:uppercase;
+#contrib .impact-action-total small{
+  display:block;color:rgba(255,255,255,.62);
+  font-size:7.5px;font-weight:900;letter-spacing:1px;
 }
-#contrib .action-stat-mini b{display:block;margin-top:4px;font-size:18px}
+#contrib .impact-action-total strong{
+  display:block;font-size:25px;line-height:1.05;margin-top:5px;
+}
+#contrib .impact-action-total>span:last-child{
+  font-size:8.5px;color:rgba(255,255,255,.62)
+}
+#contrib .impact-action-orbit{
+  position:absolute;right:190px;bottom:-45px;
+  width:170px;height:170px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.08);
+  opacity:.8;
+}
+#contrib .impact-action-orbit span{
+  position:absolute;width:35px;height:35px;
+  display:grid;place-items:center;border-radius:50%;
+  background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.10);
+  font-size:16px;backdrop-filter:blur(8px);
+}
+#contrib .impact-action-orbit span:nth-child(1){left:2px;top:57px}
+#contrib .impact-action-orbit span:nth-child(2){left:65px;top:5px}
+#contrib .impact-action-orbit span:nth-child(3){right:2px;top:57px}
+#contrib .impact-action-orbit span:nth-child(4){left:65px;bottom:5px}
 
-#contrib .contrib-layout{
-  display:grid;grid-template-columns:minmax(0,1.18fr) minmax(280px,.82fr);
-  gap:17px;align-items:start;
+#contrib .impact-action-grid{
+  display:grid;
+  grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:10px;
+  margin:0 0 18px;
 }
-#contrib .contrib-action-card,
-#contrib .contrib-form-card,
-#contrib .contrib-history-card{
-  background:rgba(255,255,255,.94);
-  border:1px solid rgba(8,83,59,.09);
-  border-radius:22px;
-  box-shadow:0 10px 30px rgba(7,72,52,.065);
+#contrib .impact-action-card{
+  min-height:126px;
+  padding:15px;
+  text-align:left;
+  border-radius:18px;
+  border:1px solid rgba(15,54,43,.09);
+  background:rgba(255,255,255,.96);
+  box-shadow:0 8px 24px rgba(8,60,44,.055);
+  display:flex;flex-direction:column;align-items:flex-start;
+  gap:10px;position:relative;overflow:hidden;
+  color:#0b1f1a;
 }
-#contrib .contrib-action-card{padding:20px}
-#contrib .contrib-action-card h3,
-#contrib .contrib-form-card h3,
-#contrib .contrib-history-card h3{margin:0 0 5px}
-#contrib .contrib-subtitle{
-  margin:0 0 15px;color:#71837c;font-size:11.5px;line-height:1.5
+#contrib .impact-action-card:before{
+  content:"";position:absolute;left:0;right:0;top:0;height:3px;
+  background:linear-gradient(90deg,#087f5b,#34d399);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .25s ease;
 }
-#contrib .contrib-action-grid{
-  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;
+#contrib .impact-action-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(8,127,91,.22);
+  box-shadow:0 16px 32px rgba(8,60,44,.10);
 }
-#contrib .contrib-action-tile{
-  position:relative;min-height:118px;text-align:left;
-  padding:15px;border-radius:17px;
-  border:1px solid #e2eee9;
-  background:linear-gradient(145deg,#fff,#f5fbf8);
-  color:#10261f;
-  overflow:hidden;
+#contrib .impact-action-card:hover:before,
+#contrib .impact-action-card.active:before{transform:scaleX(1)}
+#contrib .impact-action-card.active{
+  background:linear-gradient(145deg,#f2fff9,#fff);
+  border-color:rgba(8,127,91,.30);
+  box-shadow:0 14px 32px rgba(8,127,91,.11);
 }
-#contrib .contrib-action-tile:after{
-  content:"";position:absolute;width:75px;height:75px;border-radius:50%;
-  right:-30px;bottom:-32px;background:rgba(22,185,129,.08);
+#contrib .impact-action-icon{
+  width:40px;height:40px;border-radius:13px;
+  display:grid;place-items:center;font-size:21px;
+  background:linear-gradient(135deg,#e9faf3,#d8f5e9);
+  box-shadow:inset 0 0 0 1px rgba(8,127,91,.06);
 }
-#contrib .contrib-action-tile:hover{
-  transform:translateY(-3px);
-  border-color:#8ddfc1;
-  box-shadow:0 12px 26px rgba(8,127,91,.11);
+#contrib .impact-action-text{display:block;min-width:0;padding-right:13px}
+#contrib .impact-action-text b{display:block;font-size:11px;font-weight:900;line-height:1.25}
+#contrib .impact-action-text small{
+  display:block;margin-top:4px;color:#70817b;
+  font-size:8.5px;line-height:1.35;
 }
-#contrib .contrib-action-tile.active{
-  background:linear-gradient(145deg,#e9fbf3,#d6f6e8);
-  border-color:#52c99d;
-  box-shadow:0 10px 25px rgba(8,127,91,.12);
+#contrib .impact-action-arrow{
+  position:absolute;right:11px;bottom:11px;
+  width:24px;height:24px;border-radius:50%;
+  display:grid;place-items:center;
+  background:#e7f8f0;color:#087f5b;font-weight:900;font-size:12px;
 }
-#contrib .contrib-action-icon{
-  width:38px;height:38px;border-radius:12px;
-  display:grid;place-items:center;font-size:20px;
-  background:#e5f8f0;margin-bottom:10px;
+#contrib .impact-action-card.active .impact-action-arrow{
+  background:#087f5b;color:#fff;
 }
-#contrib .contrib-action-tile b{display:block;font-size:12px;font-weight:900}
-#contrib .contrib-action-tile span{
-  display:block;margin-top:4px;color:#71837c;font-size:9.5px;line-height:1.35
+
+#contrib .contrib-form-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:16px;
 }
-#contrib .contrib-form-card{padding:20px}
-#contrib .contrib-form-card .input-field{margin-bottom:13px}
 #contrib .contrib-info-modern{
-  background:linear-gradient(135deg,#effcf6,#e2f8ee)!important;
-  border:1px solid #bdebd7!important;
-  border-radius:16px!important;
-  padding:14px!important;
+  background:linear-gradient(135deg,#effcf5,#f8fffb)!important;
+  border:1px solid #bcebd5!important;
+  box-shadow:inset 0 0 0 1px rgba(8,127,91,.025);
 }
 #contrib .contrib-save{
-  min-height:48px!important;
-  font-size:13px!important;
-  border-radius:14px!important;
+  min-height:48px;
+  background:linear-gradient(135deg,#087f5b,#16b981)!important;
 }
 #contrib .contrib-history-card{
-  margin-top:17px;padding:20px;
-  grid-column:1/-1;
+  margin-top:0;
 }
-#contrib .contrib-progress{
-  margin-top:16px;padding:15px;border-radius:17px;
-  background:linear-gradient(135deg,#f7fcfa,#edf9f4);
-  border:1px solid #e1eee8;
-}
-#contrib .contrib-progress-top{display:flex;justify-content:space-between;gap:10px;align-items:center}
-#contrib .contrib-progress-top span{font-size:10px;color:#71837c;font-weight:800}
-#contrib .contrib-progress-top b{font-size:12px;color:#087f5b}
-#contrib .contrib-progress-bar{height:8px;background:#dceee7;border-radius:99px;overflow:hidden;margin-top:9px}
-#contrib .contrib-progress-bar span{display:block;height:100%;width:0;background:linear-gradient(90deg,#087f5b,#34d399);border-radius:99px;transition:width .5s}
 
-@media(max-width:1000px){
-  #dashboard .dashboard-hero-wrap .nature-stat{display:none!important}
-  #contrib .contrib-layout{grid-template-columns:1fr}
-  #contrib .contrib-history-card{grid-column:auto}
+/* Existing dashboard cards: subtle life without changing data structure */
+#dashboard .dashboard-panel,
+#dashboard .dashboard-news-bottom{
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
 }
-@media(max-width:700px){
-  #dashboard .dashboard-hero-wrap .nature-banner{min-height:350px!important}
-  #dashboard .dashboard-hero-wrap .nature-banner-content{padding:25px 19px!important}
-  #dashboard .dashboard-hero-wrap .nature-banner h2{font-size:30px!important}
-  #dashboard .dashboard-hero-wrap .nature-banner p{font-size:11px!important;max-width:300px!important}
-  #contrib .action-hero{min-height:260px;padding:22px 19px;border-radius:21px}
-  #contrib .action-hero h2{font-size:29px}
-  #contrib .action-hero-stats{left:19px;right:auto;bottom:18px}
-  #contrib .action-stat-mini{min-width:100px}
-  #contrib .contrib-action-grid{grid-template-columns:1fr}
-  #contrib .contrib-action-tile{min-height:96px}
+#dashboard .dashboard-panel:hover{
+  transform:translateY(-2px);
+}
+#dashboard .dashboard-panel-head .panel-link-btn{
+  transition:transform .2s ease,color .2s ease;
+}
+#dashboard .dashboard-panel-head .panel-link-btn:hover{
+  transform:translateX(3px);
+  color:#087f5b;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1180px){
+  #contrib .impact-action-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  #contrib .impact-action-card{min-height:118px}
+}
+@media(max-width:760px){
+  #contrib .impact-action-hero{
+    min-height:310px;padding:21px 18px;border-radius:20px;
+  }
+  #contrib .impact-action-copy h2{font-size:27px;max-width:280px}
+  #contrib .impact-action-copy p{max-width:290px;font-size:10.5px}
+  #contrib .impact-action-total{
+    left:18px;right:auto;top:auto;bottom:18px;min-width:135px;
+  }
+  #contrib .impact-action-orbit{right:-20px;bottom:4px;opacity:.55}
+  #contrib .impact-action-grid{
+    grid-template-columns:1fr 1fr;gap:9px;
+  }
+  #contrib .impact-action-card{
+    min-height:132px;padding:13px;
+  }
+  #contrib .impact-action-text b{font-size:10.5px}
+  #contrib .impact-action-text small{font-size:8px}
+  #contrib .contrib-form-grid{grid-template-columns:1fr}
+}
+@media(max-width:390px){
+  #contrib .impact-action-grid{grid-template-columns:1fr}
+  #contrib .impact-action-card{min-height:105px}
 }
 </style>
 
@@ -3265,79 +3256,70 @@ html,body{overflow-x:hidden!important}
       </div>  
     </section>  
 
-    <!-- TAB KONTRIBUSI -->
-    <section id="contrib" class="page">
-      <div class="topline">
-        <div>
-          <h1>Aksi Kontribusi Hijau</h1>
-          <p>Ubah kebiasaan kecil menjadi dampak nyata yang bisa dilacak.</p>
+    <!-- TAB KONTRIBUSI -->  
+    <section id="contrib" class="page">  
+      <div class="topline">  
+        <div>  
+          <h1>Aksi Kontribusi Hijau</h1>  
+          <p>Catat langkah progresif Anda dalam menekan jejak karbon operasional.</p>  
+        </div>  
+      </div>  
+        
+      <div class="card" style="background: var(--esg-dark); color: white; border: none; text-align: center; padding: 32px 24px; margin-bottom: 24px;">  
+        <div style="font-size: 13.5px; color: #a7f3d0; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">Total Pengurangan Karbon (Offset)</div>  
+        <div style="font-size: 44px; font-weight: 900; margin: 12px 0; letter-spacing: -1px;"><span id="offsetTotal">0.00</span> <small style="font-size: 20px; font-weight: 700;">kgCO₂e</small></div>  
+        <div style="font-size: 15px; font-weight: 500;">Setara penyerapan hingga <strong style="color: #34d399;"><span id="offsetTreeEq">0.00</span> pohon</strong>/tahun</div>  
+      </div>  
+
+
+      <div class="impact-action-hero">
+        <div class="impact-action-copy">
+          <span class="impact-kicker">IMPACT ACTION CENTER</span>
+          <h2>Setiap aksi kecil punya<br><em>dampak yang terukur.</em></h2>
+          <p>Pilih aksi yang kamu lakukan, masukkan volumenya, lalu lihat estimasi kontribusi pengurangan emisi secara langsung.</p>
+        </div>
+        <div class="impact-action-orbit" aria-hidden="true">
+          <span>🌱</span><span>☀️</span><span>♻️</span><span>🚲</span>
+        </div>
+        <div class="impact-action-total">
+          <small>TOTAL OFFSET</small>
+          <strong><span id="impactHeroOffset">0.00</span></strong>
+          <span>kgCO₂e</span>
         </div>
       </div>
 
-      <div class="action-hero">
-        <div class="action-hero-content">
-          <span class="action-kicker">🌱 IMPACT ACTION CENTER</span>
-          <h2>Setiap aksi kecil,<br><em>punya dampak besar.</em></h2>
-          <p>Catat kontribusi lingkunganmu, lihat estimasi pengurangan emisi, dan bangun kebiasaan berkelanjutan secara konsisten.</p>
-        </div>
-        <div class="action-hero-stats">
-          <div class="action-stat-mini">
-            <span>Total Offset</span>
-            <b><span id="offsetTotal">0.00</span> kg</b>
-          </div>
-          <div class="action-stat-mini">
-            <span>Setara Pohon</span>
-            <b><span id="offsetTreeEq">0.00</span></b>
-          </div>
-        </div>
+      <div class="impact-action-grid" aria-label="Pilih jenis aksi kontribusi">
+        <button type="button" class="impact-action-card active" data-contrib-action="tree">
+          <span class="impact-action-icon">🌳</span>
+          <span class="impact-action-text"><b>Menanam Pohon</b><small>Serap karbon melalui aksi penghijauan.</small></span>
+          <span class="impact-action-arrow">→</span>
+        </button>
+        <button type="button" class="impact-action-card" data-contrib-action="renewable">
+          <span class="impact-action-icon">☀️</span>
+          <span class="impact-action-text"><b>Energi Terbarukan</b><small>Catat penggunaan energi bersih.</small></span>
+          <span class="impact-action-arrow">→</span>
+        </button>
+        <button type="button" class="impact-action-card" data-contrib-action="transport">
+          <span class="impact-action-icon">🚲</span>
+          <span class="impact-action-text"><b>Mobilitas Rendah Emisi</b><small>Pilih perjalanan aktif atau bersama.</small></span>
+          <span class="impact-action-arrow">→</span>
+        </button>
+        <button type="button" class="impact-action-card" data-contrib-action="waste">
+          <span class="impact-action-icon">♻️</span>
+          <span class="impact-action-text"><b>Kelola Sampah</b><small>Kurangi emisi melalui daur ulang.</small></span>
+          <span class="impact-action-arrow">→</span>
+        </button>
+        <button type="button" class="impact-action-card" data-contrib-action="custom">
+          <span class="impact-action-icon">✨</span>
+          <span class="impact-action-text"><b>Aksi Lainnya</b><small>Masukkan pengurangan yang terukur.</small></span>
+          <span class="impact-action-arrow">→</span>
+        </button>
       </div>
 
-      <div class="contrib-layout">
-        <div class="contrib-action-card">
-          <h3>🌿 Pilih Aksi Kamu</h3>
-          <p class="contrib-subtitle">Pilih aktivitas terlebih dahulu. Form di sebelah kanan akan menyesuaikan otomatis.</p>
-
-          <div class="contrib-action-grid">
-            <button type="button" class="contrib-action-tile active" data-contrib-choice="tree" onclick="selectContribType('tree')">
-              <div class="contrib-action-icon">🌳</div>
-              <b>Menanam Pohon</b>
-              <span>Tambah penyerapan karbon melalui penghijauan.</span>
-            </button>
-            <button type="button" class="contrib-action-tile" data-contrib-choice="renewable" onclick="selectContribType('renewable')">
-              <div class="contrib-action-icon">☀️</div>
-              <b>Energi Terbarukan</b>
-              <span>Gunakan solar panel atau sumber energi bersih.</span>
-            </button>
-            <button type="button" class="contrib-action-tile" data-contrib-choice="transport" onclick="selectContribType('transport')">
-              <div class="contrib-action-icon">🚲</div>
-              <b>Mobilitas Rendah Emisi</b>
-              <span>Sepeda, berjalan kaki, atau mobilitas bersama.</span>
-            </button>
-            <button type="button" class="contrib-action-tile" data-contrib-choice="waste" onclick="selectContribType('waste')">
-              <div class="contrib-action-icon">♻️</div>
-              <b>Kelola Sampah</b>
-              <span>Daur ulang dan kurangi sampah yang terbuang.</span>
-            </button>
-          </div>
-
-          <div class="contrib-progress">
-            <div class="contrib-progress-top">
-              <span>PROGRESS AKSI BERKELANJUTAN</span>
-              <b id="contribProgressLabel">0%</b>
-            </div>
-            <div class="contrib-progress-bar"><span id="contribProgressBar"></span></div>
-          </div>
-        </div>
-
-        <div class="contrib-form-card">
-          <h3>✦ Catat Aksi</h3>
-          <p class="contrib-subtitle">Masukkan data kontribusi untuk menghitung estimasi offset.</p>
-
-          <div class="input-field">
-            <label>Tanggal Aksi</label>
-            <input type="date" id="contribDate">
-          </div>
-
+      <div class="card">  
+        <h3>🌱 Catat Aksi Kontribusi Baru</h3>  
+        <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px;">
+          <div class="input-field"><label>Tanggal Aksi</label><input type="date" id="contribDate"></div>
           <div class="input-field">
             <label>Jenis Kontribusi / Aksi</label>
             <select id="contribType" onchange="updateContribLabel()">
@@ -3349,28 +3331,2428 @@ html,body{overflow-x:hidden!important}
             </select>
           </div>
 
-          <div id="contribInfoBox" class="contrib-info-modern">
-            <div style="display:flex;align-items:center;gap:8px;color:#166534;font-weight:900;font-size:13px;">
-              <span>💡</span><span id="contribInfoTitle">Informasi Kalkulasi Offset</span>
-            </div>
-            <div style="font-size:12px;color:#15803d;font-weight:500;line-height:1.5;margin-top:5px;" id="contribInfoDesc">1 Pohon yang ditanam menyerap emisi kurang lebih 21,77 kgCO₂e per tahun.</div>
-            <div style="font-size:12px;font-weight:900;color:#064e3b;margin-top:8px;padding-top:8px;border-top:1px dashed rgba(22,163,74,.3);" id="contribInfoResult">Hasil Offset: 0,00 kgCO₂e</div>
+          <div id="contribInfoBox" style="background: #f0fdf4; border: 1px solid #bbf7d0; padding: 16px; border-radius: 12px; display: flex; flex-direction: column; gap: 6px;">
+            <div style="display: flex; align-items: center; gap: 8px; color: #166534; font-weight: 800; font-size: 14px;"><span>ℹ️</span> <span id="contribInfoTitle">Informasi Kalkulasi Offset</span></div>
+            <div style="font-size: 13px; color: #15803d; font-weight: 500; line-height: 1.5;" id="contribInfoDesc">1 Pohon yang ditanam menyerap emisi kurang lebih 21,77 kgCO₂e per tahun.</div>
+            <div style="font-size: 12.5px; font-weight: 800; color: #064e3b; margin-top: 4px; padding-top: 8px; border-top: 1px dashed rgba(22, 163, 74, 0.3);" id="contribInfoResult">Hasil Offset: 0,00 kgCO₂e</div>
           </div>
 
-          <div class="input-field" style="margin-top:13px;">
+          <div class="input-field">
             <label id="contribUnitLabel">Jumlah Pohon yang Ditanam</label>
             <input type="number" id="contribValue" placeholder="Contoh: 2" min="0" step="0.1" oninput="updateContribLabel()">
           </div>
+          <button class="btn primary" id="saveContribBtn" style="margin-top: 8px;">Simpan Aksi Kontribusi</button>
+        </div>  
+      </div>  
 
-          <button class="btn primary contrib-save" id="saveContribBtn">🌱 Simpan Aksi Kontribusi</button>
+      <div class="card">  
+        <h3>Riwayat Aksi Kontribusi</h3>  
+        <div id="contribHistoryBox"></div>  
+      </div>  
+    </section>  
+
+    <!-- TAB LIVE CHAT / DISKUSI KOMUNITAS (STANDBY DI LUAR) -->
+    <section id="chat" class="page">
+      <div class="topline">
+        <div>
+          <h1>💬 Hub Komunikasi Komunitas</h1>
+          <p>Berdikusi real-time, bagikan foto, dan berkolaborasi untuk keberlanjutan bersama rekan kerja GGF.</p>
+        </div>
+      </div>
+
+      <div class="chat-layout">
+        <!-- Sidebar Daftar Ruang Chat (Standby di Luar) -->
+        <div class="chat-sidebar" id="chatSidebarPane">
+          <div class="chat-search-box">
+            <input type="text" id="chatSearchInput" placeholder="🔍 Cari grup / obrolan..." oninput="renderChatRoomsList()">
+          </div>
+          <div class="chat-tab-header">
+            <div style="display:flex; align-items:center; gap:6px;">
+              <span>👥 Ruang Pesan</span>
+              <button onclick="openCreateGroupModal()" title="Buat Grup Baru" style="background:var(--esg-primary); color:white; border:none; border-radius:50%; width:24px; height:24px; font-size:14px; font-weight:900; display:flex; align-items:center; justify-content:center; cursor:pointer;">+</button>
+            </div>
+            <button onclick="refreshChatData()" style="background:none; border:none; color:var(--esg-primary); font-size:13px; font-weight:800;">🔄 Segarkan</button>
+          </div>
+          <div class="chat-rooms-list" id="chatRoomsList"></div>
         </div>
 
-        <div class="contrib-history-card">
-          <h3>📋 Riwayat Aksi Kontribusi</h3>
-          <p class="contrib-subtitle">Semua kontribusi yang sudah kamu catat akan muncul di sini.</p>
-          <div id="contribHistoryBox"></div>
+        <!-- Ruang Utama Percakapan -->
+        <div class="chat-main-pane" id="chatMainPane">
+          <div class="chat-tab-header">
+             <div style="display:flex; align-items:center; gap:8px;">
+               <button id="mobileChatBackBtn" class="btn outline" style="padding:4px 8px; font-size:12px; border:none; border-radius:6px; background:#f1f5f9;" onclick="toggleMobileChatList()">⬅️ Kembali</button>
+               <span id="activeChatTitle" style="font-size: 15px; font-weight: 800;">🌍 Pilih Ruang Obrolan</span>
+             </div>
+             <div id="activeChatActionBtn" style="display:none;">
+               <button onclick="openManageGroupModal()" class="btn outline" style="padding:4px 10px; font-size:11.5px;">⚙️ Kelola Grup</button>
+             </div>
+          </div>
+          
+          <div class="chat-messages-box" id="chatMessagesBox">
+            <div style="text-align:center; color:var(--text-muted); font-size:13px; margin-top:30px;">Silakan pilih salah satu ruang pesan atau grup di sebelah kiri untuk mulai berdiskusi.</div>
+          </div>
+
+          <div class="active-reply-banner" id="activeReplyBanner">
+            <div style="overflow:hidden;">
+              <b style="color:var(--esg-dark);" id="replyingToName">Membalas Pesan</b>
+              <span style="font-size:12px; color:var(--text-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; display:block;" id="replyingToText">-</span>
+            </div>
+            <button onclick="cancelReplyChat()" style="background:none; border:none; font-size:18px; font-weight:900; color:var(--danger); cursor:pointer;">&times;</button>
+          </div>
+
+          <div class="chat-input-bar">
+            <div class="emoji-picker-panel" id="emojiPicker">
+                <span onclick="insertEmoji('😀')">😀</span><span onclick="insertEmoji('😂')">😂</span><span onclick="insertEmoji('🥰')">🥰</span>
+                <span onclick="insertEmoji('😎')">😎</span><span onclick="insertEmoji('🙏')">🙏</span><span onclick="insertEmoji('👍')">👍</span>
+                <span onclick="insertEmoji('🔥')">🔥</span><span onclick="insertEmoji('🎉')">🎉</span><span onclick="insertEmoji('😢')">😢</span>
+                <span onclick="insertEmoji('🤔')">🤔</span><span onclick="insertEmoji('🌍')">🌍</span><span onclick="insertEmoji('🌱')">🌱</span>
+            </div>
+
+            <button class="chat-attach-btn" onclick="toggleEmojiPicker()" title="Sisipkan Emoticon">😀</button>
+            <button class="chat-attach-btn" onclick="document.getElementById('chatPhotoInput').click()" title="Kirim Foto">📎</button>
+            <input type="file" id="chatPhotoInput" accept="image/*" style="display:none;" onchange="handleDirectChatPhotoUpload(this)">
+            
+            <div class="chat-input-wrapper">
+                <div class="chat-media-preview-bar" id="chatMediaPreviewBar">
+                    <img id="chatMediaPreviewImg" src="">
+                    <button class="chat-media-remove" onclick="removeChatPhoto()">&times;</button>
+                </div>
+                <input type="text" id="chatMessageInput" placeholder="Ketik pesan..." onkeypress="handleChatKeyPress(event)">
+            </div>
+            
+            <button class="chat-send-btn" id="chatSubmitBtn" onclick="sendChatMessage()">🚀</button>
+            <button class="btn outline" id="chatCancelEditBtn" style="display:none; width: auto; border-color:var(--danger); color:var(--danger); padding: 8px 12px; font-size: 13px;" onclick="cancelEditChat()">Batal</button>
+          </div>
         </div>
       </div>
     </section>
 
->
+    <!-- TAB PROFIL -->  
+    <section id="profile" class="page">  
+      <div class="topline">  
+        <div>  
+          <h1>Kelola Profil Pengguna</h1>  
+          <p>Pastikan identitas akun, informasi departemen, dan peran profesional Anda tetap mutakhir.</p>  
+        </div>  
+      </div>  
+      <div class="card" style="max-width: 600px; margin: 0 auto;">  
+
+        <div class="photo-uploader">
+          <div class="avatar-preview">
+            <span class="icon" id="profAvatarPh">👤</span>
+            <img id="profAvatarImg" src="">
+          </div>
+          <div class="photo-actions">
+            <label class="btn outline" style="padding: 10px 18px; font-size: 13.5px; cursor: pointer; display: inline-flex;">
+              📷 Ganti Foto
+              <input type="file" id="photoInput" accept="image/png, image/jpeg, image/jpg" style="display: none;">
+            </label>
+            <button id="removePhotoBtn" class="btn outline" style="padding: 10px 18px; font-size: 13.5px; color: var(--danger); border-color: #fca5a5; display: none;">🗑️ Hapus</button>
+          </div>
+        </div>
+        
+        <div style="display: flex; flex-direction: column; gap: 16px;">  
+          <div class="input-field"><label>User ID / NIK (Permanen)</label><input type="text" id="userId" readonly style="background: #e2e8f0; cursor: not-allowed; opacity: 0.8; font-weight:700;"></div>
+          <div class="input-field"><label>Nama Lengkap</label><input type="text" id="userName" value="" placeholder="Ketik nama lengkap Anda"></div>  
+          <div class="input-field"><label>Departemen</label><input type="text" id="department" value="Sustainability" placeholder="Sustainability, dst."></div>  
+          <div class="input-field"><label>Tim / Bagian</label><input type="text" id="team" value="Energy & Climate" placeholder="Energy & Climate, dst."></div>  
+          <div class="input-field"><label>PG / Area</label><input type="text" id="pg" placeholder="PG / Area kerja"></div>  
+          <div class="input-field"><label>Peran (Role)</label><input type="text" id="role" placeholder="Inspector, dst."></div>  
+            
+          <button class="btn primary" id="saveProfileBtn" style="margin-top: 12px; padding: 16px; font-size: 15px;">☁️ Simpan Profil ke Server</button>  
+          
+          <div style="background: #f8fafc; padding: 20px; border-radius: 16px; border: 1px solid #e2e8f0; display: flex; flex-direction: column; gap: 14px; margin-top: 24px;">
+            <h4 style="margin: 0; color: var(--esg-dark); font-size: 15px; font-weight: 800;">🔐 Perbarui Kata Sandi Akses</h4>
+            <div class="input-field"><label>Password Lama</label><input type="password" id="currentPasswordInput" placeholder="Masukkan password lama"></div>
+            <div class="input-field"><label>Password Baru</label><input type="password" id="newPasswordInput" placeholder="Masukkan password baru"></div>
+            <button type="button" class="btn outline" id="changePasswordBtn" style="border-color: var(--esg-primary); color: var(--esg-primary);">🔄 Perbarui Password di Server</button>
+          </div>
+
+          <div style="background: #f0fdf4; padding: 18px 20px; border-radius: 16px; border: 1px solid #bbf7d0; display: flex; flex-direction: column; gap: 10px; margin-top: 16px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <span style="font-size: 24px;">📲</span>
+              <div>
+                <b style="color: #166534; font-size: 14px; display: block;">Pasang Aplikasi di Perangkat Ini</b>
+                <span style="font-size: 12px; color: var(--text-muted);">Android, iPhone / iPad (iOS), atau Komputer (PC/Mac)</span>
+              </div>
+            </div>
+            <button type="button" class="btn primary" onclick="openPwaInstallModal()" style="padding: 12px; font-size: 13.5px; font-weight: 800;">
+              ✨ Buka Panduan & Pasang Aplikasi
+            </button>
+          </div>
+
+          <button class="btn outline" id="pullServerBtn" style="margin-top: 16px;">🔄 Sinkronisasi Ulang dari Server</button>
+          <button class="btn danger" id="resetProfileBtn" style="margin-top: 8px;">Keluar Akun / Reset Perangkat</button>
+        </div>  
+      </div>  
+    </section>
+  </main>  
+</div>  
+
+<div class="mobile-nav">  
+  <button class="active" data-page="dashboard"><span class="ico">🌍</span>Dasbor</button>  
+  <button data-page="team_dashboard"><span class="ico">👥</span>Tim</button>
+  <button data-page="ranking_data"><span class="ico">🏆</span>Ranking</button>
+  <button data-page="input"><span class="ico">⚡</span>Input</button>  
+  <button data-page="contrib"><span class="ico">🌱</span>Aksi</button>  
+  <button data-page="chat"><span class="ico">💬</span>Chat <span class="mobile-nav-badge" id="mobChatBadge"></span></button>  
+  <button data-page="profile"><span class="ico">👤</span>Profil</button>  
+</div>  
+
+<div class="toast" id="toast">Notifikasi muncul di sini</div>  
+
+<script>  
+const FACTOR_VERSION = 'GGP-Carbon-Factor-R3-2026';  
+const FACTORS = { motorKm: 0.113, carKm: 0.197, acHours: 0.837, lampHours: 0.01674, tvHours: 0.0465, laptopHours: 0.054125, phoneHours: 0.00372, gridKwh: 0.93, treeKgPerYear: 21.77 };  
+const CONTRIB_FACTORS = { tree: FACTORS.treeKgPerYear, renewable: FACTORS.gridKwh, transport: FACTORS.motorKm, waste: 1.2, custom: 1 };  
+const BASE_KEY = 'ggf-carbon-personal-v32';  
+const SESSION_AUTH_KEY = 'ggf-session-authenticated-v2';
+const $ = id => document.getElementById(id);  
+  
+let currentTrendMode = 'day';
+let rawLeaderboardData = [];
+let cropper = null;
+
+let currentActiveRecipient = null; 
+let allChatMessages = [];
+let chatGroups = []; 
+let editingTimestamp = null; 
+let replyingMessageData = null; 
+let pendingChatMedia = null;
+
+let teamDetailedRecords = []; 
+
+function maskId(id) {
+    if (!id) return '***';
+    const str = String(id).trim();
+    if (str.length <= 4) return '***';
+    return str.substring(0, 3) + '****' + str.substring(str.length - 2);
+}
+
+function toggleMobileChatList() {
+    $('chatSidebarPane').classList.remove('hidden-mobile');
+    $('chatMainPane').classList.remove('active-mobile');
+}
+
+function openMobileChatRoom() {
+    $('chatSidebarPane').classList.add('hidden-mobile');
+    $('chatMainPane').classList.add('active-mobile');
+}
+
+function switchAuthTab(tab) {
+  $('authLoginSection').style.display = 'none';
+  $('authRegisterSection').style.display = 'none';
+  $('authForgotSection').style.display = 'none';
+  
+  if (tab === 'login') {
+    $('authLoginSection').style.display = 'flex';
+    $('tabLoginBtn').style.background = 'white'; $('tabLoginBtn').style.color = 'var(--esg-primary)'; $('tabLoginBtn').style.boxShadow = '0 2px 4px rgba(0,0,0,0.05)';
+    $('tabRegBtn').style.background = 'transparent'; $('tabRegBtn').style.color = 'var(--text-muted)'; $('tabRegBtn').style.boxShadow = 'none';
+  } else if (tab === 'register') {
+    $('authRegisterSection').style.display = 'flex';
+    $('tabRegBtn').style.background = 'white'; $('tabRegBtn').style.color = 'var(--esg-primary)'; $('tabRegBtn').style.boxShadow = '0 2px 4px rgba(0,0,0,0.05)';
+    $('tabLoginBtn').style.background = 'transparent'; $('tabLoginBtn').style.color = 'var(--text-muted)'; $('tabLoginBtn').style.boxShadow = 'none';
+  } else if (tab === 'forgot') {
+    $('authForgotSection').style.display = 'flex';
+    $('tabLoginBtn').style.background = 'transparent'; $('tabLoginBtn').style.color = 'var(--text-muted)'; $('tabLoginBtn').style.boxShadow = 'none';
+    $('tabRegBtn').style.background = 'transparent'; $('tabRegBtn').style.color = 'var(--text-muted)'; $('tabRegBtn').style.boxShadow = 'none';
+  }
+}
+
+function setTrendMode(mode) {
+  currentTrendMode = mode;
+  ['day', 'week', 'month'].forEach(m => {
+    const btn = $('mode' + m.charAt(0).toUpperCase() + m.slice(1) + 'Btn');
+    if(btn) {
+      if(m === mode) { btn.style.background = 'var(--esg-primary)'; btn.style.color = 'white'; btn.style.boxShadow = '0 2px 8px rgba(5,150,105,0.2)'; } 
+      else { btn.style.background = 'transparent'; btn.style.color = 'var(--text-muted)'; btn.style.boxShadow = 'none'; }
+    }
+  });
+  if (mode === 'week') $('trendWeekWrapper').style.display = 'block';
+  else $('trendWeekWrapper').style.display = 'none';
+  renderDashboard();
+}
+
+function updateGrandFilterUI() {
+  const mode = $('grandFilterMode').value;
+  if (mode === 'month') { $('grandSubFilterBox').style.display = 'block'; $('grandMonthSelect').style.display = 'block'; $('grandWeekSelect').style.display = 'none'; }
+  else if (mode === 'week') { $('grandSubFilterBox').style.display = 'block'; $('grandMonthSelect').style.display = 'block'; $('grandWeekSelect').style.display = 'block'; }
+  else { $('grandSubFilterBox').style.display = 'none'; }
+  renderDashboard();
+}
+
+function updateGlobalFilterModeUI() {
+  const mode = $('globalFilterMode').value;
+  $('gBoxDay').style.display = mode === 'day' ? 'flex' : 'none';
+  $('gBoxMonth').style.display = mode === 'month' ? 'flex' : 'none';
+  $('gBoxRange').style.display = mode === 'range' ? 'flex' : 'none';
+  renderDashboard();
+}
+
+function populateMonthDropdowns() {
+  const months = [
+    {val: '01', name: 'Januari'}, {val: '02', name: 'Februari'}, {val: '03', name: 'Maret'}, {val: '04', name: 'April'}, {val: '05', name: 'Mei'}, {val: '06', name: 'Juni'},
+    {val: '07', name: 'Juli'}, {val: '08', name: 'Agustus'}, {val: '09', name: 'September'}, {val: '10', name: 'Oktober'}, {val: '11', name: 'November'}, {val: '12', name: 'Desember'}
+  ];
+  const currentYear = new Date().getFullYear();
+  const currentMonthNum = String(new Date().getMonth() + 1).padStart(2, '0');
+  let html = '';
+  months.forEach(m => { html += `<option value="${currentYear}-${m.val}">${m.name} ${currentYear}</option>`; });
+  $('trendMonthSelect').innerHTML = html; $('grandMonthSelect').innerHTML = html; $('lbInputMonth').innerHTML = html; $('lbInputMonthForWeek').innerHTML = html; $('gInputMonth').innerHTML = html;
+  const defVal = `${currentYear}-${currentMonthNum}`;
+  $('trendMonthSelect').value = defVal; $('grandMonthSelect').value = defVal; $('lbInputMonth').value = defVal; $('lbInputMonthForWeek').value = defVal; $('gInputMonth').value = defVal;
+  $('gInputStartDate').value = `${defVal}-01`; $('gInputEndDate').value = todayISO();
+}
+
+function defaultState() { return { profile: { userId: '', userName: '', password: '', department: '', team: '', pg: '', role: '', photo: '' }, records: [], contributions: [], myTeam: [], lastChatReadTimestamp: new Date(0).toISOString(), chatGroups: [], chatMessages: [] }; }  
+function num(v) { if (typeof v === 'string') { v = v.replace(/,/g, '.'); } const n = parseFloat(v); return Number.isFinite(n) ? n : 0; }  
+function fmt(n) { return (Number(n) || 0).toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }  
+function todayISO() { const d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return d.toISOString().slice(0, 10); }  
+  
+function toast(msg) {  
+  const t = $('toast'); t.textContent = msg; t.classList.add('show');  
+  setTimeout(() => t.classList.remove('show'), 2500);  
+}  
+function esc(s) { return String(s ?? '').replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[m])); }  
+  
+let state = defaultState();  
+try { 
+  const stored = localStorage.getItem(BASE_KEY); 
+  if(stored) {
+    state = JSON.parse(stored);
+    if(state.records && Array.isArray(state.records)) {
+      state.records = state.records.filter(r => r.date && /^\d{4}-\d{2}-\d{2}$/.test(r.date));
+    }
+    if(!state.myTeam) state.myTeam = [];
+    if(!state.lastChatReadTimestamp) state.lastChatReadTimestamp = new Date(0).toISOString();
+    if(!state.chatGroups) state.chatGroups = [];
+    if(!state.chatMessages) state.chatMessages = [];
+    chatGroups = state.chatGroups;
+    allChatMessages = state.chatMessages;
+  }
+} catch(e) {}  
+
+function saveLocal() { 
+  state.chatGroups = chatGroups;
+  state.chatMessages = allChatMessages;
+  localStorage.setItem(BASE_KEY, JSON.stringify(state)); 
+}  
+  
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbywJqm6ZqVLIZgRikIcvk8Q76GY7FSP5JRUd6u0EZuDiO8ZvStG_8GhIv7ybkBe5lc8og/exec'; 
+
+// ==============================================
+// === FETCH CHAT & GROUPS DARI SERVER (SYNC) ===
+// ==============================================
+async function fetchChatMessages() {
+  try {
+    const res = await fetch(SCRIPT_URL + "?action=get_chats");
+    const data = await res.json();
+    if(data.status === 'success' && data.data) {
+      allChatMessages = data.data.map(serverMsg => {
+        let localExist = allChatMessages.find(m => String(m.timestamp) === String(serverMsg.timestamp));
+        
+        let parsedReactions = {};
+        if (serverMsg.reactions) {
+            try {
+                parsedReactions = typeof serverMsg.reactions === 'string' ? JSON.parse(serverMsg.reactions) : serverMsg.reactions;
+            } catch(e) { parsedReactions = {}; }
+        } else if (localExist && localExist.reactions) {
+            parsedReactions = localExist.reactions;
+        }
+
+        if (localExist) {
+            return {
+                ...serverMsg,
+                message: serverMsg.message !== undefined ? serverMsg.message : localExist.message,
+                media: serverMsg.media || localExist.media || null,
+                reactions: parsedReactions
+            };
+        }
+        return {
+            ...serverMsg,
+            reactions: parsedReactions
+        };
+      });
+
+      // Sinkronisasi Grup dari Pesan Tipe Khusus / Server Payload
+      data.data.forEach(m => {
+          if (m.type === 'group_meta' && m.groupData) {
+              try {
+                  let gInfo = typeof m.groupData === 'string' ? JSON.parse(m.groupData) : m.groupData;
+                  if (gInfo && gInfo.id) {
+                      let existIdx = chatGroups.findIndex(g => g.id === gInfo.id);
+                      if (existIdx >= 0) {
+                          chatGroups[existIdx] = gInfo;
+                      } else {
+                          chatGroups.push(gInfo);
+                      }
+                  }
+              } catch(err) {}
+          }
+      });
+
+      saveLocalChatData();
+      updateChatBadge();
+      renderChatRoomsList();
+      if (currentActiveRecipient) {
+          renderChatMessages();
+      }
+    }
+  } catch(e) {}
+}
+
+function saveLocalChatData() {
+    state.chatGroups = chatGroups;
+    state.chatMessages = allChatMessages;
+    saveLocal();
+}
+
+function fillUnitOptions(sel, max = 20) { sel.innerHTML = ''; for(let i = 1; i <= max; i++) sel.add(new Option(i, i)); }  
+function setupOptions() { fillUnitOptions($('acUnits'), 10); fillUnitOptions($('lampUnits'), 30); fillUnitOptions($('tvUnits'), 8); fillUnitOptions($('poolUnits'), 10); }  
+  
+function getRecordFromForm() {  
+  const motorKm = num($('motorGo').value) + num($('motorBack').value) + num($('motorMob').value);
+  const carKm = num($('carGo').value) + num($('carBack').value) + num($('carMob').value);
+  const r = {  
+    date: $('dateInput').value || todayISO(), 
+    motorGo: num($('motorGo').value), motorBack: num($('motorBack').value), motorMob: num($('motorMob').value), motorKm,
+    carGo: num($('carGo').value), carBack: num($('carBack').value), carMob: num($('carMob').value), carKm,
+    laptopHours: num($('laptopHours').value), phoneHours: num($('phoneHours').value),  
+    acUnits: num($('acUnits').value || 1), acHours: num($('acHours').value), acUsers: Math.max(1, num($('acUsers').value || 1)),  
+    lampUnits: num($('lampUnits').value || 1), lampHours: num($('lampHours').value), lampUsers: Math.max(1, num($('lampUsers').value || 1)),  
+    tvUnits: num($('tvUnits').value || 1), tvHours: num($('tvHours').value), tvUsers: Math.max(1, num($('tvUsers').value || 1)),
+    poolUnits: num($('poolUnits').value || 1), poolUsers: Math.max(1, num($('poolUsers').value || 1)), poolGo: num($('poolGo').value), poolBack: num($('poolBack').value)
+  }; 
+  return enrichRecord(r);  
+}  
+  
+function enrichRecord(r) {  
+  const motorKm = num(r.motorKm); const carKm = num(r.carKm);  
+  const personal = { 'Motor': motorKm * FACTORS.motorKm, 'Mobil Pribadi': carKm * FACTORS.carKm, 'Laptop / PC': num(r.laptopHours) * FACTORS.laptopHours, 'Handphone': num(r.phoneHours) * FACTORS.phoneHours };  
+  const poolPerPerson = ((num(r.poolGo) + num(r.poolBack)) * num(r.poolUnits || 1)) * FACTORS.carKm / Math.max(1, num(r.poolUsers || 1));
+  const collective = { 'AC Bersama': num(r.acUnits || 1) * num(r.acHours) * FACTORS.acHours / Math.max(1, num(r.acUsers || 1)), 'Lampu Bersama': num(r.lampUnits || 1) * num(r.lampHours) * FACTORS.lampHours / Math.max(1, num(r.lampUsers || 1)), 'TV Bersama': num(r.tvUnits || 1) * num(r.tvHours) * FACTORS.tvHours / Math.max(1, num(r.tvUsers || 1)), 'Mobil Perusahaan (Carpool)': poolPerPerson };  
+  const breakdown = { ...personal, ...collective };
+  const personalTotal = Object.values(personal).reduce((a, v) => a + num(v), 0); 
+  const collectiveTotal = Object.values(collective).reduce((a, v) => a + num(v), 0); 
+  const total = personalTotal + collectiveTotal;  
+  return { ...r, motorKm, carKm, breakdown, summary: { personalTotal, collectiveTotal, motorKm, carKm }, total, updatedAt: new Date().toISOString() };  
+}  
+  
+function setForm(r = {}) {  
+  $('dateInput').value = r.date || todayISO(); 
+  $('motorGo').value = r.motorGo ?? ''; $('motorBack').value = r.motorBack ?? ''; $('motorMob').value = r.motorMob ?? '';
+  $('carGo').value = r.carGo ?? ''; $('carBack').value = r.carBack ?? ''; $('carMob').value = r.carMob ?? '';
+  $('laptopHours').value = r.laptopHours || ''; $('phoneHours').value = r.phoneHours || '';  
+  $('acUnits').value = String(r.acUnits || 1); $('acHours').value = r.acHours || ''; $('acUsers').value = r.acUsers || '';  
+  $('lampUnits').value = String(r.lampUnits || 1); $('lampHours').value = r.lampHours || ''; $('lampUsers').value = r.lampUsers || '';  
+  $('tvUnits').value = String(r.tvUnits || 1); $('tvHours').value = r.tvHours || ''; $('tvUsers').value = r.tvUsers || '';  
+  $('poolUnits').value = String(r.poolUnits || 1); $('poolUsers').value = r.poolUsers || ''; $('poolGo').value = r.poolGo || ''; $('poolBack').value = r.poolBack || '';
+}  
+  
+function upsertLocal(r) { 
+  if(!r.date || !/^\d{4}-\d{2}-\d{2}$/.test(r.date)) return;
+  state.records = state.records.filter(x => x.date !== r.date); 
+  state.records.push(r); 
+  state.records.sort((a, b) => a.date.localeCompare(b.date)); 
+  saveLocal(); 
+}  
+
+function removeLocalRecord(dateStr) {
+  state.records = state.records.filter(x => x.date !== dateStr);
+  saveLocal();
+}
+  
+function renderBreakdownToday(el, breakdown) {  
+  const entries = Object.entries(breakdown || {}).filter(e => e[1] > 0).sort((a, b) => b[1] - a[1]); const max = Math.max(...entries.map(e => e[1]), 1);  
+  el.innerHTML = entries.length ? entries.map(([k, v]) => `<div class="break-row"><b>${esc(k)}</b><div class="bar"><span style="width:${Math.max(2, v / max * 100)}%"></span></div><em>${fmt(v)} kg</em></div>`).join('') : '<div style="padding: 16px; text-align: center; color: var(--text-muted); font-weight:600; font-size:13px;">Belum ada aktivitas terekam.</div>';  
+}  
+
+function renderBreakdownGrand(el, records) {
+  const aggregate = {};
+  records.forEach(r => { Object.entries(r.breakdown || {}).forEach(([k, v]) => aggregate[k] = (aggregate[k] || 0) + num(v)); });
+  const entries = Object.entries(aggregate).filter(e => e[1] > 0).sort((a, b) => b[1] - a[1]); const max = Math.max(...entries.map(e => e[1]), 1);
+  el.innerHTML = entries.length ? entries.map(([k, v]) => `<div class="break-row"><b>${esc(k)}</b><div class="bar"><span style="width:${Math.max(2, v / max * 100)}%; background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%);"></span></div><em>${fmt(v)} kg</em></div>`).join('') : '<div style="padding: 16px; text-align: center; color: var(--text-muted); font-weight:600; font-size:13px;">Belum ada riwayat akumulasi.</div>';
+}
+  
+function drawChart(canvas, records) {  
+  const ctx = canvas.getContext('2d'); const w = canvas.clientWidth || 400, h = canvas.clientHeight || 280; const dpr = window.devicePixelRatio || 1;  
+  canvas.width = w * dpr; canvas.height = h * dpr; ctx.scale(dpr, dpr); ctx.clearRect(0, 0, w, h); ctx.strokeStyle = '#f1f5f9';  
+  for(let i = 0; i < 5; i++) { let y = 20 + i * (h - 70) / 4; ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke(); }  
+  
+  let trendData = []; let subtitleText = ''; const selectedMonthStr = $('trendMonthSelect').value;
+
+  if (currentTrendMode === 'day') {
+    subtitleText = `Perbandingan Harian Bulan ${selectedMonthStr}`;
+    const [yr, mo] = selectedMonthStr.split('-').map(Number); const daysInMonth = new Date(yr, mo, 0).getDate();
+    for(let d = 1; d <= daysInMonth; d++) { const dStr = String(d).padStart(2, '0'); const found = records.find(r => r.date === `${selectedMonthStr}-${dStr}`); trendData.push({ label: `${d}`, total: found ? found.total : 0 }); }
+  } else if (currentTrendMode === 'week') {
+    const weekNum = parseInt($('trendWeekSelect').value); subtitleText = `Tren Harian Minggu ke-${weekNum} (${selectedMonthStr})`;
+    const [yr, mo] = selectedMonthStr.split('-').map(Number); let startDay = (weekNum - 1) * 7 + 1; let endDay = Math.min(weekNum * 7, new Date(yr, mo, 0).getDate());
+    for(let d = startDay; d <= endDay; d++) { const dStr = String(d).padStart(2, '0'); const found = records.find(r => r.date === `${selectedMonthStr}-${dStr}`); trendData.push({ label: `${d}`, total: found ? found.total : 0 }); }
+  } else if (currentTrendMode === 'month') {
+    subtitleText = `Akumulasi Bulanan`; const [yr, mo] = selectedMonthStr.split('-');
+    const monthsList = [{m: '01', name: 'Jan'}, {m: '02', name: 'Feb'}, {m: '03', name: 'Mar'}, {m: '04', name: 'Apr'}, {m: '05', name: 'Mei'}, {m: '06', name: 'Jun'}, {m: '07', name: 'Jul'}, {m: '08', name: 'Agu'}, {m: '09', name: 'Sep'}, {m: '10', name: 'Okt'}, {m: '11', name: 'Nov'}, {m: '12', name: 'Des'}];
+    monthsList.forEach(item => { const monthTotal = records.filter(r => r.date && r.date.startsWith(`${yr}-${item.m}`)).reduce((sum, r) => sum + num(r.total), 0); trendData.push({ label: item.name, total: monthTotal }); });
+  }
+
+  $('chartSubtitle').textContent = subtitleText;
+  const max = Math.max(...trendData.map(r => r.total), 1); const chartWidth = w - 40; const startX = 20;
+  const x = i => trendData.length === 1 ? w / 2 : startX + (i * (chartWidth / (trendData.length - 1))); const y = v => (h - 50) - (v / max * (h - 90));  
+    
+  let grad = ctx.createLinearGradient(0, 0, 0, h); grad.addColorStop(0, 'rgba(16, 185, 129, 0.4)'); grad.addColorStop(1, 'rgba(16, 185, 129, 0)');  
+  ctx.beginPath(); ctx.moveTo(startX, h - 50); trendData.forEach((r, i) => ctx.lineTo(x(i), y(r.total))); ctx.lineTo(startX + chartWidth, h - 50); ctx.fillStyle = grad; ctx.fill();  
+  ctx.strokeStyle = '#10b981'; ctx.lineWidth = 3; ctx.lineJoin = 'round'; ctx.beginPath();  
+  trendData.forEach((r, i) => i ? ctx.lineTo(x(i), y(r.total)) : ctx.moveTo(x(i), y(r.total))); ctx.stroke();  
+
+  trendData.forEach((r, i) => {
+    const px = x(i); const py = y(r.total);
+    if (r.total > 0 || trendData.length <= 15) { ctx.fillStyle = 'white'; ctx.strokeStyle = '#10b981'; ctx.lineWidth = 2.5; ctx.beginPath(); ctx.arc(px, py, 4, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+      if (trendData.length <= 15 && r.total > 0) { ctx.fillStyle = '#0f172a'; ctx.font = 'bold 10px "Plus Jakarta Sans", sans-serif'; ctx.textAlign = 'center'; ctx.fillText(fmt(r.total), px, py - 10); }
+    }
+    if (trendData.length <= 15 || i % Math.ceil(trendData.length / 10) === 0 || i === trendData.length - 1) { ctx.fillStyle = '#64748b'; ctx.font = '10px "Plus Jakarta Sans", sans-serif'; ctx.textAlign = 'center'; ctx.fillText(r.label, px, h - 16); }
+  });
+}  
+
+function populateTeamDeptFilter() {
+    let depts = [...new Set(rawLeaderboardData.map(u => (u.department || 'Lainnya').trim().toUpperCase()))];
+    const myDept = (state.profile.department || 'LAINNYA').trim().toUpperCase();
+    if(myDept && !depts.includes(myDept)) depts.push(myDept);
+
+    let deptSelect = $('teamDeptFilter');
+    let currentVal = deptSelect.value || myDept;
+
+    let html = '<option value="ALL">🌐 Semua Departemen (Corporate)</option>';
+    depts.sort().forEach(d => {
+        if(d) html += `<option value="${esc(d)}">🏢 Departemen: ${esc(d)}</option>`;
+    });
+    deptSelect.innerHTML = html;
+
+    if (depts.includes(currentVal)) {
+        deptSelect.value = currentVal;
+    } else if (depts.length > 0) {
+        deptSelect.value = depts[0];
+    } else {
+        deptSelect.value = 'ALL';
+    }
+}
+
+async function fetchLeaderboard() {
+  try {
+    const res = await fetch(SCRIPT_URL + "?action=leaderboard");
+    const resData = await res.json();
+    if (resData.status === 'success') {
+      rawLeaderboardData = resData.data || [];
+      populateTeamDeptFilter();
+      renderLeaderboardUI();
+      renderDashboardTeamPreview();
+      renderChatRoomsList();
+    } else {
+      $('leaderboardBox').innerHTML = '<div style="text-align:center; padding: 24px; color:var(--text-muted); font-size: 13.5px;">Belum ada data terekam di sistem.</div>';
+    }
+  } catch(e) {
+    $('leaderboardBox').innerHTML = '<div style="text-align:center; padding: 24px; color:var(--danger); font-size: 13.5px;">Gagal terhubung ke server.</div>';
+  }
+}
+
+function updateLeaderboardModeUI() {
+  const mode = $('lbModeSelect').value;
+  $('lbBoxDay').style.display = mode === 'day' ? 'flex' : 'none';
+  $('lbBoxWeek').style.display = mode === 'week' ? 'flex' : 'none';
+  $('lbBoxMonth').style.display = mode === 'month' ? 'flex' : 'none';
+  renderLeaderboardUI();
+}
+
+function renderLeaderboardUI() {
+  if (!rawLeaderboardData || rawLeaderboardData.length === 0) {
+    $('leaderboardBox').innerHTML = '<div style="text-align:center; padding: 24px; color:var(--text-muted); font-size: 13.5px;">Belum ada data tersedia.</div>';
+    return;
+  }
+  const mode = $('lbModeSelect').value;
+  const sortMode = $('lbSortSelect').value;
+  let aggregatedUsers = {};
+
+  if (mode === 'day') {
+    const selectedDate = $('lbInputDate').value || todayISO();
+    rawLeaderboardData.forEach(item => {
+      if (item.date === selectedDate && item.emission >= 0) {
+        if (!aggregatedUsers[item.userId]) aggregatedUsers[item.userId] = { userId: item.userId, userName: item.userName, photo: item.photo, totalEmission: 0, items: [] };
+        aggregatedUsers[item.userId].totalEmission += item.emission;
+        aggregatedUsers[item.userId].items.push(item);
+        if (item.userName) aggregatedUsers[item.userId].userName = item.userName;
+        if (item.photo) aggregatedUsers[item.userId].photo = item.photo;
+      }
+    });
+  } else if (mode === 'week') {
+    const monthStr = $('lbInputMonthForWeek').value;
+    const weekNum = parseInt($('lbInputWeekNum').value);
+    const [yr, mo] = monthStr.split('-').map(Number);
+    let startDay = (weekNum - 1) * 7 + 1;
+    let endDay = Math.min(weekNum * 7, new Date(yr, mo, 0).getDate());
+
+    rawLeaderboardData.forEach(item => {
+      if (item.date && item.date.startsWith(monthStr)) {
+        const dayPart = parseInt(item.date.split('-')[2]);
+        if (dayPart >= startDay && dayPart <= endDay && item.emission >= 0) {
+          if (!aggregatedUsers[item.userId]) aggregatedUsers[item.userId] = { userId: item.userId, userName: item.userName, photo: item.photo, totalEmission: 0, items: [] };
+          aggregatedUsers[item.userId].totalEmission += item.emission;
+          aggregatedUsers[item.userId].items.push(item);
+          if (item.userName) aggregatedUsers[item.userId].userName = item.userName;
+          if (item.photo) aggregatedUsers[item.userId].photo = item.photo;
+        }
+      }
+    });
+  } else if (mode === 'month') {
+    const monthStr = $('lbInputMonth').value;
+    rawLeaderboardData.forEach(item => {
+      if (item.date && item.date.startsWith(monthStr) && item.emission >= 0) {
+        if (!aggregatedUsers[item.userId]) aggregatedUsers[item.userId] = { userId: item.userId, userName: item.userName, photo: item.photo, totalEmission: 0, items: [] };
+        aggregatedUsers[item.userId].totalEmission += item.emission;
+        aggregatedUsers[item.userId].items.push(item);
+        if (item.userName) aggregatedUsers[item.userId].userName = item.userName;
+        if (item.photo) aggregatedUsers[item.userId].photo = item.photo;
+      }
+    });
+  }
+
+  let sorted = Object.values(aggregatedUsers);
+  if (sortMode === 'lowest') sorted.sort((a, b) => a.totalEmission - b.totalEmission);
+  else sorted.sort((a, b) => b.totalEmission - a.totalEmission);
+
+  if (sorted.length === 0) {
+    $('leaderboardBox').innerHTML = '<div style="text-align:center; padding: 24px; color:var(--text-muted); font-size: 13.5px;">Tidak ada data pada periode ini.</div>';
+    return;
+  }
+
+  let html = '';
+  sorted.forEach((user, index) => {
+    const rank = index + 1;
+    const rankIcon = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : `#${rank}`;
+    
+    let badgeHtml = '<span class="rank-badge normal">Peserta</span>';
+    if (rank === 1 && sortMode === 'lowest') badgeHtml = '<span class="rank-badge top">🥇 Terhemat</span>';
+    else if (rank === 1 && sortMode === 'highest') badgeHtml = '<span class="rank-badge third">🔥 Tertinggi</span>';
+    else if (rank === 2) badgeHtml = '<span class="rank-badge runner">🥈 Posisi 2</span>';
+    else if (rank === 3) badgeHtml = '<span class="rank-badge third">🥉 Posisi 3</span>';
+
+    const defaultAvatarSvg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2394a3b8' d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E";
+    const photoSrc = (user.photo && user.photo.startsWith('data:image')) ? user.photo : defaultAvatarSvg;
+    const encodedUserJson = encodeURIComponent(JSON.stringify(user));
+
+    html += `
+      <div class="lb-item" onclick="openUserDetailModal('${encodedUserJson}')">
+        <div class="lb-rank">${rankIcon}</div>
+        <img src="${photoSrc}" class="lb-avatar">
+        <div class="lb-info">
+          <div class="lb-name">${esc(user.userName) || 'Anonim'}</div>
+          <div>${badgeHtml}</div>
+        </div>
+        <div class="lb-score">${fmt(user.totalEmission)} <small>kgCO₂e</small></div>
+      </div>
+    `;
+  });
+  $('leaderboardBox').innerHTML = html;
+}
+
+// ==============================================
+// === LOGIKA CHAT, MEDIA, REAKSI & GRUP SYNC ===
+// ==============================================
+function updateChatBadge() {
+    const myId = String(state.profile.userId).trim();
+    const unreadCount = allChatMessages.filter(m => 
+        m.timestamp > state.lastChatReadTimestamp && 
+        String(m.senderId).trim() !== myId
+    ).length;
+
+    if (unreadCount > 0 && !$('chat').classList.contains('active')) {
+        const displayCount = unreadCount > 99 ? '99+' : unreadCount;
+        $('deskChatBadge').textContent = displayCount;
+        $('mobChatBadge').textContent = displayCount;
+        $('deskChatBadge').style.display = 'inline-block';
+        $('mobChatBadge').style.display = 'inline-block';
+    } else {
+        $('deskChatBadge').style.display = 'none';
+        $('mobChatBadge').style.display = 'none';
+    }
+}
+
+function renderChatRoomsList() {
+  const container = $('chatRoomsList');
+  const searchKey = ($('chatSearchInput')?.value || '').toLowerCase();
+  const myId = String(state.profile.userId).trim();
+  
+  let uniqueUsers = {};
+  rawLeaderboardData.forEach(u => {
+    if(u.userId && u.userId !== state.profile.userId) uniqueUsers[u.userId] = { userId: u.userId, userName: u.userName, department: u.department, photo: u.photo };
+  });
+
+  let html = '';
+  if (!searchKey || 'grup komunitas'.includes(searchKey) || 'diskusi publik'.includes(searchKey)) {
+    html += `
+      <div class="chat-room-item ${currentActiveRecipient === 'GENERAL' ? 'active' : ''}" onclick="switchChatRoom('GENERAL', '🌍 Grup Diskusi Komunitas GGF')">
+        <div style="font-size:22px; margin-right:4px;">🌍</div>
+        <div style="overflow:hidden;">
+          <div class="chat-room-title">Grup Komunitas</div>
+          <div class="chat-room-sub">Diskusi publik GGF</div>
+        </div>
+      </div>
+    `;
+  }
+
+  // Render Grup Buatan (Semua pengguna fleksibel dapat melihat dan masuk ke grup)
+  chatGroups.forEach(g => {
+    if (searchKey && !g.name.toLowerCase().includes(searchKey)) return;
+    const activeClass = currentActiveRecipient === g.id ? 'active' : '';
+    html += `
+      <div class="chat-room-item ${activeClass}" onclick="switchChatRoom('${g.id}', '👥 Grup: ${esc(g.name)}')">
+        <div style="font-size:22px; margin-right:4px;">👥</div>
+        <div style="overflow:hidden;">
+          <div class="chat-room-title" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${esc(g.name)}</div>
+          <div class="chat-room-sub">${g.members ? g.members.length : 1} Anggota (Admin: ${g.admin === myId ? 'Anda' : 'Publik'})</div>
+        </div>
+      </div>
+    `;
+  });
+
+  Object.entries(uniqueUsers).forEach(([uid, u]) => {
+    const nameStr = (u.userName || '').toLowerCase();
+    if (searchKey && !nameStr.includes(searchKey)) return; 
+
+    const defaultAvatarSvg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2394a3b8' d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E";
+    const photoSrc = (u.photo && u.photo.startsWith('data:image')) ? u.photo : defaultAvatarSvg;
+    const activeClass = currentActiveRecipient === uid ? 'active' : '';
+    const encodedUserJson = encodeURIComponent(JSON.stringify({ userId: uid, userName: u.userName, department: u.department, photo: u.photo, totalEmission: 0 }));
+
+    html += `
+      <div class="chat-room-item ${activeClass}">
+        <img src="${photoSrc}" style="width:34px; height:34px; border-radius:50%; object-fit:cover; border:2px solid white; box-shadow:0 1px 3px rgba(0,0,0,0.05); cursor:pointer;" onclick="openUserDetailModal('${encodedUserJson}')" title="Lihat Profil">
+        <div style="overflow:hidden; flex:1; cursor:pointer;" onclick="switchChatRoom('${uid}', '👤 Pesan Individu: ${esc(u.userName)}')">
+          <div class="chat-room-title" style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${esc(u.userName)}</div>
+          <div class="chat-room-sub">Pesan Pribadi</div>
+        </div>
+      </div>
+    `;
+  });
+  container.innerHTML = html || '<div style="text-align:center; padding:20px; font-size:12.5px; color:var(--text-muted);">Kontak / Grup tidak ditemukan</div>';
+}
+
+function switchChatRoom(recipientId, titleText) {
+  currentActiveRecipient = recipientId;
+  $('activeChatTitle').textContent = titleText;
+  
+  const isCustomGroup = chatGroups.some(g => g.id === recipientId);
+  if (isCustomGroup) {
+      $('activeChatActionBtn').style.display = 'block';
+  } else {
+      $('activeChatActionBtn').style.display = 'none';
+  }
+
+  cancelEditChat(); cancelReplyChat(); renderChatRoomsList(); renderChatMessages();
+  openMobileChatRoom();
+}
+
+function renderChatMessages() {
+  const box = $('chatMessagesBox');
+  if (!currentActiveRecipient) {
+    box.innerHTML = '<div style="text-align:center; background: rgba(255,255,255,0.8); border-radius:12px; padding:12px 20px; margin: 40px auto; width: fit-content; font-size:13.5px; box-shadow:0 1px 3px rgba(0,0,0,0.1); color: var(--text-muted);">📌 Silakan pilih salah satu ruang pesan atau grup di sebelah kiri untuk mulai berdiskusi.</div>';
+    return;
+  }
+
+  let filtered = [];
+  const myId = String(state.profile.userId).trim();
+
+  if (currentActiveRecipient === 'GENERAL') {
+    filtered = allChatMessages.filter(m => (m.recipientId === 'GENERAL' || !m.recipientId) && m.type !== 'group_meta');
+  } else if (chatGroups.some(g => g.id === currentActiveRecipient)) {
+    filtered = allChatMessages.filter(m => m.recipientId === currentActiveRecipient && m.type !== 'group_meta');
+  } else {
+    filtered = allChatMessages.filter(m => 
+      ((String(m.senderId).trim() === myId && String(m.recipientId).trim() === currentActiveRecipient) ||
+      (String(m.senderId).trim() === currentActiveRecipient && String(m.recipientId).trim() === myId)) && m.type !== 'group_meta'
+    );
+  }
+
+  if (filtered.length === 0) {
+    box.innerHTML = '<div style="text-align:center; background: rgba(255,255,255,0.8); border-radius:12px; padding:8px 16px; margin: 30px auto; width: fit-content; font-size:13px; box-shadow:0 1px 3px rgba(0,0,0,0.1);">Belum ada pesan. Mulai obrolan!</div>';
+    return;
+  }
+
+  const defaultAvatarSvg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2394a3b8' d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E";
+  let html = '';
+  
+  filtered.forEach(m => {
+    const isMe = String(m.senderId).trim() === myId;
+    const rowClass = isMe ? 'me' : 'other';
+    
+    let senderPhoto = m.photo;
+    let senderDept = 'Sustainability';
+    if (!senderPhoto && isMe) senderPhoto = state.profile.photo;
+    if (!senderPhoto || !senderDept) { 
+        const foundUser = rawLeaderboardData.find(u => String(u.userId) === String(m.senderId)); 
+        if (foundUser) {
+            senderPhoto = foundUser.photo;
+            senderDept = foundUser.department;
+        } 
+    }
+    const photoSrc = (senderPhoto && senderPhoto.startsWith('data:image')) ? senderPhoto : defaultAvatarSvg;
+    const userProfileObj = { userId: m.senderId, userName: m.senderName, department: senderDept, photo: senderPhoto, totalEmission: 0 };
+    const encodedUserJson = encodeURIComponent(JSON.stringify(userProfileObj));
+
+    let replyQuoteHtml = '';
+    if (m.replyTo) { 
+        let replyObj = typeof m.replyTo === 'string' ? JSON.parse(m.replyTo) : m.replyTo;
+        replyQuoteHtml = `<div class="chat-reply-quote"><b>${esc(replyObj.senderName)}</b><span>${esc(replyObj.message)}</span></div>`; 
+    }
+
+    let mediaHtml = '';
+    if(m.media) {
+        mediaHtml = `<img src="${m.media}" class="chat-media-attachment" alt="Photo" onclick="openImageLightbox('${m.media}')" title="Klik untuk memperbesar & download">`;
+    }
+
+    let reactionsHtml = '';
+    if(m.reactions && typeof m.reactions === 'object' && Object.keys(m.reactions).length > 0) {
+        let spans = Object.entries(m.reactions).map(([emoji, count]) => {
+            let safeCount = Number(count) || 1;
+            return `<span>${emoji} <small style="opacity:0.8; font-size:11px; font-weight:bold;">${safeCount}</small></span>`;
+        }).join('');
+        reactionsHtml = `<div class="chat-reactions-badge">${spans}</div>`;
+    }
+
+    html += `
+      <div class="chat-message-row ${rowClass}">
+        <img src="${photoSrc}" class="chat-msg-avatar" title="Lihat Profil ${esc(m.senderName)}" onclick="openUserDetailModal('${encodedUserJson}')">
+        <div class="chat-bubble-content">
+          ${!isMe ? `<span class="chat-sender-name" onclick="openUserDetailModal('${encodedUserJson}')" title="Lihat Profil">${esc(m.senderName || 'Anonim')}</span>` : ''}
+          <div class="chat-bubble-wrapper">
+            
+            <div class="chat-bubble">
+              ${replyQuoteHtml}
+              ${mediaHtml}
+              ${m.message ? `<div id="msg_text_${m.timestamp}" style="white-space: pre-wrap;">${esc(m.message)}</div>` : ''}
+              ${reactionsHtml}
+            </div>
+            
+            <div class="chat-msg-menu">
+                <button class="chat-msg-menu-btn" onclick="toggleChatMenu('${m.timestamp}')">⋮</button>
+                <div class="chat-msg-dropdown" id="chat_dropdown_${m.timestamp}">
+                    <div class="chat-quick-reactions-strip">
+                        <span onclick="reactToMsg('${m.timestamp}', '👍')">👍</span>
+                        <span onclick="reactToMsg('${m.timestamp}', '❤️')">❤️</span>
+                        <span onclick="reactToMsg('${m.timestamp}', '😂')">😂</span>
+                        <span onclick="reactToMsg('${m.timestamp}', '🙏')">🙏</span>
+                        <span onclick="reactToMsg('${m.timestamp}', '😲')">😲</span>
+                    </div>
+                    <button onclick="prepareReplyChat('${encodeURIComponent(JSON.stringify(m))}')">↩️ Balas</button>
+                    <button onclick="openForwardModal('${encodeURIComponent(JSON.stringify(m))}')">↗️ Teruskan</button>
+                    ${isMe ? `
+                    <button onclick="prepareEditChat('${m.timestamp}', \`${encodeURIComponent(m.message || '')}\`)">✏️ Edit</button>
+                    <button class="danger" onclick="deleteChatMessage('${m.timestamp}')">🗑️ Hapus</button>
+                    ` : ''}
+                </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    `;
+  });
+  box.innerHTML = html; 
+  setTimeout(() => { box.scrollTop = box.scrollHeight; }, 100);
+}
+
+// Fitur Lightbox Preview & Download Foto di Chat
+function openImageLightbox(imgSrc) {
+    $('lightboxImg').src = imgSrc;
+    $('lightboxDownloadBtn').href = imgSrc;
+    $('imageLightboxModal').style.display = 'flex';
+}
+
+function closeImageLightbox() {
+    $('imageLightboxModal').style.display = 'none';
+}
+
+// Handler Buat Grup Baru
+function openCreateGroupModal() {
+  if(!state.profile.userId) return toast('⚠️ Lengkapi profil terlebih dahulu!');
+  const listContainer = $('groupMembersCheckboxList');
+  let html = '';
+  
+  rawLeaderboardData.forEach(u => {
+    if (u.userId && u.userId !== state.profile.userId) {
+      html += `
+        <label style="display:flex; align-items:center; gap:8px; font-size:13px; font-weight:600; cursor:pointer;">
+          <input type="checkbox" name="groupMemberChk" value="${u.userId}" style="width:16px; height:16px;" checked>
+          ${esc(u.userName)} (${maskId(u.userId)})
+        </label>
+      `;
+    }
+  });
+
+  listContainer.innerHTML = html || '<div style="font-size:12px; color:var(--text-muted); text-align:center;">Semua pengguna komunitas otomatis terintegrasi.</div>';
+  $('newGroupNameInput').value = '';
+  $('createGroupModal').style.display = 'flex';
+}
+
+async function submitCreateGroup() {
+  const groupName = $('newGroupNameInput').value.trim();
+  if(!groupName) return toast('⚠️ Nama grup wajib diisi!');
+
+  const checkboxes = document.querySelectorAll('input[name="groupMemberChk"]:checked');
+  let members = [state.profile.userId]; 
+  checkboxes.forEach(chk => members.push(chk.value));
+
+  const newGroup = {
+    id: 'group_' + Date.now(),
+    name: groupName,
+    admin: state.profile.userId,
+    members: members
+  };
+
+  chatGroups.push(newGroup);
+  saveLocalChatData();
+  $('createGroupModal').style.display = 'none';
+  renderChatRoomsList();
+  switchChatRoom(newGroup.id, `👥 Grup: ${groupName}`);
+  toast('🎉 Grup berhasil dibuat!');
+
+  const payload = {
+      timestamp: new Date().toISOString(),
+      action: "send_chat",
+      senderId: String(state.profile.userId).trim(),
+      senderName: state.profile.userName,
+      recipientId: newGroup.id,
+      message: `[Sistem Grup Dibuat: ${groupName}]`,
+      type: 'group_meta',
+      groupData: JSON.stringify(newGroup),
+      photo: state.profile.photo || '',
+      reactions: {}
+  };
+
+  try {
+      await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(payload) });
+  } catch(e) {}
+}
+
+function openManageGroupModal() {
+  const group = chatGroups.find(g => g.id === currentActiveRecipient);
+  if (!group) return;
+  const myId = String(state.profile.userId).trim();
+
+  const container = $('manageGroupMembersList');
+  let html = `<div style="font-size:12px; font-weight:700; color:var(--esg-dark); margin:4px 0;">Daftar Anggota Grup:</div>`;
+  group.members.forEach(mId => {
+    const uInfo = rawLeaderboardData.find(u => u.userId === mId) || { userName: mId === myId ? state.profile.userName : mId };
+    const isGroupAdmin = group.admin === mId;
+    const encodedUserJson = encodeURIComponent(JSON.stringify({ userId: mId, userName: uInfo.userName, department: uInfo.department || 'Sustainability', photo: uInfo.photo || '', totalEmission: 0 }));
+    html += `
+      <div style="display:flex; justify-content:space-between; align-items:center; background:white; padding:6px 10px; border-radius:8px; border:1px solid #e2e8f0; font-size:12.5px; margin-bottom:4px; cursor:pointer;" onclick="openUserDetailModal('${encodedUserJson}')">
+        <span>${esc(uInfo.userName)} ${isGroupAdmin ? '<b>(Admin)</b>' : ''}</span>
+        <small style="color:var(--esg-primary)">Lihat Profil</small>
+      </div>
+    `;
+  });
+
+  container.innerHTML = html;
+  $('manageGroupModal').style.display = 'flex';
+}
+
+async function deleteCurrentGroup() {
+    const groupId = currentActiveRecipient;
+    const group = chatGroups.find(g => g.id === groupId);
+    if (!group) return;
+    const myId = String(state.profile.userId).trim();
+
+    if (!confirm(`Yakin ingin menghapus grup "${group.name}" secara permanen?`)) return;
+
+    chatGroups = chatGroups.filter(g => g.id !== groupId);
+    allChatMessages = allChatMessages.filter(m => m.recipientId !== groupId);
+    saveLocalChatData();
+
+    $('manageGroupModal').style.display = 'none';
+    currentActiveRecipient = null;
+    $('activeChatTitle').textContent = '🌍 Pilih Ruang Obrolan';
+    $('activeChatActionBtn').style.display = 'none';
+    renderChatRoomsList();
+    renderChatMessages();
+    toast('🗑️ Grup berhasil dihapus.');
+
+    const payload = {
+        timestamp: new Date().toISOString(),
+        action: "send_chat",
+        senderId: myId,
+        senderName: state.profile.userName,
+        recipientId: groupId,
+        message: `[Sistem Grup Dihapus]`,
+        type: 'group_meta_delete',
+        groupData: JSON.stringify({ id: groupId }),
+        photo: state.profile.photo || '',
+        reactions: {}
+    };
+
+    try {
+        await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(payload) });
+    } catch(e) {}
+}
+
+// Fitur Kirim Foto Tanpa Modal Crop (Langsung Unggah & Preview ke Server)
+function handleDirectChatPhotoUpload(input) {
+    if(input.files && input.files[0]) {
+        const file = input.files[0];
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const img = new Image();
+            img.src = e.target.result;
+            img.onload = function() {
+                const canvas = document.createElement('canvas');
+                let width = img.width;
+                let height = img.height;
+                const maxDim = 800;
+                if (width > height && width > maxDim) {
+                    height *= maxDim / width;
+                    width = maxDim;
+                } else if (height > maxDim) {
+                    width *= maxDim / height;
+                    height = maxDim;
+                }
+                canvas.width = width;
+                canvas.height = height;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, width, height);
+                
+                pendingChatMedia = canvas.toDataURL('image/jpeg', 0.8);
+                $('chatMediaPreviewImg').src = pendingChatMedia;
+                $('chatMediaPreviewBar').style.display = 'block';
+                $('chatMessageInput').focus();
+            };
+        };
+        reader.readAsDataURL(file);
+    }
+}
+
+function removeChatPhoto() {
+    pendingChatMedia = null;
+    $('chatMediaPreviewBar').style.display = 'none';
+    $('chatPhotoInput').value = '';
+}
+
+function toggleEmojiPicker() {
+    $('emojiPicker').classList.toggle('show');
+}
+
+function insertEmoji(emoji) {
+    const input = $('chatMessageInput');
+    input.value += emoji;
+    input.focus();
+    toggleEmojiPicker();
+}
+
+window.toggleChatMenu = function(timestamp) {
+    document.querySelectorAll('.chat-msg-dropdown.show').forEach(el => {
+        if (el.id !== 'chat_dropdown_' + timestamp) el.classList.remove('show');
+    });
+    const dropdown = $('chat_dropdown_' + timestamp);
+    if (dropdown) dropdown.classList.toggle('show');
+};
+
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.chat-msg-menu')) {
+        document.querySelectorAll('.chat-msg-dropdown.show').forEach(el => el.classList.remove('show'));
+    }
+    if (!e.target.closest('.chat-input-bar')) {
+        const picker = $('emojiPicker');
+        if (picker) picker.classList.remove('show');
+    }
+});
+
+// Perbaikan Reaksi Pesan agar Sinkron ke Server dan Tersimpan Permanen
+window.reactToMsg = async function(timestamp, emoji) {
+    const msg = allChatMessages.find(m => String(m.timestamp) === String(timestamp));
+    if(msg) {
+        if(!msg.reactions || typeof msg.reactions !== 'object') msg.reactions = {};
+        msg.reactions[emoji] = (Number(msg.reactions[emoji]) || 0) + 1;
+        saveLocalChatData();
+        renderChatMessages();
+
+        const myId = String(state.profile.userId).trim();
+        const reactionPayload = {
+            action: "react_chat",
+            timestamp: timestamp,
+            senderId: myId,
+            reactions: JSON.stringify(msg.reactions)
+        };
+        try {
+            await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(reactionPayload) });
+        } catch(e) {}
+    }
+};
+
+function prepareReplyChat(encodedJson) {
+  replyingMessageData = JSON.parse(decodeURIComponent(encodedJson));
+  $('replyingToName').textContent = `Membalas ke ${replyingMessageData.senderName}`;
+  $('replyingToText').textContent = replyingMessageData.message;
+  $('activeReplyBanner').style.display = 'flex'; $('chatMessageInput').focus();
+}
+
+function cancelReplyChat() { replyingMessageData = null; $('activeReplyBanner').style.display = 'none'; }
+
+function openForwardModal(encodedJson) {
+  const msgObj = JSON.parse(decodeURIComponent(encodedJson));
+  const modalList = $('forwardTargetList');
+  let uniqueUsers = {};
+  rawLeaderboardData.forEach(u => { if(u.userId && u.userId !== state.profile.userId) uniqueUsers[u.userId] = { userName: u.userName, photo: u.photo }; });
+
+  let html = `<div class="chat-room-item" onclick="executeForward('${esc(msgObj.message)}', 'GENERAL')"><div style="font-size:20px; margin-right:8px;">🌍</div><div><b>Grup Komunitas</b><div style="font-size:11px; color:var(--text-muted);">Teruskan ke ruang publik</div></div></div>`;
+  
+  chatGroups.forEach(g => {
+    html += `<div class="chat-room-item" onclick="executeForward('${esc(msgObj.message)}', '${g.id}')"><div style="font-size:20px; margin-right:8px;">👥</div><div><b>${esc(g.name)}</b><div style="font-size:11px; color:var(--text-muted);">Teruskan ke grup</div></div></div>`;
+  });
+
+  Object.entries(uniqueUsers).forEach(([uid, u]) => { html += `<div class="chat-room-item" onclick="executeForward('${esc(msgObj.message)}', '${uid}')"><div style="font-size:20px; margin-right:8px;">👤</div><div><b>${esc(u.userName)}</b><div style="font-size:11px; color:var(--text-muted);">Teruskan ke personal</div></div></div>`; });
+  modalList.innerHTML = html; $('forwardModal').style.display = 'flex';
+}
+
+async function executeForward(messageText, targetRecipientId) {
+  $('forwardModal').style.display = 'none';
+  if(!state.profile.userId || !state.profile.userName) return toast('⚠️ Mohon lengkapi profil terlebih dahulu!');
+  const myId = String(state.profile.userId).trim();
+  const newTimestamp = new Date().toISOString();
+  const forwardedMsg = `[Pesan Diteruskan]\n${messageText}`;
+
+  const payload = { timestamp: newTimestamp, action: "send_chat", senderId: myId, senderName: state.profile.userName, recipientId: targetRecipientId, message: forwardedMsg, type: targetRecipientId === 'GENERAL' ? 'group' : 'private', photo: state.profile.photo || '', media: null, reactions: {} };
+  allChatMessages.push(payload);
+  saveLocalChatData();
+  if (currentActiveRecipient === targetRecipientId) { renderChatMessages(); } toast('↗️ Pesan berhasil diteruskan!');
+  try { await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(payload) }); } catch(e) {}
+}
+
+async function sendChatMessage() {
+  if (!currentActiveRecipient) return toast('⚠️ Pilih ruang obrolan terlebih dahulu!');
+  const input = $('chatMessageInput');
+  const message = input.value.trim();
+  
+  if(!message && !pendingChatMedia) return;
+  if(!state.profile.userId || !state.profile.userName) return toast('⚠️ Mohon lengkapi profil terlebih dahulu!');
+  
+  const myId = String(state.profile.userId).trim();
+
+  if (editingTimestamp) {
+    const target = allChatMessages.find(m => String(m.timestamp) === String(editingTimestamp));
+    if (target) {
+        target.message = message;
+    }
+    saveLocalChatData();
+    const activeEditTS = editingTimestamp;
+    cancelEditChat(); 
+    renderChatMessages(); 
+    toast('✏️ Pembaruan tersimpan');
+    
+    const editPayload = { action: "edit_chat", timestamp: activeEditTS, senderId: myId, newMessage: message };
+    try { 
+        await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(editPayload) }); 
+    } catch(e) {}
+  } else {
+    const newTimestamp = new Date().toISOString();
+    let replyPayloadData = null;
+    if (replyingMessageData) { replyPayloadData = { senderName: replyingMessageData.senderName, message: replyingMessageData.message }; }
+    
+    const isCustomGroup = chatGroups.some(g => g.id === currentActiveRecipient);
+    const payload = { 
+        timestamp: newTimestamp, action: "send_chat", senderId: myId, senderName: state.profile.userName, 
+        recipientId: currentActiveRecipient, message: message, 
+        type: (currentActiveRecipient === 'GENERAL' || isCustomGroup) ? 'group' : 'private', 
+        photo: state.profile.photo || '', 
+        replyTo: replyPayloadData ? JSON.stringify(replyPayloadData) : '',
+        media: pendingChatMedia || null,
+        reactions: {}
+    };
+
+    allChatMessages.push(payload);
+    saveLocalChatData();
+
+    cancelReplyChat(); 
+    removeChatPhoto(); 
+    input.value = '';
+    renderChatMessages(); 
+    
+    try { await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(payload) }); } catch(e) {}
+  }
+}
+
+function prepareEditChat(timestamp, encodedMsg) { 
+    editingTimestamp = timestamp; 
+    $('chatMessageInput').value = decodeURIComponent(encodedMsg); 
+    $('chatMessageInput').focus(); 
+    $('chatSubmitBtn').textContent = '💾'; 
+    $('chatCancelEditBtn').style.display = 'inline-flex'; 
+}
+
+function cancelEditChat() { 
+    editingTimestamp = null; 
+    $('chatMessageInput').value = ''; 
+    $('chatSubmitBtn').textContent = '🚀'; 
+    $('chatCancelEditBtn').style.display = 'none'; 
+}
+
+async function deleteChatMessage(timestamp) {
+  if(!confirm('Anda yakin ingin menarik pesan ini?')) return;
+  const myId = String(state.profile.userId).trim();
+  allChatMessages = allChatMessages.filter(m => !(String(m.timestamp) === String(timestamp) && String(m.senderId).trim() === myId));
+  saveLocalChatData();
+  renderChatMessages(); toast('🗑️ Pesan berhasil ditarik');
+  try { await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify({ action: "delete_chat", timestamp: timestamp, senderId: myId }) }); } catch(e) {}
+}
+
+function handleChatKeyPress(e) { if (e.key === 'Enter') sendChatMessage(); }
+function refreshChatData() { fetchChatMessages(); renderChatRoomsList(); toast('🔄 Memuat ulang percakapan!'); }
+
+window.openUserDetailModal = async function(encodedJson) {
+  try {
+    const user = JSON.parse(decodeURIComponent(encodedJson));
+    $('modalUserName').textContent = user.userName || 'Nama Pengguna';
+    $('modalUserSub').textContent = `User ID: ${maskId(user.userId)}`;
+    $('modalUserTotalScore').textContent = fmt(user.totalEmission || 0) + ' kgCO₂e';
+    const defaultAvatarSvg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2394a3b8' d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E";
+    $('modalUserAvatar').src = (user.photo && user.photo.startsWith('data:image')) ? user.photo : defaultAvatarSvg;
+    $('modalUserBreakdownList').innerHTML = '<div style="text-align:center; padding: 20px; color:var(--text-muted); font-size:13px;">Menarik data rinci server...</div>';
+    $('userDetailModal').style.display = 'flex';
+
+    const res = await fetch(SCRIPT_URL + "?userId=" + encodeURIComponent(user.userId));
+    const resData = await res.json();
+
+    if (resData.status === 'success' && resData.records && resData.records.length > 0) {
+      let aggregateBreakdown = {};
+      let calculatedTotal = 0;
+      resData.records.forEach(rec => {
+        const motorVal = num(rec.motor), mobilVal = num(rec.mobil), laptopVal = num(rec.laptop), hpVal = num(rec.handphone);
+        const acVal = num(rec.ac), lampuVal = num(rec.lampu), tvVal = num(rec.tv), poolVal = num(rec.pool);
+        const recTotal = motorVal + mobilVal + laptopVal + hpVal + acVal + lampuVal + tvVal + poolVal;
+        calculatedTotal += recTotal;
+
+        if(motorVal > 0) aggregateBreakdown['Motor'] = (aggregateBreakdown['Motor'] || 0) + motorVal;
+        if(mobilVal > 0) aggregateBreakdown['Mobil Pribadi'] = (aggregateBreakdown['Mobil Pribadi'] || 0) + mobilVal;
+        if(laptopVal > 0) aggregateBreakdown['Laptop / PC'] = (aggregateBreakdown['Laptop / PC'] || 0) + laptopVal;
+        if(hpVal > 0) aggregateBreakdown['Handphone'] = (aggregateBreakdown['Handphone'] || 0) + hpVal;
+        if(acVal > 0) aggregateBreakdown['AC Bersama'] = (aggregateBreakdown['AC Bersama'] || 0) + acVal;
+        if(lampuVal > 0) aggregateBreakdown['Lampu Bersama'] = (aggregateBreakdown['Lampu Bersama'] || 0) + lampuVal;
+        if(tvVal > 0) aggregateBreakdown['TV Bersama'] = (aggregateBreakdown['TV Bersama'] || 0) + tvVal;
+        if(poolVal > 0) aggregateBreakdown['Mobil Perusahaan (Carpool)'] = (aggregateBreakdown['Mobil Perusahaan (Carpool)'] || 0) + poolVal;
+      });
+
+      $('modalUserTotalScore').textContent = fmt(calculatedTotal) + ' kgCO₂e';
+
+      const entries = Object.entries(aggregateBreakdown).sort((a, b) => b[1] - a[1]);
+      const maxVal = Math.max(...entries.map(e => e[1]), 1);
+
+      if (entries.length > 0) {
+        let listHtml = '';
+        entries.forEach(([k, v]) => { listHtml += `<div class="break-row" style="margin: 6px 0;"><b style="font-size:13px;">${esc(k)}</b><div class="bar" style="height:10px;"><span style="width:${Math.max(3, v / maxVal * 100)}%"></span></div><em style="font-size:13px;">${fmt(v)} kg</em></div>`; });
+        $('modalUserBreakdownList').innerHTML = listHtml;
+      } else { $('modalUserBreakdownList').innerHTML = '<div style="text-align:center; padding: 20px; color:var(--text-muted); font-size:13px;">Komponen tidak terdeteksi.</div>'; }
+    } else { $('modalUserBreakdownList').innerHTML = '<div style="text-align:center; padding: 20px; color:var(--text-muted); font-size:13px;">Tidak ada riwayat rinci.</div>'; }
+  } catch(e) { $('modalUserBreakdownList').innerHTML = '<div style="text-align:center; padding: 20px; color:var(--danger); font-size:13px;">Gagal memuat rincian data.</div>'; }
+};
+
+function syncPeriodFilter(val) {
+    if ($('teamPeriodFilter')) $('teamPeriodFilter').value = val;
+    if ($('rtPeriodFilterSync')) $('rtPeriodFilterSync').value = val;
+    renderTeamDashboardView();
+    renderRankingDataView();
+}
+
+function syncDeptFilter(val) {
+    if ($('teamDeptFilter')) $('teamDeptFilter').value = val;
+    if ($('rtDeptFilter')) $('rtDeptFilter').value = val;
+    loadTeamData();
+}
+
+async function loadTeamData() {
+    let deptSelect = $('teamDeptFilter');
+    let filterVal = deptSelect ? deptSelect.value : 'ALL';
+    if (!filterVal) filterVal = 'ALL';
+
+    let allIds = [...new Set(rawLeaderboardData.map(u => String(u.userId).trim()))];
+    const myId = String(state.profile.userId).trim();
+    if(myId && !allIds.includes(myId)) allIds.push(myId);
+    allIds = allIds.filter(id => id && id !== 'undefined');
+
+    $('td_user_count').textContent = `Memuat...`;
+    $('td_total').innerHTML = '<span style="font-size:16px;">Memuat...</span>';
+    $('td_indiv').textContent = '...'; 
+    $('td_shared').textContent = '...';
+
+    teamDetailedRecords = [];
+
+    try {
+        const fetchPromises = allIds.map(uid => 
+            fetch(SCRIPT_URL + "?userId=" + encodeURIComponent(uid))
+            .then(res => res.json())
+            .catch(() => null) 
+        );
+        
+        const results = await Promise.all(fetchPromises);
+
+        let validUsersInDept = 0;
+        let dynamicDepts = new Set();
+        
+        results.forEach((data, index) => {
+            if (data && data.status === 'success' && data.records) {
+                let actualDept = (data.department || 'LAINNYA').trim().toUpperCase();
+                dynamicDepts.add(actualDept);
+
+                if (filterVal === 'ALL' || actualDept === filterVal) {
+                    validUsersInDept++;
+                    let uid = allIds[index];
+                    
+                    let uniqueRecordsByDate = {};
+                    data.records.forEach(r => {
+                        let dateKey = r.tanggalEmisi || r.date;
+                        if(dateKey) uniqueRecordsByDate[dateKey] = r; 
+                    });
+
+                    Object.values(uniqueRecordsByDate).forEach(r => {
+                        r.userId = uid;
+                        r.userName = data.userName || uid;
+                        r.department = data.department || 'Lainnya';
+                        r.photo = data.photo || '';
+                        teamDetailedRecords.push(r);
+                    });
+                }
+            }
+        });
+
+        let currentVal = filterVal;
+        let html = '<option value="ALL">🌐 Semua Departemen (Corporate)</option>';
+        [...dynamicDepts].sort().forEach(d => {
+            if(d) html += `<option value="${esc(d)}">🏢 Departemen: ${esc(d)}</option>`;
+        });
+        if (deptSelect) deptSelect.innerHTML = html;
+        if ($('rtDeptFilter')) $('rtDeptFilter').innerHTML = html;
+
+        if ([...dynamicDepts].includes(currentVal)) {
+            if (deptSelect) deptSelect.value = currentVal;
+            if ($('rtDeptFilter')) $('rtDeptFilter').value = currentVal;
+        } else {
+            if (deptSelect) deptSelect.value = filterVal;
+            if ($('rtDeptFilter')) $('rtDeptFilter').value = filterVal;
+        }
+
+        $('td_user_count').textContent = `${validUsersInDept} user`;
+    } catch (e) {
+        toast('⚠️ Terjadi gangguan koneksi saat menarik rincian data tim.');
+    }
+
+    renderTeamDashboardView();
+    renderRankingDataView();
+}
+
+function renderTeamDashboardView() {
+  let totalEmission = 0, totalIndividual = 0, totalShared = 0;
+  let categoryBreakdown = { 'AC Bersama': 0, 'Motor': 0, 'Laptop': 0, 'Lampu Bersama': 0, 'Handphone': 0, 'Mobil': 0, 'TV Bersama': 0 };
+  let userTotals = {};
+
+  // 1. Ambil nilai filter periode
+  const periodFilter = $('teamPeriodFilter') ? $('teamPeriodFilter').value : 'all';
+  const today = todayISO();
+  const currentMonth = today.substring(0, 7);
+
+  // 2. Filter data teamDetailedRecords berdasarkan periode
+  let filteredRecords = teamDetailedRecords.filter(rec => {
+      const dateStr = rec.tanggalEmisi || rec.date;
+      if (!dateStr) return false;
+      if (periodFilter === 'today') return dateStr === today;
+      if (periodFilter === 'month') return dateStr.startsWith(currentMonth);
+      return true; // 'all'
+  });
+
+  // 3. Kalkulasi data yang sudah difilter
+  filteredRecords.forEach(rec => {
+      const motor = num(rec.motor), mobil = num(rec.mobil), laptop = num(rec.laptop), hp = num(rec.handphone);
+      const ac = num(rec.ac), lampu = num(rec.lampu), tv = num(rec.tv), pool = num(rec.pool);
+      
+      const indiv = motor + mobil + laptop + hp;
+      const shared = ac + lampu + tv + pool;
+      const total = indiv + shared;
+
+      totalEmission += total;
+      totalIndividual += indiv;
+      totalShared += shared;
+
+      categoryBreakdown['AC Bersama'] += ac; categoryBreakdown['Motor'] += motor; categoryBreakdown['Laptop'] += laptop;
+      categoryBreakdown['Lampu Bersama'] += lampu; categoryBreakdown['Handphone'] += hp; categoryBreakdown['Mobil'] += mobil;
+      categoryBreakdown['TV Bersama'] += tv;
+
+      if(!userTotals[rec.userId]) userTotals[rec.userId] = { userId: rec.userId, name: rec.userName, photo: rec.photo, total: 0, dept: rec.department, days: new Set() };
+      userTotals[rec.userId].total += total;
+      userTotals[rec.userId].days.add(rec.tanggalEmisi || rec.date);
+  });
+
+  // Tampilkan Ringkasan Angka Utama
+  $('td_total').textContent = fmt(totalEmission);
+  $('td_indiv').textContent = fmt(totalIndividual);
+  $('td_shared').textContent = fmt(totalShared);
+
+  // Tampilkan Breakdown Kategori
+  const maxCategoryVal = Math.max(...Object.values(categoryBreakdown), 1);
+  const breakdownHtml = Object.entries(categoryBreakdown).sort((a,b)=>b[1]-a[1]).map(([k,v]) => {
+      return `<div style="display:flex; align-items:center; margin-bottom:10px; font-size:13px; font-weight:700;">
+          <div style="width:120px; color:var(--esg-dark);">${k}</div>
+          <div style="flex:1; background:#f1f5f9; height:12px; border-radius:6px; margin:0 12px; overflow:hidden;">
+              <div style="width:${(v/maxCategoryVal)*100}%; background:linear-gradient(90deg, #059669, #34d399); height:100%; border-radius:6px;"></div>
+          </div>
+          <div style="width:70px; text-align:right; color:var(--text-muted);">${fmt(v)} kg</div>
+      </div>`;
+  }).join('');
+  $('td_category_list').innerHTML = breakdownHtml || '<div style="color:var(--text-muted); font-size:13px; text-align:center; padding:16px;">Belum ada klasifikasi memadai pada periode ini.</div>';
+
+  // 4. Proses Ranking (Berdasarkan TOTAL EMISI, konsisten di Team Dashboard & Ranking Data)
+  let sortedUsers = Object.values(userTotals);
+  sortedUsers.sort((a,b)=> a.total - b.total);
+
+  const defaultAvatarSvg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2394a3b8' d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E";
+
+  $('td_top_ranking').innerHTML = sortedUsers.length > 0 ? sortedUsers.map((u, i) => {
+      const photoSrc = (u.photo && u.photo.startsWith('data:image')) ? u.photo : defaultAvatarSvg;
+      const medal = i===0?'🥇':i===1?'🥈':i===2?'🥉':'🏅';
+      const encodedUserJson = encodeURIComponent(JSON.stringify({ userId: u.userId, userName: u.name, department: u.dept, photo: u.photo, totalEmission: u.total }));
+      
+      return `
+      <div style="background:white; border:1px solid #e2e8f0; padding:24px 16px; border-radius:16px; text-align:center; position:relative; flex:1; min-width:140px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); transition: transform 0.2s; cursor:pointer;" onclick="openUserDetailModal('${encodedUserJson}')" title="Klik untuk lihat profil">
+          <div style="position:absolute; top:-14px; left:50%; transform:translateX(-50%); font-size:28px; filter:drop-shadow(0 4px 6px rgba(0,0,0,0.1));">${medal}</div>
+          <img src="${photoSrc}" style="width:56px; height:56px; border-radius:50%; object-fit:cover; border:3px solid white; box-shadow:0 4px 12px rgba(0,0,0,0.08); margin: 16px auto 12px;">
+          <div style="font-weight:800; font-size:14px; color:var(--esg-dark); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${esc(u.name)}</div>
+          <div style="font-size:11.5px; color:var(--text-muted); font-weight:600; margin-bottom:14px;">${esc(u.dept)}</div>
+          <div style="color:var(--esg-primary); font-weight:900; font-size:20px; letter-spacing:-0.5px;">${fmt(u.total)} <small style="font-size:11px; font-weight:700; color:var(--text-muted);">kgCO₂e</small></div>
+      </div>
+      `;
+  }).join('') : '<div style="padding:24px; color:#94a3b8; font-size:13px; text-align:center; width:100%;">Belum ada data terekam untuk departemen & periode ini.</div>';
+}
+
+function renderRankingDataView() {
+  let userStats = {};
+  let dailyRows = [];
+
+  // 1. Terapkan filter periode aktif yang sinkron dengan Team Dashboard
+  const periodFilter = $('teamPeriodFilter') ? $('teamPeriodFilter').value : 'all';
+  const today = todayISO();
+  const currentMonth = today.substring(0, 7);
+
+  let filteredRecords = teamDetailedRecords.filter(rec => {
+      const dateStr = rec.tanggalEmisi || rec.date;
+      if (!dateStr) return false;
+      if (periodFilter === 'today') return dateStr === today;
+      if (periodFilter === 'month') return dateStr.startsWith(currentMonth);
+      return true;
+  });
+
+  filteredRecords.forEach(rec => {
+      const motor = num(rec.motor), mobil = num(rec.mobil), laptop = num(rec.laptop), hp = num(rec.handphone);
+      const ac = num(rec.ac), lampu = num(rec.lampu), tv = num(rec.tv), pool = num(rec.pool);
+      
+      const indiv = motor + mobil + laptop + hp;
+      const shared = ac + lampu + tv + pool;
+      const total = indiv + shared;
+      const dateStr = rec.tanggalEmisi || rec.date;
+
+      if(!userStats[rec.userId]) userStats[rec.userId] = { id: rec.userId, name: rec.userName, photo: rec.photo, dept: rec.department, total: 0, indiv: 0, shared: 0, days: new Set() };
+      userStats[rec.userId].total += total;
+      userStats[rec.userId].indiv += indiv;
+      userStats[rec.userId].shared += shared;
+      userStats[rec.userId].days.add(dateStr);
+
+      dailyRows.push({
+          date: dateStr, name: rec.userName, photo: rec.photo, id: rec.userId, dept: rec.department, total, indiv, shared, motor, mobil, ac, lampu, tv, laptop, hp
+      });
+  });
+
+  let sortedUsers = Object.values(userStats).map(u => {
+      u.record = u.days.size;
+      u.avg = u.total / Math.max(1, u.record);
+      return u;
+  });
+
+  const sortFilter = $('rtSortFilter') ? $('rtSortFilter').value : 'total_lowest';
+  
+  if (sortFilter === 'total_lowest' || sortFilter === 'lowest') {
+      // Default: Total emisi terendah (Identik dengan urutan di Team Dashboard)
+      sortedUsers.sort((a,b) => a.total - b.total || a.avg - b.avg);
+  } else if (sortFilter === 'total_highest') {
+      sortedUsers.sort((a,b) => b.total - a.total || b.avg - a.avg);
+  } else if (sortFilter === 'avg_lowest') {
+      sortedUsers.sort((a,b) => a.avg - b.avg || a.total - b.total);
+  } else if (sortFilter === 'avg_highest' || sortFilter === 'highest') {
+      sortedUsers.sort((a,b) => b.avg - a.avg || b.total - a.total);
+  }
+
+  const defaultAvatarSvg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2394a3b8' d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E";
+
+  const isTotalSorted = (sortFilter === 'total_lowest' || sortFilter === 'total_highest' || sortFilter === 'lowest');
+  const isLowest = (sortFilter === 'total_lowest' || sortFilter === 'avg_lowest' || sortFilter === 'lowest');
+  const isHighest = (sortFilter === 'total_highest' || sortFilter === 'avg_highest' || sortFilter === 'highest');
+
+  $('rt_performance_body').innerHTML = sortedUsers.length > 0 ? sortedUsers.map((u, i) => {
+      const rank = i + 1;
+      const photoSrc = (u.photo && u.photo.startsWith('data:image')) ? u.photo : defaultAvatarSvg;
+      
+      let badge = '<span class="badge-status normal">Peserta</span>';
+      let rankBg = '#f1f5f9', rankColor = '#64748b', rankIcon = `#${rank}`;
+      
+      if (rank === 1 && isLowest) { 
+          badge = '<span class="badge-status top">🥇 Terhemat</span>'; 
+          rankBg = '#059669'; rankColor = 'white'; rankIcon = rank; 
+      } else if (rank === 1 && isHighest) {
+          badge = '<span class="badge-status third">🔥 Tertinggi</span>';
+          rankBg = '#9a3412'; rankColor = 'white'; rankIcon = rank; 
+      } else if (rank === 2) { 
+          badge = '<span class="badge-status runner">🥈 Posisi 2</span>'; 
+          rankBg = '#475569'; rankColor = 'white'; rankIcon = rank; 
+      } else if (rank === 3) { 
+          badge = '<span class="badge-status third">🥉 Posisi 3</span>'; 
+          rankBg = '#ea580c'; rankColor = 'white'; rankIcon = rank; 
+      }
+      
+      const encodedUserJson = encodeURIComponent(JSON.stringify({ userId: u.id, userName: u.name, department: u.dept, photo: u.photo, totalEmission: u.total }));
+
+      const totalStyle = isTotalSorted 
+          ? 'font-weight:900; color:var(--esg-primary); font-size:14.5px;' 
+          : 'font-weight:600; color:#334155;';
+      const avgStyle = !isTotalSorted 
+          ? 'font-weight:900; color:var(--esg-primary); font-size:14.5px;' 
+          : 'font-weight:600; color:#475569;';
+
+      return `<tr style="cursor:pointer;" onclick="openUserDetailModal('${encodedUserJson}')" title="Klik untuk lihat profil">
+          <td><div style="background:${rankBg}; color:${rankColor}; width:32px; height:32px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; box-shadow:0 2px 6px rgba(0,0,0,0.1);">${rankIcon}</div></td>
+          <td>
+             <div style="display:flex; align-items:center; gap:12px;">
+                 <img src="${photoSrc}" style="width:42px; height:42px; border-radius:50%; object-fit:cover; border:2px solid #e2e8f0;">
+                 <div>
+                     <div style="font-weight:800; font-size:14px; color:var(--esg-dark);">${esc(u.name)}</div>
+                     <div style="font-size:11.5px; color:var(--text-muted); font-weight:600;">${maskId(u.id)}</div>
+                 </div>
+             </div>
+          </td>
+          <td style="color:#475569;">${esc(u.dept)}</td>
+          <td style="text-align:center; font-weight: 600;">${u.record}</td>
+          <td style="${avgStyle}">${fmt(u.avg)}</td>
+          <td style="${totalStyle}">${fmt(u.total)}</td>
+          <td>${fmt(u.indiv)}</td>
+          <td>${fmt(u.shared)}</td>
+          <td>${badge}</td>
+      </tr>`;
+  }).join('') : '<tr><td colspan="9" style="text-align:center; color:#94a3b8; padding:24px;">Data kosong. Pastikan departemen terverifikasi.</td></tr>';
+
+  const periodDetailFilter = $('rtPeriodFilter') ? $('rtPeriodFilter').value : 'day';
+  let detailRows = [];
+
+  if (periodDetailFilter === 'month') {
+      let monthAgg = {};
+      dailyRows.forEach(r => {
+          const mKey = r.date ? r.date.substring(0, 7) : 'Unknown';
+          const key = r.id + '_' + mKey;
+          if(!monthAgg[key]) {
+              monthAgg[key] = { ...r, date: mKey, recordCount: 1 };
+          } else {
+              monthAgg[key].total += r.total;
+              monthAgg[key].indiv += r.indiv;
+              monthAgg[key].shared += r.shared;
+              monthAgg[key].motor += r.motor;
+              monthAgg[key].mobil += r.mobil;
+              monthAgg[key].ac += r.ac;
+              monthAgg[key].lampu += r.lampu;
+              monthAgg[key].tv += r.tv;
+              monthAgg[key].laptop += r.laptop;
+              monthAgg[key].hp += r.hp;
+              monthAgg[key].recordCount++;
+          }
+      });
+      detailRows = Object.values(monthAgg).sort((a,b) => b.date.localeCompare(a.date));
+  } else {
+      detailRows = dailyRows.sort((a,b) => b.date.localeCompare(a.date));
+  }
+
+  $('rt_daily_body').innerHTML = detailRows.length > 0 ? detailRows.map(r => {
+      const photoSrc = (r.photo && r.photo.startsWith('data:image')) ? r.photo : defaultAvatarSvg;
+      const encodedUserJson = encodeURIComponent(JSON.stringify({ userId: r.id, userName: r.name, department: r.dept, photo: r.photo, totalEmission: r.total }));
+      return `
+      <tr style="cursor:pointer;" onclick="openUserDetailModal('${encodedUserJson}')" title="Klik untuk lihat profil">
+          <td style="color:#64748b; font-size:12.5px; font-weight:600;">${esc(r.date)} ${r.recordCount ? `<small>(${r.recordCount} records)</small>` : ''}</td>
+          <td>
+            <div style="display:flex; align-items:center; gap:10px;">
+               <img src="${photoSrc}" style="width:32px; height:32px; border-radius:50%; object-fit:cover; border:1px solid #e2e8f0;">
+               <div>
+                   <div style="font-weight:800; color:var(--esg-dark);">${esc(r.name)}</div>
+                   <div style="font-size:11px; color:#94a3b8; font-weight:600;">${maskId(r.id)}</div>
+               </div>
+            </div>
+          </td>
+          <td style="color:#64748b;">${esc(r.dept)}</td>
+          <td style="font-weight:800; color:var(--esg-primary); font-size:14.5px;">${fmt(r.total)}</td>
+          <td style="font-weight:700;">${fmt(r.indiv)}</td>
+          <td style="font-weight:700; color:#ea580c;">${fmt(r.shared)}</td>
+          <td>${fmt(r.motor)}</td>
+          <td>${fmt(r.mobil)}</td>
+          <td>${fmt(r.ac)}</td>
+          <td>${fmt(r.lampu)}</td>
+          <td>${fmt(r.tv)}</td>
+          <td>${fmt(r.laptop)}</td>
+          <td>${fmt(r.hp)}</td>
+      </tr>
+      `;
+  }).join('') : '<tr><td colspan="13" style="text-align:center; color:#94a3b8; padding:24px;">Rekam aktivitas tidak ditemukan.</td></tr>';
+}
+
+function toggleSort(type) {
+  const sortSelect = $('rtSortFilter');
+  if (!sortSelect) return;
+  if (type === 'total') {
+    sortSelect.value = (sortSelect.value === 'total_lowest') ? 'total_highest' : 'total_lowest';
+  } else if (type === 'avg') {
+    sortSelect.value = (sortSelect.value === 'avg_lowest') ? 'avg_highest' : 'avg_lowest';
+  }
+  renderRankingDataView();
+}
+
+
+/* ===== DASHBOARD FRESH V3 BEHAVIOR ===== */
+let currentNewsIndex = 0;
+let newsRotationTimer = null;
+
+const DASHBOARD_NEWS = [
+  {
+    category:'ENERGI TERBARUKAN',
+    source:'ANTARA NEWS',
+    date:'16 Mei 2026',
+    title:'Indonesia terus mempercepat pengembangan energi terbarukan.',
+    desc:'Perkembangan energi bersih, PLTS, hidrogen, dan transisi energi Indonesia.',
+    image:'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85',
+    url:'https://www.antaranews.com/tag/renewable-energy-sources'
+  },
+  {
+    category:'CLEAN ENERGY',
+    source:'UN CLIMATE CHANGE',
+    date:'14 Juli 2026',
+    title:'Energi terbarukan mencatat pertumbuhan pembangkitan yang sangat cepat.',
+    desc:'Ikuti perkembangan energi terbarukan dan arah transisi energi global.',
+    image:'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=900&q=85',
+    url:'https://unfccc.int/news/renewable-power-generation-records-its-fastest-growth-ever'
+  },
+  {
+    category:'CLIMATE ACTION',
+    source:'UNEP',
+    date:'Insight',
+    title:'Climate action: dari kebijakan hingga solusi nyata di lapangan.',
+    desc:'Solusi iklim, resilience, finance, dan inovasi hijau dari berbagai belahan dunia.',
+    image:'https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=900&q=85',
+    url:'https://www.unep.org/news-and-stories/news/spotlight-climate-action'
+  },
+  {
+    category:'IKLIM & ENERGI',
+    source:'GREENPEACE INDONESIA',
+    date:'Insight',
+    title:'Melihat perkembangan isu iklim dan energi di Indonesia.',
+    desc:'Berita, riset, kampanye, dan perspektif tentang transisi energi serta lingkungan.',
+    image:'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=900&q=85',
+    url:'https://www.greenpeace.org/indonesia/news-stories/?category=iklim-dan-energi'
+  },
+  {
+    category:'NATURE & ENERGY',
+    source:'MONGABAY',
+    date:'Insight',
+    title:'Energi bersih, konservasi, dan tantangan lingkungan global.',
+    desc:'Eksplorasi berita tentang energi, biodiversitas, hutan, dan solusi berbasis alam.',
+    image:'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=900&q=85',
+    url:'https://news.mongabay.com/list/renewable-energy/'
+  },
+  {
+    category:'SUSTAINABILITY',
+    source:'ANTARA',
+    date:'Insight',
+    title:'Praktik keberlanjutan semakin dekat dengan aktivitas sehari-hari.',
+    desc:'Green office, transportasi, energi, dan aksi lingkungan yang bisa diterapkan bersama.',
+    image:'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=900&q=85',
+    url:'https://www.antaranews.com/tag/isu-keberlanjutan'
+  }
+];
+
+function navigateToPage(pageId){
+  const page = document.getElementById(pageId);
+  const buttons = document.querySelectorAll('.nav button, .mobile-nav button');
+  if(!page){
+    console.warn('Halaman tidak ditemukan:', pageId);
+    return false;
+  }
+  buttons.forEach(btn => btn.classList.toggle('active', btn.dataset.page === pageId));
+  document.querySelectorAll('.page').forEach(section => section.classList.remove('active'));
+  page.classList.add('active');
+  try { renderDashboard(); } catch(err) { console.warn('renderDashboard:', err); }
+  if(pageId === 'chat'){
+    try{
+      state.lastChatReadTimestamp = new Date().toISOString();
+      saveLocal();
+      if($('deskChatBadge')) $('deskChatBadge').style.display='none';
+      if($('mobChatBadge')) $('mobChatBadge').style.display='none';
+      fetchChatMessages(); renderChatRoomsList();
+      currentActiveRecipient = null;
+      if($('activeChatTitle')) $('activeChatTitle').textContent='🌍 Pilih Ruang Obrolan';
+      if($('activeChatActionBtn')) $('activeChatActionBtn').style.display='none';
+      renderChatMessages();
+      if(typeof toggleMobileChatList==='function') toggleMobileChatList();
+    }catch(e){ console.warn('chat navigation:',e); }
+  }
+  if(pageId === 'team_dashboard'){
+    try{ renderTeamDashboardView(); loadTeamData(); }catch(e){ console.warn('team navigation:',e); }
+  }
+  if(pageId === 'ranking_data'){
+    try{ renderRankingDataView(); loadTeamData(); }catch(e){ console.warn('ranking navigation:',e); }
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+  return true;
+}
+
+function renderDashboardTeamPreview(){
+  const box=$('dashboardTeamPreview');
+  if(!box) return;
+  const data=Array.isArray(rawLeaderboardData)?rawLeaderboardData:[];
+  const users={};
+  data.forEach(item=>{
+    if(!item || !item.userId) return;
+    const id=String(item.userId);
+    if(!users[id]) users[id]={userId:id,userName:item.userName||'Anonim',photo:item.photo||'',totalEmission:0};
+    users[id].totalEmission += Math.max(0,num(item.emission));
+    if(item.userName) users[id].userName=item.userName;
+    if(item.photo) users[id].photo=item.photo;
+  });
+  const sorted=Object.values(users).sort((a,b)=>a.totalEmission-b.totalEmission);
+  const totalUsers=sorted.length;
+  if($('dashTeamMembers')) $('dashTeamMembers').textContent=String(totalUsers);
+  if(!sorted.length){
+    box.innerHTML='<div class="dashboard-empty">Belum ada data tim. Mulai catat aktivitas untuk melihat performa.</div>';
+    return;
+  }
+  const fallback="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2394a3b8' d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E";
+  box.innerHTML=sorted.slice(0,4).map((u,i)=>{
+    const photo=(u.photo&&u.photo.startsWith('data:image'))?u.photo:fallback;
+    return `<div class="team-preview-item">
+      <div class="team-preview-rank">${i<3?['🥇','🥈','🥉'][i]:`#${i+1}`}</div>
+      <img class="team-preview-avatar" src="${photo}" alt="">
+      <div class="team-preview-name">${esc(u.userName||'Anonim')}</div>
+      <div class="team-preview-value">${fmt(u.totalEmission)}<small>kgCO₂e</small></div>
+    </div>`;
+  }).join('');
+}
+
+function drawCategoryDonut(records){
+  const canvas=$('categoryDonut'), legend=$('categoryLegend');
+  if(!canvas || !legend) return;
+  const aggregate={};
+  (records||[]).forEach(r=>{
+    Object.entries(r.breakdown||{}).forEach(([k,v])=>{
+      const value=num(v); if(value>0) aggregate[k]=(aggregate[k]||0)+value;
+    });
+  });
+  const entries=Object.entries(aggregate).sort((a,b)=>b[1]-a[1]);
+  const total=entries.reduce((s,[,v])=>s+v,0);
+  if($('categoryDonutTotal')) $('categoryDonutTotal').textContent=fmt(total);
+  const ctx=canvas.getContext('2d'), dpr=window.devicePixelRatio||1, size=190;
+  canvas.width=size*dpr; canvas.height=size*dpr; canvas.style.width=size+'px'; canvas.style.height=size+'px';
+  ctx.setTransform(dpr,0,0,dpr,0,0); ctx.clearRect(0,0,size,size);
+  const cx=size/2,cy=size/2,r=68,ring=23;
+  const palette=['#10b981','#2f80ed','#f5b52e','#d977a7','#58a6c9','#7c68d9','#14b8a6'];
+  if(!total){
+    ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.strokeStyle='#e6efeb';ctx.lineWidth=ring;ctx.stroke();
+    legend.innerHTML='<div class="dashboard-empty">Belum ada komponen emisi.</div>';
+    return;
+  }
+  let angle=-Math.PI/2;
+  entries.slice(0,7).forEach(([name,value],i)=>{
+    const sweep=value/total*Math.PI*2;
+    ctx.beginPath();ctx.arc(cx,cy,r,angle,angle+sweep);
+    ctx.strokeStyle=palette[i%palette.length];ctx.lineWidth=ring;ctx.lineCap='butt';ctx.stroke();
+    angle+=sweep;
+  });
+  legend.innerHTML=entries.slice(0,7).map(([name,value],i)=>{
+    const pct=(value/total*100);
+    return `<div class="category-row"><span class="category-dot" style="background:${palette[i%palette.length]}"></span><b>${esc(name)}</b><strong>${pct.toFixed(0)}%</strong></div>`;
+  }).join('');
+}
+
+function renderFreshNews(){
+  const grid=$('newsGrid'), dots=$('newsDots');
+  if(!grid || !dots) return;
+  const total=DASHBOARD_NEWS.length, visible=3;
+  const items=[];
+  for(let i=0;i<visible;i++) items.push(DASHBOARD_NEWS[(currentNewsIndex+i)%total]);
+  grid.innerHTML=items.map((n,i)=>`
+    <a class="news-card ${i===0?'is-feature':''}" href="${n.url}" target="_blank" rel="noopener noreferrer">
+      <div class="news-image" style="background-image:url('${n.image}')">
+        <span class="news-category">${n.category}</span>
+        <span class="news-read">Baca ↗</span>
+      </div>
+      <div class="news-body">
+        <small>${n.source} · ${n.date}</small>
+        <h4>${esc(n.title)}</h4>
+        <p>${esc(n.desc)}</p>
+      </div>
+    </a>`).join('');
+  dots.innerHTML=DASHBOARD_NEWS.map((_,i)=>`<button type="button" class="news-dot-btn ${i===currentNewsIndex?'active':''}" onclick="setNewsIndex(${i})" aria-label="Berita ${i+1}"></button>`).join('');
+}
+function setNewsIndex(index){
+  currentNewsIndex=(index+DASHBOARD_NEWS.length)%DASHBOARD_NEWS.length;
+  renderFreshNews();
+  restartNewsRotation();
+}
+function changeNews(step){ setNewsIndex(currentNewsIndex+step); }
+function restartNewsRotation(){
+  clearInterval(newsRotationTimer);
+  newsRotationTimer=setInterval(()=>changeNews(1),8000);
+}
+
+function syncDashboardMeta(){
+  const now=new Date();
+  const label=now.toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'});
+  if($('dashboardTodayLabel')) $('dashboardTodayLabel').textContent=label;
+  const photo=state?.profile?.photo||'';
+  if($('heroAvatarImg')){
+    $('heroAvatarImg').src=photo || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23dff8ee'/%3E%3Ccircle cx='32' cy='25' r='10' fill='%23087f5b'/%3E%3Cpath d='M15 53c2-12 10-18 17-18s15 6 17 18' fill='%23087f5b'/%3E%3C/svg%3E";
+  }
+  const unread=(typeof allChatMessages!=='undefined' && Array.isArray(allChatMessages) && state?.profile?.userId)
+    ? allChatMessages.filter(m=>m.timestamp>state.lastChatReadTimestamp && String(m.senderId).trim()!==String(state.profile.userId).trim()).length : 0;
+  if($('chatMetaCount')) $('chatMetaCount').textContent=unread>99?'99+':String(unread);
+}
+
+function renderDashboard() {  
+  if(!$('dashDateFilter').value) $('dashDateFilter').value = todayISO();
+  if(!$('gInputDate').value) $('gInputDate').value = todayISO();
+
+  const selectedDashDate = $('dashDateFilter').value; 
+  const r = state.records.find(x => x.date === selectedDashDate) || null;  
+  const targetTotal = r?.total || 0;
+  
+  let filteredGrandRecords = state.records; 
+  const grandMode = $('grandFilterMode').value, grandMonth = $('grandMonthSelect').value;
+  
+  if (grandMode === 'month' && grandMonth) { filteredGrandRecords = state.records.filter(item => item.date && item.date.startsWith(grandMonth)); }
+  else if (grandMode === 'week' && grandMonth) {
+      const weekNum = parseInt($('grandWeekSelect').value); const [yr, mo] = grandMonth.split('-').map(Number);
+      let startDay = (weekNum - 1) * 7 + 1; let endDay = Math.min(weekNum * 7, new Date(yr, mo, 0).getDate());
+      filteredGrandRecords = state.records.filter(item => { if (!item.date || !item.date.startsWith(grandMonth)) return false; const dayPart = parseInt(item.date.split('-')[2]); return dayPart >= startDay && dayPart <= endDay; });
+  }
+
+  const grandTotal = filteredGrandRecords.reduce((sum, item) => sum + num(item.total), 0);
+  let totalOffset = 0;
+  (state.contributions || []).forEach(c => { totalOffset += (num(c.value) * (CONTRIB_FACTORS[c.type] || 1)); });
+  const netEmission = grandTotal - totalOffset;
+  
+  const gMode = $('globalFilterMode').value;
+  let targetRecordsForActivities = state.records, labelSubText = "(Semua Waktu)";
+
+  if (gMode === 'day') {
+    const dVal = $('gInputDate').value || todayISO();
+    targetRecordsForActivities = state.records.filter(item => item.date === dVal); labelSubText = `(${dVal})`;
+  } else if (gMode === 'month') {
+    const mVal = $('gInputMonth').value;
+    targetRecordsForActivities = state.records.filter(item => item.date && item.date.startsWith(mVal)); labelSubText = `(Bulan ${mVal})`;
+  } else if (gMode === 'range') {
+    const sVal = $('gInputStartDate').value || todayISO(), eVal = $('gInputEndDate').value || todayISO();
+    targetRecordsForActivities = state.records.filter(item => item.date && item.date >= sVal && item.date <= eVal); labelSubText = `(${sVal} s/d ${eVal})`;
+  }
+
+  let filteredPersonalTotal = 0, filteredCollectiveTotal = 0;
+  targetRecordsForActivities.forEach(item => {
+    filteredPersonalTotal += num(item.summary?.personalTotal); filteredCollectiveTotal += num(item.summary?.collectiveTotal);
+  });
+
+  $('dashName').textContent = state.profile.userName || 'Ivo Audio';  
+  $('todayTotal').textContent = fmt(targetTotal); $('treeEqToday').textContent = fmt(targetTotal / FACTORS.treeKgPerYear);  
+  $('grandTotal').textContent = fmt(grandTotal); $('treeEqGrand').textContent = fmt(grandTotal / FACTORS.treeKgPerYear);
+  $('netEmissionTotal').textContent = fmt(netEmission);
+  $('personalTotalDash').textContent = fmt(filteredPersonalTotal); $('collectiveTotalDash').textContent = fmt(filteredCollectiveTotal);  
+  $('personalLabelSub').textContent = labelSubText; $('collectiveLabelSub').textContent = labelSubText;
+
+  if($('breakdownBoxToday')) renderBreakdownToday($('breakdownBoxToday'), r?.breakdown || {});  
+  if($('breakdownBoxGrand')) renderBreakdownGrand($('breakdownBoxGrand'), filteredGrandRecords);
+  if($('trendChart')) drawChart($('trendChart'), state.records);
+  renderDashboardTeamPreview();
+  drawCategoryDonut(filteredGrandRecords);
+  syncDashboardMeta();
+  if($('newsGrid') && !$('newsGrid').children.length) { renderFreshNews(); restartNewsRotation(); }
+  renderHistory(); renderContribUI(); updateAvatarsUI();
+}  
+  
+function renderHistory() {  
+  const rows = (state.records || []).filter(r => r.date && /^\d{4}-\d{2}-\d{2}$/.test(r.date)).sort((a, b) => b.date.localeCompare(a.date));  
+  $('historyBox').innerHTML = rows.length ? `<div class="table-wrap"><thead><tr><th>Tanggal</th><th>Total (kgCO₂e)</th><th>Konfigurasi</th></tr></thead><tbody>${rows.map(r => `<tr><td><b style="color:var(--esg-dark);">${esc(r.date)}</b></td><td><b style="color:var(--esg-primary);">${fmt(r.total)}</b></td><td><button class="btn outline" style="padding:6px 12px; font-size:12.5px; border-radius:8px;" data-edit="${esc(r.date)}">✏️ Sesuaikan</button></td></tr>`).join('')}</tbody></table></div>` : '<div style="text-align:center; color:#94a3b8; padding: 24px; font-weight:600; font-size:13px;">Riwayat pemakaian belum terdeteksi.</div>';  
+}  
+
+function updateContribLabel() {
+  const type = $('contribType').value, val = num($('contribValue').value), factor = CONTRIB_FACTORS[type] || 1;
+  const totalOffset = val * factor, treeEq = totalOffset / FACTORS.treeKgPerYear;
+  const config = {
+    tree: { title: 'Penanaman Pohon', desc: `1 Pohon diproyeksikan menekan ${FACTORS.treeKgPerYear} kgCO₂e/tahun.` },
+    renewable: { title: 'Transisi Terbarukan', desc: `1 kWh terbarukan menghilangkan ketergantungan senilai ${CONTRIB_FACTORS.renewable} kgCO₂e.` },
+    transport: { title: 'Rute Hijau', desc: `Mobilitas aktif/bersama merepresi ${CONTRIB_FACTORS.transport} kgCO₂e per km.` },
+    waste: { title: 'Optimasi Sampah', desc: `Daur ulang mencegah pelepasan 1,20 kgCO₂e per kilogram material.` },
+    custom: { title: 'Kustomisasi Operasional', desc: `Input data mentah dalam unit kgCO₂e yang berhasil dikonversi.` }
+  };
+  const currentConfig = config[type] || config.custom;
+  $('contribInfoTitle').textContent = `Algoritma Kalkulasi: ${currentConfig.title}`;
+  $('contribInfoDesc').textContent = currentConfig.desc;
+  $('contribInfoResult').textContent = `Netto Terkalkulasi: +${fmt(totalOffset)} kgCO₂e (≈ ${fmt(treeEq)} pohon/tahun)`;
+  const labels = { tree: 'Bibit Ditanam', renewable: 'Energi Bersih (kWh)', transport: 'Jarak Tempuh Hijau (km)', waste: 'Massa Daur Ulang (kg)', custom: 'Penurunan Riil (kgCO₂e)' };
+  $('contribUnitLabel').textContent = labels[type] || 'Volume Tercatat';
+}
+
+function renderContribUI() {
+  const contribs = state.contributions || []; let totalOffset = 0;
+  contribs.forEach(c => { totalOffset += (num(c.value) * (CONTRIB_FACTORS[c.type] || 1)); });
+  $('offsetTotal').textContent = fmt(totalOffset); $('offsetTreeEq').textContent = fmt(totalOffset / FACTORS.treeKgPerYear);
+  const rows = [...contribs].sort((a, b) => b.date.localeCompare(a.date));
+  const typeNames = { tree: 'Penanaman Pohon', renewable: 'Energi Bersih', transport: 'Transportasi Rendah Emisi', waste: 'Daur Ulang Tersetifikasi', custom: 'Aksi Berkelanjutan Lain' };
+  $('contribHistoryBox').innerHTML = rows.length ? 
+    `<div class="table-wrap"><thead><tr><th>Tanggal Pencatatan</th><th>Kategori Aksi</th><th>Besaran</th><th>Kompensasi Emisi</th><th>Tindakan</th></tr></thead><tbody>${rows.map(c => {
+       const calcOffset = num(c.value) * (CONTRIB_FACTORS[c.type] || 1);
+       return `<tr><td><b>${esc(c.date)}</b></td><td>${typeNames[c.type] || c.type}</td><td>${fmt(c.value)}</td><td><b style="color:var(--esg-primary);">+${fmt(calcOffset)} kg</b></td><td><button class="btn outline" style="padding:4px 10px; font-size:12.5px; color:var(--danger); border-color:var(--danger); border-radius:8px;" onclick="deleteContrib('${c.id}')">🗑️ Tarik</button></td></tr>`;
+    }).join('')}</tbody></table></div>` : '<div style="text-align:center; color:#94a3b8; padding: 24px; font-weight:600; font-size:13px;">Portfolio kontribusi masih kosong.</div>';
+}
+
+function saveContribution() {
+  const value = num($('contribValue').value);
+  if (value <= 0) return toast('⚠️ Kuantifikasi aksi wajib dilampirkan!');
+  if (!state.contributions) state.contributions = [];
+  state.contributions.push({ id: 'c_' + Date.now(), date: $('contribDate').value || todayISO(), type: $('contribType').value, value });
+  saveLocal(); renderDashboard(); $('contribValue').value = ''; updateContribLabel(); toast('✅ Tindakan berhasil dieksekusi masuk basis data!');
+}
+
+window.deleteContrib = function(id) { state.contributions = state.contributions.filter(c => c.id !== id); saveLocal(); renderDashboard(); toast('🗑️ Histori tereksekusi ditarik'); };
+
+async function saveRecordAndServer() {
+  const record = getRecordFromForm();
+  if(!record.date || !/^\d{4}-\d{2}-\d{2}$/.test(record.date)) return toast('⚠️ Parsing tanggal anomali. Mohon koreksi.');
+  upsertLocal(record); renderDashboard();
+  if(!state.profile.userName || !state.profile.userId) return toast('⚠️ Identitas struktural belum tertanam. Silakan sinkronkan profil.');
+
+  const targetBreakdown = record.breakdown || {};
+  const payload = {
+    timestamp: new Date().toISOString(), action: "save_emission", tanggalEmisi: record.date,
+    userName: state.profile.userName, userId: String(state.profile.userId).trim(), password: state.profile.password || '',
+    department: state.profile.department, team: state.profile.team, pg: state.profile.pg, role: state.profile.role,
+    motor: targetBreakdown['Motor'] || 0, mobil: targetBreakdown['Mobil Pribadi'] || 0, laptop: targetBreakdown['Laptop / PC'] || 0,
+    handphone: targetBreakdown['Handphone'] || 0, ac: targetBreakdown['AC Bersama'] || 0, lampu: targetBreakdown['Lampu Bersama'] || 0,
+    tv: targetBreakdown['TV Bersama'] || 0, pool: targetBreakdown['Mobil Perusahaan (Carpool)'] || 0,
+    totalEmission: record.total, photo: state.profile.photo || ''
+  };
+
+  toast(`⏳ Melakukan injeksi data operasional pada ${record.date}...`);
+  try {
+    await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(payload) });
+    toast(`✅ Transaksi berhasil: Data ${record.date} tervalidasi di pusat.`);
+    fetchLeaderboard(); loadTeamData();
+  } catch(err) { toast('❌ Failover ke mode lokal. Jaringan pusat tidak merespon.'); }
+}
+
+async function deleteRecordAndServer() {
+  const d = $('dateInput').value;
+  if(!d) return toast('⚠️ Silakan bidik tanggal yang akan dieliminasi.');
+  if(!confirm(`Konfirmasi penarikan penuh berkas emisi tanggal ${d}? Operasi akan dipantulkan ke server utama.`)) return;
+
+  removeLocalRecord(d); setForm({ date: d }); renderDashboard();
+  if(!state.profile.userId) return toast('⚠️ Parameter sesi tidak memadai.');
+
+  const payload = {
+    timestamp: new Date().toISOString(), action: "save_emission", tanggalEmisi: d,
+    userName: state.profile.userName, userId: String(state.profile.userId).trim(), password: state.profile.password || '',
+    department: state.profile.department, team: state.profile.team, pg: state.profile.pg, role: state.profile.role,
+    motor: 0, mobil: 0, laptop: 0, handphone: 0, ac: 0, lampu: 0, tv: 0, pool: 0, totalEmission: 0, photo: state.profile.photo || ''
+  };
+
+  toast(`⏳ Menginisiasi pembersihan berkas ${d}...`);
+  try {
+    await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(payload) });
+    toast(`🗑️ Eksekusi paripurna. Catatan ${d} bersih.`);
+    fetchLeaderboard(); loadTeamData();
+  } catch(err) { toast('❌ Server pusat menolak proses delegasi.'); }
+}
+
+async function saveProfileToServer() {
+  state.profile = { ...state.profile, userName: $('userName').value.trim(), department: $('department').value.trim(), team: $('team').value.trim(), pg: $('pg').value.trim(), role: $('role').value.trim() };  
+  saveLocal(); 
+  if(!state.profile.userName || !state.profile.userId) return toast('⚠️ Pengisian identifikasi minimal belum terpenuhi!');
+
+  const exportDate = $('dashDateFilter').value || todayISO();
+  const targetRecord = state.records.find(x => x.date === exportDate), targetBreakdown = targetRecord ? targetRecord.breakdown : {};
+
+  const payload = {
+    timestamp: new Date().toISOString(), action: "save_emission", tanggalEmisi: exportDate,
+    userName: state.profile.userName, userId: String(state.profile.userId).trim(), password: state.profile.password || '',
+    department: state.profile.department, team: state.profile.team, pg: state.profile.pg, role: state.profile.role,
+    motor: targetBreakdown['Motor'] || 0, mobil: targetBreakdown['Mobil Pribadi'] || 0, laptop: targetBreakdown['Laptop / PC'] || 0,
+    handphone: targetBreakdown['Handphone'] || 0, ac: targetBreakdown['AC Bersama'] || 0, lampu: targetBreakdown['Lampu Bersama'] || 0,
+    tv: targetBreakdown['TV Bersama'] || 0, pool: targetBreakdown['Mobil Perusahaan (Carpool)'] || 0,
+    totalEmission: targetRecord ? targetRecord.total : 0, photo: state.profile.photo || ''
+  };
+
+  toast('⏳ Mentransmisikan pembaruan kredensial...');
+  try {
+    await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify(payload) });
+    toast('✅ Sinkronisasi profil sukses berlabuh di master.');
+    renderDashboard(); fetchLeaderboard();
+  } catch(err) { toast('❌ Gagal melakukan penetrasi profil ke node utama.'); }
+}
+
+function processServerDataAndLogin(data, uid, pwd) {
+  state.profile.userId = String(uid).trim(); state.profile.password = String(pwd).trim();
+  state.profile.userName = data.userName || ''; state.profile.department = data.department || '';
+  state.profile.team = data.team || ''; state.profile.pg = data.pg || ''; state.profile.role = data.role || '';
+  if(data.photo) state.profile.photo = data.photo;
+  
+  if(data.records && Array.isArray(data.records) && data.records.length > 0) {
+    state.records = []; 
+    data.records.forEach(serverRec => {
+       let cleanDate = String(serverRec.date || serverRec.tanggalEmisi || '').substring(0, 10);
+       if (cleanDate && cleanDate !== "undefined") {
+         state.records = state.records.filter(x => x.date !== cleanDate);
+         const serverTotalEmission = num(serverRec.total);
+         const valMotor = num(serverRec.motor), valMobil = num(serverRec.mobil), valLaptop = num(serverRec.laptop), valHp = num(serverRec.handphone);
+         const valAc = num(serverRec.ac), valLampu = num(serverRec.lampu), valTv = num(serverRec.tv);
+
+         const r = {
+           date: cleanDate,
+           motorGo: Number((valMotor / FACTORS.motorKm).toFixed(2)) || 0, motorBack: 0, motorMob: 0, motorKm: valMotor / FACTORS.motorKm,
+           carGo: Number((valMobil / FACTORS.carKm).toFixed(2)) || 0, carBack: 0, carMob: 0, carKm: valMobil / FACTORS.carKm,
+           laptopHours: Number((valLaptop / FACTORS.laptopHours).toFixed(2)) || 0, phoneHours: Number((valHp / FACTORS.phoneHours).toFixed(2)) || 0,
+           acUnits: 1, acUsers: 1, acHours: Number((valAc / FACTORS.acHours).toFixed(2)) || 0,
+           lampUnits: 1, lampUsers: 1, lampHours: Number((valLampu / FACTORS.lampHours).toFixed(2)) || 0,
+           tvUnits: 1, tvUsers: 1, tvHours: Number((valTv / FACTORS.tvHours).toFixed(2)) || 0,
+           poolUnits: 1, poolUsers: 1, poolGo: 0, poolBack: 0
+         };
+         const enriched = enrichRecord(r);
+         if (serverTotalEmission > 0) {
+             enriched.total = serverTotalEmission;
+             if (enriched.summary.personalTotal === 0 && enriched.summary.collectiveTotal === 0) {
+                 enriched.summary.personalTotal = serverTotalEmission; enriched.breakdown['Motor'] = serverTotalEmission;
+             }
+         }
+         state.records.push(enriched);
+       }
+    });
+    state.records.sort((a, b) => a.date.localeCompare(b.date));
+    if (state.records.length > 0) {
+      const latestDate = state.records[state.records.length - 1].date;
+      $('dashDateFilter').value = latestDate; $('gInputDate').value = latestDate; $('dateInput').value = latestDate;
+      setForm(state.records.find(x => x.date === latestDate));
+    }
+  }
+  saveLocal(); localStorage.setItem(SESSION_AUTH_KEY, 'true');
+  loadProfile(); renderDashboard(); fetchLeaderboard(); fetchChatMessages();
+  $('authModal').style.display = 'none';
+}
+
+$('authLoginBtn').onclick = async () => {
+  const uid = $('authUserId').value.trim(), pwd = $('authPassword').value.trim(), errBox = $('authErrorMsg');
+  errBox.style.display = 'none';
+  if(!uid || !pwd) return toast('⚠️ Tolong berikan otoritas ID dan kata sandi terlebih dulu.');
+
+  toast('⏳ Autentikasi sesi...');
+  try {
+    const res = await fetch(SCRIPT_URL + "?userId=" + encodeURIComponent(uid));
+    const data = await res.json();
+    if(data.status === 'success') {
+      const serverPwd = String(data.password || "").trim(), inputPwd = String(pwd).trim();
+      if (serverPwd === "") {
+        await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify({ action: "update_password", userId: uid, password: pwd }) });
+        processServerDataAndLogin(data, uid, pwd); toast('✅ Token valid. Meluncur!');
+      } else if (serverPwd === inputPwd) {
+        processServerDataAndLogin(data, uid, pwd); toast('✅ Welcome back!');
+      } else { errBox.style.display = 'block'; toast('❌ Password tidak sesuai algoritma kami.'); }
+    } else { errBox.style.display = 'block'; toast('❌ User ID tidak terindeks.'); }
+  } catch(e) { toast('❌ Server pusat sedang maintenance atau offline.'); }
+};
+
+$('authSubmitRegisterBtn').onclick = async () => {
+  const uid = $('regUserId').value.trim(), pwd = $('regPassword').value.trim(), name = $('regName').value.trim(), regErrBox = $('regErrorMsg');
+  regErrBox.style.display = 'none';
+  if(!uid || !pwd || !name) return toast('⚠️ Semua isian formulir sifatnya mandatori.');
+
+  toast('⏳ Melakukan handshake ID ke master database...');
+  try {
+    const checkRes = await fetch(SCRIPT_URL + "?userId=" + encodeURIComponent(uid));
+    const checkData = await checkRes.json();
+    if (checkData.status === 'success' && checkData.userName) { regErrBox.style.display = 'block'; toast('❌ Insiden duplikasi! ID telah diambil.'); return; }
+
+    toast('⏳ Menyisipkan konfigurasi baru...');
+    await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify({ action: "register", userId: uid, password: pwd, userName: name, department: $('regDept').value.trim(), team: '', pg: '', role: '' }) });
+    state.profile.userId = uid; state.profile.password = pwd; state.profile.userName = name; state.profile.department = $('regDept').value.trim(); 
+    saveLocal(); localStorage.setItem(SESSION_AUTH_KEY, 'true');
+    loadProfile(); renderDashboard(); fetchLeaderboard(); fetchChatMessages();
+    $('authModal').style.display = 'none'; toast('✅ Selesai dirakit. Nikmati dashboardnya!');
+  } catch(e) { toast('❌ Transmisi gagal.'); }
+};
+
+$('authSubmitForgotBtn').onclick = async () => {
+  const uid = $('forgotUserId').value.trim();
+  const newPwd = $('forgotNewPassword').value.trim();
+  if(!uid || !newPwd) return toast('⚠️ Silakan lengkapi NIK dan Kata Sandi baru.');
+
+  toast('⏳ Menghubungi server untuk reset sandi...');
+  try {
+    const checkRes = await fetch(SCRIPT_URL + "?userId=" + encodeURIComponent(uid));
+    const checkData = await checkRes.json();
+    if (checkData.status === 'success') {
+       await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify({ action: "update_password", userId: uid, password: newPwd }) });
+       toast('✅ Password sukses di-reset. Silakan masuk.');
+       switchAuthTab('login');
+    } else {
+       toast('❌ User ID tidak terdaftar dalam sistem.');
+    }
+  } catch(e) {
+    toast('❌ Gagal menghubungi server utama.');
+  }
+};
+
+$('pullServerBtn').onclick = async () => {
+  const uid = state.profile.userId, pwd = state.profile.password;
+  if(!uid) return;
+  toast('⏳ Meminta snapshot terkini...');
+  const res = await fetch(SCRIPT_URL + "?userId=" + encodeURIComponent(uid));
+  const data = await res.json();
+  if(data.status === 'success') { processServerDataAndLogin(data, uid, pwd); toast('✅ Sinkronisasi ulang tuntas.'); }
+};
+
+function loadProfile() { 
+  const p = state.profile; 
+  ['userId','userName','department','team','pg','role'].forEach(k => { if($(k)) $(k).value = p[k] || ''; }); 
+  $('currentPasswordInput').value = ''; $('newPasswordInput').value = '';
+  updateAvatarsUI();
+}  
+
+function updateAvatarsUI() {
+  const p = state.profile, photo = p.photo;
+  $('sbName').textContent = p.userName ? p.userName : ''; $('sbRole').textContent = p.department ? p.department : '';
+  if(photo) {
+    $('profAvatarImg').src = $('sbAvatarImg').src = $('moAvatarImg').src = photo;
+    $('profAvatarImg').style.display = $('sbAvatarImg').style.display = $('moAvatarImg').style.display = 'block';
+    $('profAvatarPh').style.display = $('sbAvatarPh').style.display = 'none'; $('removePhotoBtn').style.display = 'inline-flex';
+  } else {
+    $('profAvatarImg').style.display = $('sbAvatarImg').style.display = $('moAvatarImg').style.display = 'none';
+    $('profAvatarPh').style.display = $('sbAvatarPh').style.display = 'flex'; $('removePhotoBtn').style.display = 'none';
+  }
+}
+
+$('photoInput').addEventListener('change', function(e) {
+  const file = e.target.files[0]; if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(event) {
+    $('imageToCrop').src = event.target.result;
+    $('cropperModal').style.display = 'flex';
+    if (cropper) cropper.destroy();
+    cropper = new Cropper($('imageToCrop'), { aspectRatio: 1, viewMode: 1, dragMode: 'move', autoCropArea: 0.9, restore: false, guides: true, center: true, highlight: false, cropBoxMovable: true, cropBoxResizable: true, toggleDragModeOnDblclick: false });
+  };
+  reader.readAsDataURL(file);
+});
+
+$('cancelCropBtn').onclick = function() {
+  $('cropperModal').style.display = 'none';
+  if (cropper) { cropper.destroy(); cropper = null; }
+  $('photoInput').value = '';
+};
+
+$('confirmCropBtn').onclick = async function() {
+  if (!cropper) return;
+  const canvas = cropper.getCroppedCanvas({ width: 300, height: 300, imageSmoothingEnabled: true, imageSmoothingQuality: 'high' });
+  state.profile.photo = canvas.toDataURL('image/jpeg', 0.9);
+  saveLocal(); updateAvatarsUI();
+  $('cropperModal').style.display = 'none'; cropper.destroy(); cropper = null; $('photoInput').value = '';
+  await saveProfileToServer();
+};
+
+$('removePhotoBtn').onclick = async function() { 
+  state.profile.photo = ''; $('photoInput').value = ''; saveLocal(); updateAvatarsUI(); await saveProfileToServer();
+};
+  
+function switchInputPane(index) {
+  const container = $('inputSwipeContainer'), paneWidth = container.clientWidth; container.scrollTo({ left: paneWidth * index, behavior: 'smooth' });
+  document.querySelectorAll('.shortcut-btn').forEach((btn, idx) => { if (idx === index) btn.classList.add('active'); else btn.classList.remove('active'); });
+}
+
+function setupSwipeListener() {
+  const container = $('inputSwipeContainer'); if (!container) return;
+  container.addEventListener('scroll', () => {
+    const paneWidth = container.clientWidth; if (paneWidth === 0) return; const index = Math.round(container.scrollLeft / paneWidth);
+    document.querySelectorAll('.shortcut-btn').forEach((btn, idx) => { if (idx === index) btn.classList.add('active'); else btn.classList.remove('active'); });
+  });
+}
+
+window.goToProfilePage = function() {
+  navigateToPage('profile');
+};
+  
+function bind() {  
+  document.querySelectorAll('.nav button, .mobile-nav button').forEach(b => {
+    b.onclick = (event) => {
+      if(event) event.preventDefault();
+      navigateToPage(b.dataset.page);
+    }
+  });  
+  
+  $('saveRecordBtn').onclick = saveRecordAndServer;  
+  $('saveContribBtn').onclick = saveContribution;
+  $('dashDateFilter').onchange = () => { renderDashboard(); };
+  
+  $('dateInput').onchange = () => { 
+    const d = $('dateInput').value, r = state.records.find(x => x.date === d); 
+    setForm(r || { date: d }); 
+    if(r) $('saveRecordBtn').innerHTML = '☁️ Timpa/Update Data Terdaftar';
+    else $('saveRecordBtn').innerHTML = '☁️ Hitung & Simpan ke Server';
+    renderDashboard(); 
+  }; 
+
+  $('deleteDateBtn').onclick = deleteRecordAndServer;  
+  
+  $('historyBox').addEventListener('click', e => {  
+    const edit = e.target.closest('[data-edit]');  
+    if(edit) { 
+      const targetDate = edit.dataset.edit; $('dateInput').value = targetDate; setForm(state.records.find(x => x.date === targetDate)); 
+      $('saveRecordBtn').innerHTML = '☁️ Timpa/Update Data Terdaftar';
+      document.querySelector('[data-page="input"]').click(); window.scrollTo({ top: 0, behavior: 'smooth' }); renderDashboard(); 
+    }  
+  });  
+
+  $('saveProfileBtn').onclick = saveProfileToServer;  
+
+  $('changePasswordBtn').onclick = async () => {
+    const currentInput = $('currentPasswordInput').value.trim(), newInput = $('newPasswordInput').value.trim(), savedPassword = String(state.profile.password || '').trim();
+    if (!currentInput || !newInput) return toast('⚠️ Kami membutuhkan kunci lama dan kunci baru.');
+    if (currentInput !== savedPassword) return toast('❌ Akses ditolak. Kunci lama tidak sesuai rekam medis kami.');
+
+    toast('⏳ Memutakhirkan kata sandi...');
+    try {
+      await fetch(SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'text/plain' }, body: JSON.stringify({ action: "update_password", userId: String(state.profile.userId).trim(), password: newInput }) });
+      state.profile.password = newInput; saveLocal();
+      $('currentPasswordInput').value = ''; $('newPasswordInput').value = ''; toast('✅ Akses Anda sukses dilindungi kunci baru.');
+    } catch(e) { toast('❌ Perintah tidak terkirim. Anda sedang luring?'); }
+  };
+  
+  $('resetProfileBtn').onclick = () => {
+    if(confirm('Logout dan putuskan jembatan data lokal?')) { localStorage.removeItem(BASE_KEY); localStorage.removeItem(SESSION_AUTH_KEY); location.reload(); }
+  };
+
+  $('userName').addEventListener('input', function() { const val = this.value.trim(); $('sbName').textContent = val ? val : ''; $('dashName').textContent = val ? val : ''; });
+  $('department').addEventListener('input', function() { const val = this.value.trim(); $('sbRole').textContent = val ? val : ''; });
+  $('refreshLeaderboardBtn').onclick = fetchLeaderboard;
+  setupSwipeListener();
+}  
+  
+// ==============================================
+// === LOGIKA PWA & INSTALASI MULTI-PLATFORM ===
+// ==============================================
+async function openPwaInstallModal() {
+  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  const isAndroid = /Android/.test(navigator.userAgent);
+  
+  // 1. JIKA EVENT SUDAH TERSEDIA: LANGSUNG 1-KLIK PROMPT OTOMATIS
+  if (window.deferredPwaPrompt) {
+    try {
+      const p = window.deferredPwaPrompt;
+      p.prompt();
+      const { outcome } = await p.userChoice;
+      if (outcome === 'accepted') {
+        toast('🚀 Memasang aplikasi JejakKarbonKu...');
+        const banner = $('pwaAutoBanner');
+        if (banner) banner.style.display = 'none';
+        $('pwaInstallModal').style.display = 'none';
+      }
+      window.deferredPwaPrompt = null;
+      return;
+    } catch(err) {
+      console.log('Install prompt error:', err);
+    }
+  }
+
+  // 2. JIKA DI ANDROID / PC TAPI PROMPT SEDANG DIINISIALISASI: TUNGGU SEBENTAR
+  if (!isIOS && !window.deferredPwaPrompt) {
+    toast('⏳ Memproses instalasi 1-klik...');
+    const received = await new Promise((resolve) => {
+      const handler = (e) => {
+        e.preventDefault();
+        window.deferredPwaPrompt = e;
+        window.removeEventListener('beforeinstallprompt', handler);
+        resolve(true);
+      };
+      window.addEventListener('beforeinstallprompt', handler);
+      setTimeout(() => resolve(false), 2000);
+    });
+
+    if (received && window.deferredPwaPrompt) {
+      try {
+        const p = window.deferredPwaPrompt;
+        p.prompt();
+        const { outcome } = await p.userChoice;
+        if (outcome === 'accepted') {
+          toast('🚀 Memasang aplikasi JejakKarbonKu...');
+          const banner = $('pwaAutoBanner');
+          if (banner) banner.style.display = 'none';
+          $('pwaInstallModal').style.display = 'none';
+        }
+        window.deferredPwaPrompt = null;
+        return;
+      } catch(err) {}
+    }
+  }
+
+  // 3. JIKA DI IPHONE (IOS SAFARI) ATAU PERLU PANDUAN MANUAL
+  if (isIOS) {
+    switchPwaTab('ios');
+  } else if (isAndroid) {
+    switchPwaTab('android');
+  } else {
+    switchPwaTab('desktop');
+  }
+  $('pwaInstallModal').style.display = 'flex';
+}
+
+function switchPwaTab(tab) {
+  $('pwaGuideAndroid').style.display = 'none';
+  $('pwaGuideIos').style.display = 'none';
+  $('pwaGuideDesktop').style.display = 'none';
+
+  $('pwaTabAndroid').style.background = 'transparent'; $('pwaTabAndroid').style.color = 'var(--text-muted)'; $('pwaTabAndroid').style.boxShadow = 'none';
+  $('pwaTabIos').style.background = 'transparent'; $('pwaTabIos').style.color = 'var(--text-muted)'; $('pwaTabIos').style.boxShadow = 'none';
+  $('pwaTabDesktop').style.background = 'transparent'; $('pwaTabDesktop').style.color = 'var(--text-muted)'; $('pwaTabDesktop').style.boxShadow = 'none';
+
+  if (tab === 'android') {
+    $('pwaGuideAndroid').style.display = 'flex';
+    $('pwaTabAndroid').style.background = 'white'; $('pwaTabAndroid').style.color = 'var(--esg-primary)'; $('pwaTabAndroid').style.boxShadow = '0 2px 4px rgba(0,0,0,0.05)';
+  } else if (tab === 'ios') {
+    $('pwaGuideIos').style.display = 'flex';
+    $('pwaTabIos').style.background = 'white'; $('pwaTabIos').style.color = 'var(--esg-primary)'; $('pwaTabIos').style.boxShadow = '0 2px 4px rgba(0,0,0,0.05)';
+  } else if (tab === 'desktop') {
+    $('pwaGuideDesktop').style.display = 'flex';
+    $('pwaTabDesktop').style.background = 'white'; $('pwaTabDesktop').style.color = 'var(--esg-primary)'; $('pwaTabDesktop').style.boxShadow = '0 2px 4px rgba(0,0,0,0.05)';
+  }
+}
+
+async function executeNativeInstall() {
+  if (window.deferredPwaPrompt) {
+    window.deferredPwaPrompt.prompt();
+    const { outcome } = await window.deferredPwaPrompt.userChoice;
+    if (outcome === 'accepted') {
+      toast('🚀 Memasang aplikasi...');
+      $('pwaInstallModal').style.display = 'none';
+      const banner = $('pwaAutoBanner');
+      if (banner) banner.style.display = 'none';
+    }
+    window.deferredPwaPrompt = null;
+  } else {
+    toast('💡 Buka menu titik tiga (⋮) di pojok kanan atas browser, lalu pilih "Tambahkan ke Layar Utama"');
+  }
+}
+
+function init() { 
+  setupOptions(); populateMonthDropdowns();
+  const tIso = todayISO(); 
+  $('dateInput').value = tIso; $('dashDateFilter').value = tIso; $('gInputDate').value = tIso; $('contribDate').value = tIso; $('lbInputDate').value = tIso;
+  $('lbModeSelect').value = 'month';
+  updateLeaderboardModeUI(); updateGlobalFilterModeUI(); updateContribLabel();
+
+  const isSessionAuth = localStorage.getItem(SESSION_AUTH_KEY);
+  if (!isSessionAuth) { $('authModal').style.display = 'flex'; }
+  else { $('authModal').style.display = 'none'; fetchLeaderboard(); fetchChatMessages(); }
+
+  loadProfile(); setForm({ date: tIso }); bind();
+  renderDashboard();
+  restartNewsRotation();
+  const r = state.records.find(x => x.date === tIso);
+  if(r) $('saveRecordBtn').innerHTML = '☁️ Timpa/Update Data Terdaftar';
+  else $('saveRecordBtn').innerHTML = '☁️ Hitung & Simpan ke Server';
+  
+  setInterval(() => {
+      if(localStorage.getItem(SESSION_AUTH_KEY)) {
+          fetchChatMessages();
+      }
+  }, 3000);
+}  
+document.addEventListener('DOMContentLoaded', init);  
+</script>  
+
+<script id="premium-ui-behavior">
+(function(){
+  const syncHero = () => {
+    const source = document.getElementById('todayTotal');
+    const target = document.getElementById('heroTodayValue');
+    if(source && target) target.textContent = source.textContent || '0.00';
+  };
+  const observer = new MutationObserver(syncHero);
+  const source = document.getElementById('todayTotal');
+  if(source) observer.observe(source,{childList:true,characterData:true,subtree:true});
+  document.addEventListener('DOMContentLoaded',syncHero);
+  setTimeout(syncHero,800);
+  setInterval(syncHero,1500);
+})();
+</script>
+<script id="sustainability-showcase-behavior">
+(function(){
+  function syncSustainabilityPulse(){
+    const s=document.getElementById('todayTotal'), t=document.getElementById('natureCarbonPulse');
+    if(s && t) t.textContent=(s.textContent||'0.00').trim();
+  }
+  document.addEventListener('DOMContentLoaded',syncSustainabilityPulse);
+  setInterval(syncSustainabilityPulse,1500);
+})();
+</script>
+
+<script id="jejak-final-behavior">
+(function(){
+  function go(page){
+    const btn=document.querySelector('[data-page="'+page+'"]');
+    if(btn) btn.click();
+  }
+  document.addEventListener('click',function(e){
+    const quick=e.target.closest('.quick-card[data-target]');
+    if(quick){ e.preventDefault(); go(quick.dataset.target); }
+  });
+  window.jejakGo=go;
+})();
+</script>
+
+
+<script id="jejak-contribution-actions-v6">
+(function(){
+  function setContributionAction(type){
+    const select=document.getElementById('contribType');
+    if(!select) return;
+    select.value=type;
+    document.querySelectorAll('.impact-action-card').forEach(card=>{
+      card.classList.toggle('active',card.getAttribute('data-contrib-action')===type);
+    });
+    if(typeof updateContribLabel==='function') updateContribLabel();
+    const value=document.getElementById('contribValue');
+    if(value) value.focus({preventScroll:true});
+  }
+
+  document.addEventListener('click',function(e){
+    const card=e.target.closest('.impact-action-card[data-contrib-action]');
+    if(card){
+      e.preventDefault();
+      setContributionAction(card.getAttribute('data-contrib-action'));
+    }
+  });
+
+  function syncContributionCards(){
+    const select=document.getElementById('contribType');
+    if(!select) return;
+    document.querySelectorAll('.impact-action-card').forEach(card=>{
+      card.classList.toggle('active',card.getAttribute('data-contrib-action')===select.value);
+    });
+    const total=document.getElementById('offsetTotal');
+    const hero=document.getElementById('impactHeroOffset');
+    if(total && hero) hero.textContent=total.textContent || '0.00';
+  }
+
+  document.addEventListener('DOMContentLoaded',function(){
+    syncContributionCards();
+    setTimeout(syncContributionCards,500);
+    setInterval(syncContributionCards,1200);
+  });
+})();
+</script>
+
+</body>  
+</html>
