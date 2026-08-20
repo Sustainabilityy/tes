@@ -2787,6 +2787,48 @@ html,body{overflow-x:hidden!important}
 }
 </style>
 
+
+<style id="v11-precision-refresh">
+.news-image.has-article-image{background-size:cover!important;transition:transform 1.2s cubic-bezier(.16,1,.3,1),filter .35s}
+.news-card:hover .news-image.has-article-image{transform:scale(1.035)}
+.news-image.no-article-image{background-size:140% 140%!important;position:relative}
+.news-image.no-article-image:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 20%,rgba(130,255,210,.32),transparent 28%),linear-gradient(135deg,transparent 35%,rgba(255,255,255,.08));animation:newsVisualDrift 7s ease-in-out infinite alternate}
+@keyframes newsVisualDrift{to{background-position:22px -16px,0 0}}
+.news-image-note{position:absolute;z-index:3;left:12px;bottom:12px;padding:5px 8px;border-radius:999px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.22);color:#fff;font-size:7px;font-weight:900;letter-spacing:.8px;backdrop-filter:blur(8px)}
+.news-image.has-article-image .news-image-note{background:rgba(2,44,34,.52)}
+.news-card .news-body h4{min-height:38px}.news-card .news-body p{min-height:31px}
+#dashboard .nature-banner{background-image:linear-gradient(92deg,rgba(2,39,29,.96) 0%,rgba(3,65,48,.82) 42%,rgba(2,52,39,.24) 100%),var(--hero-bg);background-size:cover;background-position:center}
+#dashboard .nature-banner:before{content:"";position:absolute;inset:-7%;background:var(--hero-bg) center/cover no-repeat;opacity:.34;z-index:-1;animation:heroKenBurns 14s ease-in-out infinite alternate}
+@keyframes heroKenBurns{from{transform:scale(1.02)}to{transform:scale(1.09) translate3d(-1.2%,-.8%,0)}}
+#contrib .impact-action-hero{min-height:255px!important;background:linear-gradient(110deg,rgba(2,44,34,.96) 0%,rgba(4,95,68,.80) 50%,rgba(2,44,34,.36) 100%),var(--impact-bg)!important;background-size:cover!important;background-position:center!important;transition:filter .35s,opacity .35s}
+#contrib .impact-action-hero:after{content:"";position:absolute;inset:-8%;background:var(--impact-bg) center/cover no-repeat;opacity:.24;z-index:-1;animation:impactKenBurns 11s ease-in-out infinite alternate}
+@keyframes impactKenBurns{from{transform:scale(1.03)}to{transform:scale(1.11) translateX(-1.5%)}}
+#contrib .impact-action-hero.impact-changing{filter:saturate(.8);opacity:.78}
+#contrib .impact-action-total{z-index:4!important;min-width:190px!important}
+#contrib .impact-action-total em{display:block;font-style:normal;margin-top:6px;color:rgba(255,255,255,.72);font-size:9px;font-weight:800}
+.ranking-command-center{position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(360px,.75fr);gap:20px;align-items:stretch;margin:0 0 18px;padding:24px;border-radius:24px;color:#fff;background:radial-gradient(circle at 88% 20%,rgba(100,255,202,.18),transparent 28%),linear-gradient(120deg,#022c22,#075c44 58%,#0a8a66);box-shadow:0 18px 44px rgba(2,76,54,.17)}
+.ranking-command-center:after{content:"";position:absolute;right:-70px;bottom:-95px;width:240px;height:240px;border:1px solid rgba(255,255,255,.13);border-radius:50%;box-shadow:0 0 0 25px rgba(255,255,255,.025),0 0 0 52px rgba(255,255,255,.018)}
+.ranking-command-copy,.ranking-command-stats{position:relative;z-index:2}
+.ranking-live-pill{display:inline-flex;align-items:center;gap:7px;padding:6px 9px;border-radius:999px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.14);font-size:8px;font-weight:900;letter-spacing:1.2px}
+.ranking-live-pill i{width:7px;height:7px;border-radius:50%;background:#6ee7b7;box-shadow:0 0 0 5px rgba(110,231,183,.12);animation:pulseDot 1.5s infinite}
+.ranking-command-copy h2{margin:12px 0 6px;font-size:clamp(20px,2.1vw,29px);letter-spacing:-1.2px;line-height:1.08}
+.ranking-command-copy p{margin:0;max-width:620px;color:rgba(255,255,255,.72);font-size:11px;line-height:1.6}
+.ranking-command-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.ranking-command-stats>div{padding:13px 12px;border-radius:16px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.13);backdrop-filter:blur(10px);min-width:0}
+.ranking-command-stats small{display:block;font-size:7.5px;letter-spacing:1px;color:rgba(255,255,255,.62);font-weight:900}
+.ranking-command-stats strong{display:block;margin:6px 0 2px;font-size:22px;letter-spacing:-.7px}
+.ranking-command-stats span{font-size:8.5px;color:rgba(255,255,255,.66);font-weight:700}
+#ranking_data .rank-table-wrapper{border-radius:22px!important;box-shadow:0 12px 34px rgba(8,60,44,.065)!important}
+#ranking_data .rank-table tbody tr{transition:transform .2s ease,background .2s ease,box-shadow .2s ease}
+#ranking_data .rank-table tbody tr:hover{transform:translateX(2px);box-shadow:inset 3px 0 #10b981;background:#f4fbf8!important}
+#ranking_data .rank-tabs{padding:5px;background:#f1f8f5;border:1px solid rgba(8,127,91,.08);border-radius:14px}
+#ranking_data .rank-tab{background:transparent!important;border-color:transparent!important}
+#ranking_data .rank-tab.active{background:#fff!important;box-shadow:0 5px 16px rgba(8,60,44,.09)!important}
+@media(min-width:901px) and (max-width:1250px){.page{padding-left:24px!important;padding-right:24px!important}.ranking-command-center{grid-template-columns:1fr}}
+@media(max-width:900px){.ranking-command-center{grid-template-columns:1fr;padding:20px;border-radius:20px}.ranking-command-stats{grid-template-columns:repeat(3,1fr)}#ranking_data .topline>div:last-child{width:100%;display:grid!important;grid-template-columns:1fr 1fr;gap:8px!important}#ranking_data .topline select,#ranking_data .topline .btn{width:100%!important;min-width:0!important}}
+@media(max-width:600px){.page{padding:17px 12px 94px!important}.news-carousel-grid{grid-template-columns:1fr!important;gap:12px!important}.news-carousel-grid .news-card:nth-child(n+3){display:none!important}.news-image,.news-card.is-feature .news-image{height:180px!important;min-height:180px!important}.ranking-command-center{padding:17px;border-radius:18px}.ranking-command-copy h2{font-size:21px}.ranking-command-copy p{font-size:10px}.ranking-command-stats{gap:7px}.ranking-command-stats>div{padding:10px 8px}.ranking-command-stats strong{font-size:17px}.ranking-command-stats span{font-size:7px}#contrib .impact-action-hero{min-height:330px!important;padding:20px 17px!important}#contrib .impact-action-total{left:17px!important;right:auto!important;bottom:17px!important;min-width:150px!important}}
+@media(max-width:390px){.ranking-command-stats{grid-template-columns:1fr}.ranking-command-stats>div{display:flex;align-items:center;justify-content:space-between;gap:8px}#ranking_data .topline>div:last-child{grid-template-columns:1fr!important}}
+</style>
 </head>  
 <body>  
 
@@ -3400,6 +3442,19 @@ html,body{overflow-x:hidden!important}
         </div>
       </div>
 
+      <div class="ranking-command-center">
+        <div class="ranking-command-copy">
+          <span class="ranking-live-pill"><i></i> LIVE RANKING</span>
+          <h2>Performance, lebih jelas. Kompetisi, lebih hidup.</h2>
+          <p>Urutan dihitung dari data emisi yang sudah difilter. Satu User ID = satu peserta, tanpa peringkat ganda.</p>
+        </div>
+        <div class="ranking-command-stats">
+          <div><small>PESERTA</small><strong id="rtUniqueUsers">0</strong><span>user unik</span></div>
+          <div><small>TOTAL EMISI</small><strong id="rtTotalValue">0.00</strong><span>kgCO₂e</span></div>
+          <div><small>TERHEMAT</small><strong id="rtBestValue">0.00</strong><span>kgCO₂e</span></div>
+        </div>
+      </div>
+
       <div class="rank-table-wrapper">
          <h3 style="margin-top:0; margin-bottom:20px; color:var(--esg-dark); font-size: 18px; font-weight:800;">Performance Ranking</h3>
          <table class="rank-table">
@@ -3556,14 +3611,7 @@ html,body{overflow-x:hidden!important}
           <h1>Aksi Kontribusi Hijau</h1>  
           <p>Catat langkah progresif Anda dalam menekan jejak karbon operasional.</p>  
         </div>  
-      </div>  
-        
-      <div class="card" style="background: var(--esg-dark); color: white; border: none; text-align: center; padding: 32px 24px; margin-bottom: 24px;">  
-        <div style="font-size: 13.5px; color: #a7f3d0; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">Total Pengurangan Karbon (Offset)</div>  
-        <div style="font-size: 44px; font-weight: 900; margin: 12px 0; letter-spacing: -1px;"><span id="offsetTotal">0.00</span> <small style="font-size: 20px; font-weight: 700;">kgCO₂e</small></div>  
-        <div style="font-size: 15px; font-weight: 500;">Setara penyerapan hingga <strong style="color: #34d399;"><span id="offsetTreeEq">0.00</span> pohon</strong>/tahun</div>  
-      </div>  
-
+      </div>
 
       <div class="impact-action-hero">
         <div class="impact-action-copy">
@@ -3578,6 +3626,7 @@ html,body{overflow-x:hidden!important}
           <small>TOTAL OFFSET</small>
           <strong><span id="impactHeroOffset">0.00</span></strong>
           <span>kgCO₂e</span>
+          <em>≈ <span id="impactHeroTrees">0.00</span> pohon/tahun</em>
         </div>
       </div>
 
@@ -5088,6 +5137,12 @@ function renderRankingDataView() {
 
   const defaultAvatarSvg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2394a3b8' d='M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z'/%3E%3C/svg%3E";
 
+  const rankingTotal=sortedUsers.reduce((sum,u)=>sum+(Number(u.total)||0),0);
+  const rankingBest=sortedUsers.length?Math.min(...sortedUsers.map(u=>Number(u.total)||0)):0;
+  if($('rtUniqueUsers')) $('rtUniqueUsers').textContent=String(sortedUsers.length);
+  if($('rtTotalValue')) $('rtTotalValue').textContent=fmt(rankingTotal);
+  if($('rtBestValue')) $('rtBestValue').textContent=fmt(rankingBest);
+
   const isTotalSorted = (sortFilter === 'total_lowest' || sortFilter === 'total_highest' || sortFilter === 'lowest');
   const isLowest = (sortFilter === 'total_lowest' || sortFilter === 'avg_lowest' || sortFilter === 'lowest');
   const isHighest = (sortFilter === 'total_highest' || sortFilter === 'avg_highest' || sortFilter === 'highest');
@@ -5306,10 +5361,37 @@ function newsPeriodStart(period){
 }
 function stripHtml(v){return String(v||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim()}
 function newsImageForCategory(key){
- return ({energi:'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85',
- iklim:'https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=1200&q=85',
- sustainability:'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=85',
- teknologi:'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1200&q=85'})[key];
+ return ({
+   energi:'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85',
+   iklim:'https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=1200&q=85',
+   sustainability:'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=85',
+   teknologi:'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1200&q=85'
+ })[key];
+}
+function newsExtractImage(item){
+  const candidates=[
+    item&&item.thumbnail,
+    item&&item.enclosure&&item.enclosure.link,
+    item&&item.media&&item.media.content&&item.media.content.url,
+    item&&item.media&&item.media.thumbnail&&item.media.thumbnail.url
+  ].filter(Boolean);
+  for(const raw of candidates){
+    const url=String(raw).trim();
+    if(/^https?:\/\//i.test(url)) return url;
+  }
+  const html=String(item&&(item.content||item.description)||'');
+  const m=html.match(/<img[^>]+(?:src|data-src)=["']([^"']+)["']/i);
+  return m&&/^https?:\/\//i.test(m[1]) ? m[1] : '';
+}
+function newsFallbackVisual(key,index){
+  const colors={
+    energi:['#0b5d46','#17a673'],
+    iklim:['#14532d','#4d9f68'],
+    sustainability:['#064e3b','#10b981'],
+    teknologi:['#0f3d56','#2aa7a0']
+  };
+  const c=colors[key]||colors.sustainability;
+  return `linear-gradient(135deg,${c[0]},${c[1]})`;
 }
 function newsCanonicalTitle(title){
  return stripHtml(title||'')
@@ -5328,16 +5410,18 @@ function newsSimilarity(a,b){
  return common/Math.min(A.size,B.size);
 }
 function dedupeNews(items){
- const unique=[];
- const seenExact=new Set();
- items.sort((a,b)=>(b.pubTime||0)-(a.pubTime||0)).forEach(n=>{
-   const key=newsCanonicalTitle(n.title);
-   if(!key||seenExact.has(key))return;
-   if(unique.some(x=>newsSimilarity(x.title,n.title)>=0.72))return;
-   seenExact.add(key);
-   unique.push(n);
- });
- return unique;
+  const unique=[];
+  const seenExact=new Set(), seenLinks=new Set();
+  items.sort((a,b)=>(b.pubTime||0)-(a.pubTime||0)).forEach(n=>{
+    const key=newsCanonicalTitle(n.title);
+    const link=String(n.url||'').trim().toLowerCase();
+    if(!key||seenExact.has(key)||(link&&seenLinks.has(link))) return;
+    if(unique.some(x=>newsSimilarity(x.title,n.title)>=0.68)) return;
+    seenExact.add(key);
+    if(link) seenLinks.add(link);
+    unique.push(n);
+  });
+  return unique;
 }
 async function fetchLiveNews(){
  const start=newsPeriodStart(newsPeriod),all=[];
@@ -5354,12 +5438,14 @@ async function fetchLiveNews(){
     if(/energi|listrik|renewable|terbarukan|efisiensi|solar/.test(low)){cat='ENERGI & EFISIENSI';key='energi'}
     else if(/iklim|climate|emisi|karbon/.test(low)){cat='IKLIM & KARBON';key='iklim'}
     else if(/teknologi|technology|hidrogen|green tech/.test(low)){cat='TEKNOLOGI HIJAU';key='teknologi'}
+    const articleImage=newsExtractImage(item);
     all.push({
-      category:cat,source:feed.name,
+      category:cat,source:feed.name.replace('Google News · ',''),
       date:pub.toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'}),
       title:title.replace(/\s+[-|–—]\s+[^-|–—]+$/,'').trim(),
       desc:(desc.slice(0,180)+(desc.length>180?'…':'')),
-      image:newsImageForCategory(key),url:item.link||'#',pubTime:pub.getTime()
+      image:articleImage,imageFallback:key,url:item.link||'#',pubTime:pub.getTime(),
+      articleId:item.guid||item.link||title
     });
    });
   }catch(e){console.warn('Live news feed error',feed.name,e)}
@@ -5381,22 +5467,34 @@ function scheduleLiveNews(){
  window.liveNewsRefreshTimer=setInterval(fetchLiveNews,6*60*60*1000);
 }
 function startNewsHeroMotion(){
- const banner=document.querySelector('#dashboard .nature-banner');
- if(!banner)return;
- let idx=0;
- const apply=()=>{
-   banner.classList.add('hero-changing');
-   setTimeout(()=>{
-     banner.style.setProperty('--hero-bg',`url("${NEWS_HERO_IMAGES[idx]}")`);
-     banner.classList.remove('hero-changing');
-   },120);
-   idx=(idx+1)%NEWS_HERO_IMAGES.length;
- };
- banner.style.setProperty('--hero-bg',`url("${NEWS_HERO_IMAGES[0]}")`);
- clearInterval(newsHeroRotationTimer);
- newsHeroRotationTimer=setInterval(apply,9000);
+  const banner=document.querySelector('#dashboard .nature-banner'); if(!banner)return;
+  let idx=0;
+  const apply=()=>{
+    banner.classList.add('hero-changing');
+    setTimeout(()=>{banner.style.setProperty('--hero-bg',`url("${NEWS_HERO_IMAGES[idx]}")`);banner.classList.remove('hero-changing')},180);
+    idx=(idx+1)%NEWS_HERO_IMAGES.length;
+  };
+  banner.style.setProperty('--hero-bg',`url("${NEWS_HERO_IMAGES[0]}")`);
+  clearInterval(newsHeroRotationTimer);newsHeroRotationTimer=setInterval(apply,8500);
 }
-
+let impactHeroRotationTimer=null;
+const IMPACT_HERO_IMAGES=[
+ 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1800&q=88',
+ 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1800&q=88',
+ 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1800&q=88',
+ 'https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=1800&q=88'
+];
+function startImpactHeroMotion(){
+  const hero=document.querySelector('#contrib .impact-action-hero'); if(!hero)return;
+  let idx=0;
+  const apply=()=>{
+    hero.classList.add('impact-changing');
+    setTimeout(()=>{hero.style.setProperty('--impact-bg',`url("${IMPACT_HERO_IMAGES[idx]}")`);hero.classList.remove('impact-changing')},180);
+    idx=(idx+1)%IMPACT_HERO_IMAGES.length;
+  };
+  hero.style.setProperty('--impact-bg',`url("${IMPACT_HERO_IMAGES[0]}")`);
+  clearInterval(impactHeroRotationTimer);impactHeroRotationTimer=setInterval(apply,7000);
+}
 function navigateToPage(pageId){
   const page = document.getElementById(pageId);
   const buttons = document.querySelectorAll('.nav button, .mobile-nav button');
@@ -5427,6 +5525,9 @@ function navigateToPage(pageId){
   }
   if(pageId === 'ranking_data'){
     try{ renderRankingDataView(); loadTeamData(); }catch(e){ console.warn('ranking navigation:',e); }
+  }
+  if(pageId === 'contrib'){
+    try{ startImpactHeroMotion(); }catch(e){ console.warn('impact hero motion:',e); }
   }
   window.scrollTo({top:0,behavior:'smooth'});
   return true;
@@ -5505,25 +5606,23 @@ function drawCategoryDonut(records){
 
 function renderFreshNews(){
   const grid=$('newsGrid'), dots=$('newsDots');
-  if(!grid || !dots) return;
+  if(!grid||!dots)return;
   const total=DASHBOARD_NEWS.length;
-  if(!total){
-    grid.innerHTML='<div class="ranking-empty">Belum ada berita terbaru.</div>';
-    dots.innerHTML='';
-    return;
-  }
-  const visible=Math.min(3,total);
-  const items=[];
-  const used=new Set();
-  for(let i=0;i<total && items.length<visible;i++){
-    const n=DASHBOARD_NEWS[(currentNewsIndex+i)%total];
-    const key=newsCanonicalTitle(n.title);
+  if(!total){grid.innerHTML='<div class="ranking-empty">Belum ada berita terbaru.</div>';dots.innerHTML='';return;}
+  const visible=Math.min(3,total),items=[],used=new Set();
+  for(let i=0;i<total&&items.length<visible;i++){
+    const n=DASHBOARD_NEWS[(currentNewsIndex+i)%total],key=newsCanonicalTitle(n.title);
     if(used.has(key))continue;
     used.add(key);items.push(n);
   }
-  grid.innerHTML=items.map((n,i)=>`
-    <a class="news-card ${i===0?'is-feature':''}" href="${n.url}" target="_blank" rel="noopener noreferrer">
-      <div class="news-image" style="background-image:url('${n.image}')">
+  grid.innerHTML=items.map((n,i)=>{
+    const bg=n.image
+      ? `background-image:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,30,20,.42)),url("${n.image}")`
+      : `background-image:${newsFallbackVisual(n.imageFallback||'sustainability',i)}`;
+    const cls=n.image?'news-image has-article-image':'news-image no-article-image';
+    return `<a class="news-card ${i===0?'is-feature':''}" href="${n.url}" target="_blank" rel="noopener noreferrer">
+      <div class="${cls}" style="${bg}">
+        <span class="news-image-note">${n.image?'FOTO ARTIKEL':'VISUAL KATEGORI'}</span>
         <span class="news-category">${esc(n.category)}</span>
         <span class="news-read">Baca ↗</span>
       </div>
@@ -5532,7 +5631,8 @@ function renderFreshNews(){
         <h4>${esc(n.title)}</h4>
         <p>${esc(n.desc)}</p>
       </div>
-    </a>`).join('');
+    </a>`;
+  }).join('');
   dots.innerHTML=DASHBOARD_NEWS.map((_,i)=>`<button type="button" class="news-dot-btn ${i===currentNewsIndex?'active':''}" onclick="setNewsIndex(${i})" aria-label="Berita ${i+1}"></button>`).join('');
 }
 function setNewsIndex(index){
@@ -5647,7 +5747,7 @@ function updateContribLabel() {
 function renderContribUI() {
   const contribs = state.contributions || []; let totalOffset = 0;
   contribs.forEach(c => { totalOffset += (num(c.value) * (CONTRIB_FACTORS[c.type] || 1)); });
-  $('offsetTotal').textContent = fmt(totalOffset); $('offsetTreeEq').textContent = fmt(totalOffset / FACTORS.treeKgPerYear);
+  if($('offsetTotal')) $('offsetTotal').textContent = fmt(totalOffset); if($('offsetTreeEq')) $('offsetTreeEq').textContent = fmt(totalOffset / FACTORS.treeKgPerYear); if($('impactHeroOffset')) $('impactHeroOffset').textContent = fmt(totalOffset); if($('impactHeroTrees')) $('impactHeroTrees').textContent = fmt(totalOffset / FACTORS.treeKgPerYear);
   const rows = [...contribs].sort((a, b) => b.date.localeCompare(a.date));
   const typeNames = { tree: 'Penanaman Pohon', renewable: 'Energi Bersih', transport: 'Transportasi Rendah Emisi', waste: 'Daur Ulang Tersetifikasi', custom: 'Aksi Berkelanjutan Lain' };
   $('contribHistoryBox').innerHTML = rows.length ? 
