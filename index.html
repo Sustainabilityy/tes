@@ -1691,9 +1691,10 @@ body:before{opacity:.35}
 </style>
 
 
-<style id="single-name-cleanup">
-.sidebar-user-info b{display:none!important}
-.sidebar-user-info span{margin-top:0!important}
+<style id="single-name-cleanup-v2">
+/* Sidebar identity: tampilkan nama pengguna, departemen hanya sebagai metadata */
+.sidebar-user-info b{display:block!important;font-size:13.5px!important;color:var(--esg-dark)!important;font-weight:900!important;line-height:1.25!important}
+.sidebar-user-info span{display:block!important;margin-top:3px!important;font-size:9.5px!important;color:#789087!important;text-transform:none!important;letter-spacing:.2px!important}
 </style>
 
 
@@ -2553,6 +2554,22 @@ html,body{overflow-x:hidden!important}
 }
 </style>
 
+
+<style id="ranking-podium-spacing-fix">
+.ranking-podium-card{padding-right:112px!important;min-width:0!important}
+.ranking-podium-card strong,.ranking-podium-card span,.ranking-podium-card b{min-width:0;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ranking-podium-card em{right:12px;top:12px;max-width:92px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ranking-podium-card .podium-medal{z-index:1}
+@media(max-width:900px){.ranking-podium-card{padding-right:105px!important}}
+</style>
+
+<style id="contrib-clean-v2">
+#contrib .impact-action-hero{min-height:205px!important;margin-top:0!important;margin-bottom:14px!important;padding:25px 28px!important;border-radius:22px!important}
+#contrib .impact-action-copy h2{font-size:clamp(24px,2.7vw,34px)!important}
+#contrib .impact-action-copy p{max-width:600px!important}
+#contrib .impact-action-total{top:24px!important;right:24px!important}
+@media(max-width:900px){#contrib .impact-action-hero{min-height:200px!important;padding:22px 20px!important}#contrib .impact-action-total{position:relative;top:auto;right:auto;margin-top:16px;width:max-content}}
+</style>
 </head>  
 <body>  
 
@@ -3324,12 +3341,6 @@ html,body{overflow-x:hidden!important}
         </div>  
       </div>  
         
-      <div class="card" style="background: var(--esg-dark); color: white; border: none; text-align: center; padding: 32px 24px; margin-bottom: 24px;">  
-        <div style="font-size: 13.5px; color: #a7f3d0; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">Total Pengurangan Karbon (Offset)</div>  
-        <div style="font-size: 44px; font-weight: 900; margin: 12px 0; letter-spacing: -1px;"><span id="offsetTotal">0.00</span> <small style="font-size: 20px; font-weight: 700;">kgCO₂e</small></div>  
-        <div style="font-size: 15px; font-weight: 500;">Setara penyerapan hingga <strong style="color: #34d399;"><span id="offsetTreeEq">0.00</span> pohon</strong>/tahun</div>  
-      </div>  
-
 
       <div class="impact-action-hero">
         <div class="impact-action-copy">
@@ -3988,8 +3999,8 @@ function renderLeaderboardUI() {
     const rankIcon = rank === 1 ? '🥇' : rank === 2 ? '🥈' : rank === 3 ? '🥉' : `#${rank}`;
     
     let badgeHtml = '<span class="rank-badge normal">Peserta</span>';
-    if (rank === 1 && sortMode === 'lowest') badgeHtml = '<span class="rank-badge top">🥇 Terhemat</span>';
-    else if (rank === 1 && sortMode === 'highest') badgeHtml = '<span class="rank-badge third">🔥 Tertinggi</span>';
+    if (rank === 1 && sortMode === 'lowest') badgeHtml = '<span class="rank-badge top">🥇 Paling Hemat</span>';
+    else if (rank === 1 && sortMode === 'highest') badgeHtml = '<span class="rank-badge third">🔥 Paling Boros</span>';
     else if (rank === 2) badgeHtml = '<span class="rank-badge runner">🥈 Posisi 2</span>';
     else if (rank === 3) badgeHtml = '<span class="rank-badge third">🥉 Posisi 3</span>';
 
@@ -4859,7 +4870,7 @@ function renderRankingDataView() {
         <strong>${esc(u.name||'Anonim')}</strong>
         <span>${esc(u.dept||'Lainnya')}</span>
         <b>${fmt(u.total)} <small>kgCO₂e</small></b>
-        <em>${i===0?'Paling hemat':i===1?'Posisi 2':'Posisi 3'}</em>
+        <em>${i===0 ? (isLowest ? '🥇 Paling Hemat' : isHighest ? '🔥 Paling Boros' : '🥇 Peringkat 1') : i===1 ? '🥈 Posisi 2' : '🥉 Posisi 3'}</em>
       </div>`;
     }).join('') : '<div class="ranking-empty">Belum ada data ranking.</div>';
   }
@@ -4872,10 +4883,10 @@ function renderRankingDataView() {
       let rankBg = '#f1f5f9', rankColor = '#64748b', rankIcon = `#${rank}`;
       
       if (rank === 1 && isLowest) { 
-          badge = '<span class="badge-status top">🥇 Terhemat</span>'; 
+          badge = '<span class="badge-status top">🥇 Paling Hemat</span>'; 
           rankBg = '#059669'; rankColor = 'white'; rankIcon = rank; 
       } else if (rank === 1 && isHighest) {
-          badge = '<span class="badge-status third">🔥 Tertinggi</span>';
+          badge = '<span class="badge-status third">🔥 Paling Boros</span>';
           rankBg = '#9a3412'; rankColor = 'white'; rankIcon = rank; 
       } else if (rank === 2) { 
           badge = '<span class="badge-status runner">🥈 Posisi 2</span>'; 
@@ -5328,7 +5339,7 @@ function updateContribLabel() {
 function renderContribUI() {
   const contribs = state.contributions || []; let totalOffset = 0;
   contribs.forEach(c => { totalOffset += (num(c.value) * (CONTRIB_FACTORS[c.type] || 1)); });
-  $('offsetTotal').textContent = fmt(totalOffset); $('offsetTreeEq').textContent = fmt(totalOffset / FACTORS.treeKgPerYear);
+  if($('impactHeroOffset')) $('impactHeroOffset').textContent = fmt(totalOffset); if($('offsetTreeEq')) $('offsetTreeEq').textContent = fmt(totalOffset / FACTORS.treeKgPerYear);
   const rows = [...contribs].sort((a, b) => b.date.localeCompare(a.date));
   const typeNames = { tree: 'Penanaman Pohon', renewable: 'Energi Bersih', transport: 'Transportasi Rendah Emisi', waste: 'Daur Ulang Tersetifikasi', custom: 'Aksi Berkelanjutan Lain' };
   $('contribHistoryBox').innerHTML = rows.length ? 
@@ -5550,7 +5561,7 @@ function loadProfile() {
 
 function updateAvatarsUI() {
   const p = state.profile, photo = p.photo;
-  $('sbName').textContent = p.userName ? p.userName : ''; $('sbRole').textContent = p.department ? p.department : '';
+  $('sbName').textContent = p.userName ? p.userName : 'Nama Pengguna'; $('sbRole').textContent = p.department ? p.department : 'Departemen';
   if(photo) {
     $('profAvatarImg').src = $('sbAvatarImg').src = $('moAvatarImg').src = photo;
     $('profAvatarImg').style.display = $('sbAvatarImg').style.display = $('moAvatarImg').style.display = 'block';
@@ -5659,8 +5670,8 @@ function bind() {
     if(confirm('Logout dan putuskan jembatan data lokal?')) { localStorage.removeItem(BASE_KEY); localStorage.removeItem(SESSION_AUTH_KEY); location.reload(); }
   };
 
-  $('userName').addEventListener('input', function() { const val = this.value.trim(); $('sbName').textContent = val ? val : ''; $('dashName').textContent = val ? val : ''; });
-  $('department').addEventListener('input', function() { const val = this.value.trim(); $('sbRole').textContent = val ? val : ''; });
+  $('userName').addEventListener('input', function() { const val = this.value.trim(); $('sbName').textContent = val ? val : 'Nama Pengguna'; $('dashName').textContent = val ? val : 'Ivo Audio'; });
+  $('department').addEventListener('input', function() { const val = this.value.trim(); $('sbRole').textContent = val ? val : 'Departemen'; });
   $('refreshLeaderboardBtn').onclick = fetchLeaderboard;
   setupSwipeListener();
 }  
@@ -5866,9 +5877,8 @@ document.addEventListener('DOMContentLoaded', init);
     document.querySelectorAll('.impact-action-card').forEach(card=>{
       card.classList.toggle('active',card.getAttribute('data-contrib-action')===select.value);
     });
-    const total=document.getElementById('offsetTotal');
     const hero=document.getElementById('impactHeroOffset');
-    if(total && hero) hero.textContent=total.textContent || '0.00';
+    if(hero && !hero.textContent.trim()) hero.textContent='0.00';
   }
 
   document.addEventListener('DOMContentLoaded',function(){
