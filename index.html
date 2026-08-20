@@ -1266,6 +1266,168 @@ body{
 }
 </style>
 
+
+<style id="final-layout-cleanup">
+/* ===== FINAL LAYOUT CLEANUP ===== */
+html,body{overflow-x:hidden!important}
+.main{min-width:0!important;overflow-x:hidden!important}
+.page{width:100%!important;max-width:1540px!important;margin:0 auto!important;overflow:visible!important}
+
+/* Header/hero spacing */
+.premium-hero{margin-bottom:18px!important}
+.sustainability-showcase{margin-top:0!important}
+.sustainability-showcase .nature-banner{margin:0!important}
+.sustainability-news-head{clear:both!important}
+
+/* Never allow showcase elements to collide */
+.sustainability-showcase *{min-width:0}
+.nature-banner{display:block!important;position:relative!important}
+.nature-banner-content{position:relative!important;z-index:5!important}
+.nature-stat{z-index:6!important}
+.sustainability-news-head{position:relative!important;z-index:2!important}
+.news-grid{position:relative!important;z-index:1!important}
+
+/* Consistent section rhythm */
+.sustainability-showcase + .grid-kpi,
+.premium-hero + .sustainability-showcase,
+.sustainability-showcase + .card{margin-top:0!important}
+.sustainability-showcase .news-grid + *{margin-top:20px}
+
+/* Desktop */
+@media(min-width:1101px){
+  .sustainability-showcase .nature-banner{
+    min-height:330px!important;
+  }
+  .sustainability-showcase .news-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    align-items:stretch!important;
+  }
+  .sustainability-showcase .news-feature{
+    grid-column:span 2!important;
+    grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)!important;
+  }
+}
+
+/* Tablet */
+@media(min-width:761px) and (max-width:1100px){
+  .page{padding-left:22px!important;padding-right:22px!important}
+  .sustainability-showcase .nature-banner{min-height:315px!important}
+  .sustainability-showcase .news-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+  .sustainability-showcase .news-feature{
+    grid-column:1/-1!important;
+    display:grid!important;
+    grid-template-columns:1fr 1fr!important;
+  }
+}
+
+/* Mobile: remove all possible overlaps */
+@media(max-width:760px){
+  .page{padding:14px 12px 95px!important}
+  .premium-hero{margin-bottom:14px!important}
+  .sustainability-showcase{margin-bottom:18px!important}
+  .sustainability-showcase .nature-banner{
+    min-height:360px!important;
+    overflow:hidden!important;
+    border-radius:20px!important;
+  }
+  .sustainability-showcase .nature-banner-content{
+    padding:21px 18px!important;
+    max-width:100%!important;
+  }
+  .sustainability-showcase .nature-banner h2{
+    margin-top:12px!important;
+    font-size:29px!important;
+    max-width:280px!important;
+  }
+  .sustainability-showcase .nature-banner p{
+    max-width:285px!important;
+  }
+  .sustainability-showcase .nature-actions{
+    max-width:285px!important;
+  }
+  .sustainability-showcase .nature-stat{
+    left:18px!important;
+    right:auto!important;
+    bottom:17px!important;
+    width:145px!important;
+  }
+  .sustainability-showcase .sustainability-news-head{
+    margin:20px 1px 12px!important;
+    display:flex!important;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    gap:9px!important;
+  }
+  .sustainability-showcase .news-all-link{
+    align-self:flex-start!important;
+  }
+  .sustainability-showcase .news-grid{
+    display:grid!important;
+    grid-template-columns:1fr!important;
+    gap:11px!important;
+  }
+  .sustainability-showcase .news-card,
+  .sustainability-showcase .news-feature{
+    grid-column:auto!important;
+    display:block!important;
+    width:100%!important;
+  }
+  .sustainability-showcase .news-image,
+  .sustainability-showcase .news-feature .news-image{
+    width:100%!important;
+    min-height:165px!important;
+    height:165px!important;
+  }
+  .sustainability-showcase .news-body,
+  .sustainability-showcase .news-feature .news-body{
+    width:100%!important;
+    padding:14px!important;
+  }
+  .sustainability-showcase .news-feature .news-body h4{
+    font-size:15px!important;
+  }
+  .sustainability-showcase .news-body h4{
+    font-size:13px!important;
+  }
+
+  /* Existing dashboard content after the news hub */
+  .sustainability-showcase ~ .grid-kpi{
+    margin-top:14px!important;
+  }
+  .sustainability-showcase ~ .grid-kpi,
+  .sustainability-showcase ~ .visual-section,
+  .sustainability-showcase ~ .card{
+    position:relative!important;
+    clear:both!important;
+  }
+
+  /* Prevent fixed/absolute children from affecting normal flow */
+  .hero-floating{display:none!important}
+}
+
+/* Tiny phones */
+@media(max-width:390px){
+  .page{padding-left:9px!important;padding-right:9px!important}
+  .sustainability-showcase .nature-banner{min-height:375px!important}
+  .sustainability-showcase .nature-banner h2{font-size:27px!important}
+  .sustainability-showcase .nature-stat{left:15px!important;bottom:14px!important}
+}
+
+/* Reduce accidental transforms that can cause visual clipping */
+@media(max-width:760px){
+  .news-card:hover,.card:hover,.kpi-box:hover,.input-item:hover{
+    transform:none!important;
+  }
+}
+
+/* Clean scrollbar */
+.news-grid,.rank-table-wrapper,.table-wrap{
+  scrollbar-width:thin;
+}
+</style>
+
 </head>  
 <body>  
 
