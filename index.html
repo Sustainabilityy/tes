@@ -1630,6 +1630,471 @@ body:before{opacity:.35}
 }
 </style>
 
+
+<style id="single-name-cleanup">
+.sidebar-user-info b{display:none!important}
+.sidebar-user-info span{margin-top:0!important}
+</style>
+
+
+<style id="jejakkarbonku-final-ui">
+/* =========================================================
+   JEJAKKARBONKU — FINAL PRODUCT UI
+   One visual language across Dashboard / Calculator / Team /
+   Ranking / Contribution / Chat / Profile
+   ========================================================= */
+
+:root{
+  --p-bg:#f3f8f5;
+  --p-card:#ffffff;
+  --p-ink:#08251d;
+  --p-muted:#6b7f77;
+  --p-line:rgba(7,76,53,.09);
+  --p-green:#087f5b;
+  --p-green-2:#18b981;
+  --p-green-3:#54ddb0;
+  --p-mint:#e7f8f0;
+  --p-dark:#033c2c;
+  --p-shadow:0 12px 34px rgba(4,68,49,.075);
+  --p-shadow-hover:0 18px 44px rgba(4,68,49,.12);
+}
+
+body{
+  background:
+    radial-gradient(circle at 86% 0%,rgba(24,185,129,.10),transparent 24rem),
+    radial-gradient(circle at 4% 45%,rgba(52,211,153,.06),transparent 23rem),
+    var(--p-bg)!important;
+}
+.main{background:transparent!important}
+.page{
+  max-width:1560px!important;
+  margin:0 auto!important;
+  padding:28px clamp(16px,3vw,42px)!important;
+}
+
+/* ---------- GLOBAL PAGE HEADER ---------- */
+.page>.topline{
+  position:relative;
+  padding:0 0 18px!important;
+  margin:0 0 18px!important;
+  border:0!important;
+}
+.page>.topline:after{
+  content:"";
+  position:absolute;left:0;bottom:0;
+  width:52px;height:3px;border-radius:99px;
+  background:linear-gradient(90deg,var(--p-green),var(--p-green-3));
+}
+.page>.topline h1{
+  color:var(--p-ink)!important;
+  font-size:clamp(25px,2.5vw,34px)!important;
+  line-height:1.08!important;
+  letter-spacing:-1.3px!important;
+  margin:0 0 6px!important;
+}
+.page>.topline p{
+  color:var(--p-muted)!important;
+  font-size:13px!important;
+  line-height:1.55!important;
+}
+
+/* ---------- ALL CARDS ---------- */
+.page .card,
+.page .team-card-white,
+.page .rank-table-wrapper{
+  background:rgba(255,255,255,.94)!important;
+  border:1px solid var(--p-line)!important;
+  border-radius:20px!important;
+  box-shadow:var(--p-shadow)!important;
+}
+.page .card{
+  padding:22px!important;
+}
+.page .card:hover,
+.page .team-card-white:hover,
+.page .rank-table-wrapper:hover{
+  box-shadow:var(--p-shadow-hover)!important;
+}
+.page .card h3{
+  color:var(--p-ink)!important;
+  font-size:16px!important;
+  letter-spacing:-.3px;
+}
+.page .card h3:before{
+  content:"";
+  width:6px;height:6px;border-radius:50%;
+  background:var(--p-green-2);
+  box-shadow:0 0 0 4px rgba(24,185,129,.10);
+}
+
+/* ---------- DASHBOARD HERO ---------- */
+.dashboard-hero-wrap{margin-bottom:18px!important}
+.dashboard-hero-wrap .nature-banner{
+  min-height:290px!important;
+  border-radius:25px!important;
+  background:
+    linear-gradient(100deg,rgba(1,47,35,.96),rgba(2,88,63,.78) 48%,rgba(2,60,44,.22)),
+    url("https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1900&q=88") center/cover!important;
+  box-shadow:0 22px 52px rgba(2,71,51,.18)!important;
+}
+.dashboard-hero-wrap .nature-banner-content{
+  padding:30px 34px!important;
+  max-width:760px!important;
+}
+.dashboard-hero-wrap .nature-banner h2{
+  font-size:clamp(31px,3.8vw,48px)!important;
+  letter-spacing:-2px!important;
+  margin:13px 0 9px!important;
+}
+.dashboard-hero-wrap .nature-banner p{
+  max-width:620px!important;
+  font-size:12.5px!important;
+}
+.dashboard-hero-wrap .nature-stat{
+  width:215px!important;
+  right:25px!important;
+  bottom:23px!important;
+}
+.dashboard-hero-wrap .nature-btn{
+  padding:10px 14px!important;
+  border-radius:11px!important;
+}
+.dashboard-hero-wrap .nature-btn.primary{
+  background:#ecfff8!important;
+  color:#075c44!important;
+}
+.dashboard-hero-wrap .nature-btn.ghost{
+  background:rgba(255,255,255,.10)!important;
+}
+
+/* ---------- KPI ---------- */
+#dashboard .grid-kpi{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:14px!important;
+  margin-bottom:18px!important;
+}
+#dashboard .kpi-main{
+  min-height:165px!important;
+  border-radius:20px!important;
+  padding:21px!important;
+  box-shadow:0 16px 36px rgba(4,90,64,.14)!important;
+}
+#dashboard .kpi-main .val{font-size:35px!important}
+#dashboard .kpi-box{
+  min-height:110px;
+  border-radius:18px!important;
+}
+#dashboard .grid-kpi + .quick-access-section{margin-top:4px}
+
+/* ---------- QUICK ACTIONS ---------- */
+.quick-access-section{
+  margin:0 0 18px!important;
+}
+.section-heading-row{
+  display:flex;justify-content:space-between;align-items:end;
+  margin-bottom:11px!important;
+}
+.section-heading-row h3{
+  margin:7px 0 3px!important;
+  font-size:20px!important;
+  color:var(--p-ink)!important;
+  letter-spacing:-.7px!important;
+}
+.section-heading-row p{
+  margin:0!important;
+  color:var(--p-muted)!important;
+  font-size:10.5px!important;
+}
+.quick-access-grid{
+  display:grid!important;
+  grid-template-columns:repeat(5,minmax(0,1fr))!important;
+  gap:11px!important;
+}
+.quick-card{
+  min-height:105px!important;
+  padding:15px!important;
+  border:1px solid var(--p-line)!important;
+  border-radius:17px!important;
+  background:rgba(255,255,255,.95)!important;
+  box-shadow:0 7px 24px rgba(4,68,49,.055)!important;
+  display:grid!important;
+  grid-template-columns:auto 1fr auto!important;
+  align-items:center!important;
+  gap:10px!important;
+  text-align:left!important;
+  color:var(--p-ink)!important;
+  position:relative!important;
+  overflow:hidden!important;
+}
+.quick-card:before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(var(--p-green),var(--p-green-3));
+  opacity:0;transition:.2s;
+}
+.quick-card:hover{
+  transform:translateY(-4px)!important;
+  border-color:rgba(8,127,91,.18)!important;
+  box-shadow:var(--p-shadow-hover)!important;
+}
+.quick-card:hover:before{opacity:1}
+.quick-icon{
+  width:43px!important;height:43px!important;
+  border-radius:13px!important;
+  display:grid!important;place-items:center!important;
+  background:linear-gradient(135deg,#eafaf3,#d9f5e9)!important;
+  font-size:21px!important;
+}
+.quick-card b{display:block;font-size:11.5px!important;font-weight:900}
+.quick-card small{display:block;margin-top:4px;font-size:8.5px!important;color:var(--p-muted)!important;line-height:1.35}
+.quick-card i{
+  font-style:normal!important;
+  width:25px;height:25px;border-radius:50%;
+  display:grid;place-items:center;
+  background:#e8f8f0;color:var(--p-green);
+  font-weight:900;
+}
+
+/* ---------- ANALYSIS / FILTER CARDS ---------- */
+#dashboard select,#dashboard input[type="date"],
+.page select,.page input,.page textarea{
+  border-radius:10px!important;
+}
+#dashboard .card[style*="grid-template"]{
+  box-shadow:none!important;
+}
+#dashboard #globalFilterInputsContainer{
+  background:#f6faf8!important;
+  border:1px solid var(--p-line)!important;
+  padding:12px!important;
+  border-radius:13px!important;
+}
+
+/* ---------- TEAM DASHBOARD ---------- */
+#team_dashboard .team-grid-top{
+  grid-template-columns:minmax(0,2fr) minmax(210px,1fr) minmax(210px,1fr)!important;
+  gap:14px!important;
+}
+#team_dashboard .team-grid-mid{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:14px!important;
+}
+#team_dashboard .team-card-green{
+  border-radius:20px!important;
+  background:
+    linear-gradient(135deg,rgba(2,72,52,.96),rgba(8,151,104,.90)),
+    url("https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1100&q=80") center/cover!important;
+  box-shadow:0 18px 38px rgba(4,100,70,.17)!important;
+}
+#team_dashboard .team-card-white{
+  padding:21px!important;
+}
+#team_dashboard .team-card-white h3{
+  font-size:15px!important;
+}
+#team_dashboard canvas{max-width:100%!important}
+
+/* ---------- RANKING ---------- */
+#ranking_data .rank-tabs{gap:7px!important}
+#ranking_data .rank-tab{
+  border-radius:11px!important;
+  background:#f6faf8!important;
+  border-color:var(--p-line)!important;
+}
+#ranking_data .rank-tab.active{
+  background:linear-gradient(135deg,#e8faf3,#d8f5e8)!important;
+  color:#086b4e!important;
+  border-color:#9be7c7!important;
+}
+#ranking_data .rank-table-wrapper{
+  padding:0!important;
+  overflow:hidden!important;
+}
+#ranking_data .rank-table{
+  border-collapse:separate!important;
+  border-spacing:0!important;
+}
+#ranking_data .rank-table th{
+  background:#f5faf7!important;
+  color:#668078!important;
+  padding:13px 15px!important;
+}
+#ranking_data .rank-table td{
+  padding:14px 15px!important;
+}
+#ranking_data .rank-table tbody tr:hover{
+  background:#f5fbf8!important;
+}
+
+/* ---------- EMISSION CALCULATOR ---------- */
+#input .input-shortcut-tabs{
+  position:sticky!important;
+  top:0!important;
+  z-index:25!important;
+  background:rgba(243,248,245,.92)!important;
+  backdrop-filter:blur(10px)!important;
+  padding:8px 0!important;
+  margin:0 0 10px!important;
+}
+#input .shortcut-btn{
+  border-radius:12px!important;
+  background:white!important;
+  border:1px solid var(--p-line)!important;
+  box-shadow:0 4px 14px rgba(4,68,49,.04)!important;
+}
+#input .shortcut-btn.active{
+  background:linear-gradient(135deg,#087f5b,#18b981)!important;
+  border-color:transparent!important;
+  color:#fff!important;
+}
+#input .input-container-swipe{gap:14px!important}
+#input .input-swipe-pane{
+  min-width:0!important;
+}
+#input .input-item{
+  border-radius:17px!important;
+  background:linear-gradient(180deg,#fff,#fbfefc)!important;
+}
+#input .input-header .ico-box{
+  width:40px!important;height:40px!important;border-radius:12px!important;
+}
+#input .actions-row{
+  gap:10px!important;
+}
+#input .actions-row .btn{
+  min-height:46px!important;
+}
+
+/* ---------- CONTRIBUTION ---------- */
+#contrib .card:first-of-type{
+  background:
+    linear-gradient(135deg,#022c22,#076a4d)!important;
+  color:white!important;
+  box-shadow:0 18px 40px rgba(2,76,54,.20)!important;
+}
+#contrib .card:first-of-type h3,
+#contrib .card:first-of-type div{
+  color:inherit;
+}
+#contrib .input-field input,#contrib .input-field select{
+  background:#f7fbf9!important;
+}
+#contrib .card{
+  overflow:hidden;
+}
+
+/* ---------- CHAT ---------- */
+#chat .chat-layout{
+  border-radius:20px!important;
+  border:1px solid var(--p-line)!important;
+  box-shadow:var(--p-shadow)!important;
+}
+#chat .chat-sidebar{
+  background:#f7fbf9!important;
+}
+#chat .chat-room-item{
+  border-color:var(--p-line)!important;
+  border-radius:13px!important;
+}
+#chat .chat-room-item.active{
+  background:linear-gradient(135deg,#087f5b,#18b981)!important;
+}
+#chat .chat-main-pane{
+  background:#eef7f2!important;
+}
+#chat .chat-input-bar{
+  background:#f8fcfa!important;
+}
+
+/* ---------- PROFILE ---------- */
+#profile .card{
+  position:relative;
+  overflow:hidden;
+}
+#profile .card:first-of-type:before{
+  content:"";
+  position:absolute;right:-60px;top:-80px;
+  width:220px;height:220px;border-radius:50%;
+  background:radial-gradient(circle,rgba(24,185,129,.14),transparent 65%);
+  pointer-events:none;
+}
+#profile .photo-uploader{
+  background:linear-gradient(135deg,#f5fcf9,#eef9f4);
+  border:1px solid var(--p-line)!important;
+  border-radius:17px;
+  padding:18px!important;
+}
+
+/* ---------- BUTTONS ---------- */
+.page .btn{
+  min-height:43px;
+  border-radius:11px!important;
+  font-weight:800!important;
+}
+.page .btn.primary{
+  background:linear-gradient(135deg,#087f5b,#18b981)!important;
+  box-shadow:0 9px 20px rgba(8,127,91,.16)!important;
+}
+.page .btn.primary:hover{transform:translateY(-2px)!important}
+.page .btn.outline{
+  background:#fff!important;
+  border-color:var(--p-line)!important;
+}
+.page .btn.outline:hover{
+  color:var(--p-green)!important;
+  border-color:#8edcbd!important;
+  background:#f4fbf7!important;
+}
+
+/* Make all actionable cards obviously clickable */
+button,.quick-card,.lb-item,.chat-room-item,.rank-tab,.news-card{
+  -webkit-user-select:none;
+}
+.quick-card,.lb-item,.chat-room-item{
+  cursor:pointer!important;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:1180px){
+  #dashboard .grid-kpi{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .quick-access-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  #team_dashboard .team-grid-top{grid-template-columns:1fr 1fr!important}
+  #team_dashboard .team-grid-top .team-card-green{grid-column:1/-1}
+}
+@media(max-width:900px){
+  .page{padding:20px 15px 92px!important}
+  #dashboard .grid-kpi{grid-template-columns:1fr!important}
+  .quick-access-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  #team_dashboard .team-grid-top,
+  #team_dashboard .team-grid-mid{grid-template-columns:1fr!important}
+  #team_dashboard .team-grid-top .team-card-green{grid-column:auto}
+  #input .input-container-swipe{display:flex!important;overflow-x:auto!important}
+}
+@media(max-width:600px){
+  .page{padding:16px 12px 94px!important}
+  .page>.topline h1{font-size:24px!important}
+  .dashboard-hero-wrap .nature-banner{
+    min-height:330px!important;
+  }
+  .dashboard-hero-wrap .nature-banner-content{
+    padding:22px 18px!important;
+  }
+  .dashboard-hero-wrap .nature-banner h2{
+    font-size:29px!important;
+  }
+  .dashboard-hero-wrap .nature-stat{
+    left:18px!important;right:auto!important;bottom:16px!important;
+    width:150px!important;
+  }
+  .quick-access-grid{grid-template-columns:1fr!important}
+  .quick-card{min-height:88px!important}
+  .page .card{padding:17px!important}
+  #input .input-row{grid-template-columns:1fr!important}
+  #input .actions-row{grid-template-columns:1fr!important;display:grid!important}
+  #ranking_data .rank-table-wrapper{overflow-x:auto!important}
+  #ranking_data .rank-table{min-width:760px!important}
+}
+</style>
+
 </head>  
 <body>  
 
@@ -2005,13 +2470,13 @@ body:before{opacity:.35}
           <button class="quick-card" type="button" onclick="document.querySelector('[data-page="input"]')?.click()">
             <span class="quick-icon">⚡</span><span><b>Kalkulator Emisi</b><small>Hitung dampak aktivitas harian</small></span><i>→</i>
           </button>
-          <button class="quick-card" type="button" onclick="document.querySelector('[data-page="team_dashboard"]')?.click()">
+          <button class="quick-card" type="button" data-target="team_dashboard" onclick="document.querySelector('[data-page="team_dashboard"]')?.click()">
             <span class="quick-icon">👥</span><span><b>Team Dashboard</b><small>Pantau performa tim</small></span><i>→</i>
           </button>
-          <button class="quick-card" type="button" onclick="document.querySelector('[data-page="ranking_data"]')?.click()">
+          <button class="quick-card" type="button" data-target="ranking_data" onclick="document.querySelector('[data-page="ranking_data"]')?.click()">
             <span class="quick-icon">🏆</span><span><b>Ranking Data</b><small>Lihat peringkat & performa</small></span><i>→</i>
           </button>
-          <button class="quick-card" type="button" onclick="document.querySelector('[data-page="contrib"]')?.click()">
+          <button class="quick-card" type="button" data-target="contrib" onclick="document.querySelector('[data-page="contrib"]')?.click()">
             <span class="quick-icon">🌱</span><span><b>Aksi Kontribusi</b><small>Catat aksi untuk bumi</small></span><i>→</i>
           </button>
         </div>
@@ -2110,27 +2575,6 @@ body:before{opacity:.35}
         </div>  
       </div>  
 
-
-      <div class="visual-section">
-        <div class="visual-card">
-          <span class="section-kicker" style="background:rgba(255,255,255,.12);color:#b7f7df;">Impact Snapshot</span>
-          <h3 style="margin-top:14px;">Dari data menjadi kebiasaan.</h3>
-          <p>Gunakan insight aktivitas untuk melihat area dengan dampak terbesar, lalu ubah menjadi keputusan sederhana yang bisa dilakukan setiap hari.</p>
-          <div class="visual-mini-grid">
-            <div class="visual-mini"><b>⚡</b><span>Gunakan energi lebih bijak</span></div>
-            <div class="visual-mini"><b>🚲</b><span>Pilih mobilitas rendah emisi</span></div>
-            <div class="visual-mini"><b>♻️</b><span>Kurangi dan pilah sampah</span></div>
-            <div class="visual-mini"><b>🌱</b><span>Tambah aksi kontribusi</span></div>
-          </div>
-          <div class="visual-orb"></div>
-        </div>
-        <div class="image-card">
-          <div class="image-card-content">
-            <span>Green mindset</span>
-            <h3>Small actions.<br>Real impact.</h3>
-          </div>
-        </div>
-      </div>
 
       <div class="card" style="margin-top: 24px;">  
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">  
@@ -4673,5 +5117,20 @@ document.addEventListener('DOMContentLoaded', init);
   setInterval(syncSustainabilityPulse,1500);
 })();
 </script>
+
+<script id="jejak-final-behavior">
+(function(){
+  function go(page){
+    const btn=document.querySelector('[data-page="'+page+'"]');
+    if(btn) btn.click();
+  }
+  document.addEventListener('click',function(e){
+    const quick=e.target.closest('.quick-card[data-target]');
+    if(quick){ e.preventDefault(); go(quick.dataset.target); }
+  });
+  window.jejakGo=go;
+})();
+</script>
+
 </body>  
 </html>
