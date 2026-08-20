@@ -1,0 +1,8 @@
+{
+  "name": "JejakKarbonKu GGF",
+  "description": "Platform Profesional Pengelolaan Jejak Karbon, Emisi & Keberlanjutan GGF",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
