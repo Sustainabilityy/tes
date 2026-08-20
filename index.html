@@ -4,7 +4,7 @@
 <meta charset="utf-8" />  
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, user-scalable=yes" />  
 <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />  
-<title>JejakKarbonKu GGF - Professional Dashboard V13</title>
+<title>JejakKarbonKu GGF - Professional Dashboard V15</title>
 
 <!-- PWA & Mobile Install Support (Android, iPhone, Desktop) -->
 <link rel="manifest" href="/manifest.json" />
@@ -2977,6 +2977,140 @@ html,body{overflow-x:hidden!important}
 @media(prefers-reduced-motion:reduce){#dashboard .nature-banner::before,.team-hero-bg,#dashboard .nature-banner::after{animation:none!important}}
 </style>
 
+
+<style id="hero-layout-v15-fix">
+/* =========================================================
+   V15 — HERO LAYOUT FIX + SUSTAINABILITY VISUAL STRIP
+   ========================================================= */
+#dashboard .dashboard-hero-wrap{margin:0 0 18px!important}
+#dashboard .nature-banner{
+  position:relative!important;
+  min-height:235px!important;
+  height:235px!important;
+  border-radius:24px!important;
+  overflow:hidden!important;
+  isolation:isolate!important;
+  box-shadow:0 20px 46px rgba(3,70,50,.16)!important;
+}
+#dashboard .nature-banner-overlay{position:absolute!important;inset:0!important;z-index:0!important}
+#dashboard .nature-banner-content{
+  position:relative!important;
+  z-index:4!important;
+  padding:58px 34px 28px!important;
+  max-width:720px!important;
+}
+#dashboard .hero-top-meta{
+  position:absolute!important;
+  right:22px!important;
+  left:auto!important;
+  top:18px!important;
+  z-index:8!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-end!important;
+  gap:8px!important;
+  width:auto!important;
+  margin:0!important;
+}
+#dashboard .hero-top-meta>*{flex:0 0 auto!important}
+#dashboard .hero-user-name{display:block!important}
+#dashboard .nature-welcome{font-size:10px!important;margin-bottom:8px!important;letter-spacing:.1px}
+#dashboard .nature-banner h2{
+  font-size:clamp(34px,3.5vw,48px)!important;
+  line-height:1.03!important;
+  margin:0 0 9px!important;
+  letter-spacing:-1.8px!important;
+}
+#dashboard .nature-banner p{max-width:610px!important;font-size:12.5px!important;line-height:1.55!important;margin:0!important}
+#dashboard .nature-actions{display:flex!important;gap:9px!important;flex-wrap:wrap!important;margin-top:17px!important}
+#dashboard .nature-btn{white-space:nowrap!important}
+#dashboard .nature-stat{
+  right:28px!important;bottom:22px!important;width:190px!important;
+  z-index:5!important;
+}
+#dashboard .nature-leaf{display:none!important}
+
+/* Animated image layer stays behind text and never affects layout. */
+#dashboard .nature-banner::before{
+  z-index:-2!important;
+  pointer-events:none!important;
+}
+#dashboard .nature-banner::after{
+  z-index:-1!important;
+  pointer-events:none!important;
+}
+
+/* Three sustainability banners */
+.sustainability-visual-strip{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:14px;
+  margin:0 0 20px!important;
+}
+.sus-visual-card{
+  position:relative;
+  min-height:155px;
+  border-radius:20px;
+  overflow:hidden;
+  isolation:isolate;
+  color:#fff;
+  box-shadow:0 12px 30px rgba(3,70,50,.11);
+  background:#064b38;
+  transform:translateZ(0);
+}
+.sus-visual-card .sus-bg{
+  position:absolute;inset:-5%;z-index:-3;
+  background:center/cover no-repeat var(--sus-bg);
+  transform:scale(1.05);
+  animation:susKenBurns 14s ease-in-out infinite alternate;
+  transition:opacity .7s ease,filter .7s ease,transform .9s ease;
+}
+.sus-visual-card.changing .sus-bg{opacity:.2;filter:blur(2px);transform:scale(1.1)}
+.sus-visual-card::after{
+  content:"";position:absolute;inset:0;z-index:-2;
+  background:linear-gradient(115deg,rgba(2,42,31,.93),rgba(4,96,69,.52) 55%,rgba(2,52,39,.18));
+}
+.sus-content{position:relative;z-index:2;padding:18px 19px;height:100%;display:flex;flex-direction:column;justify-content:flex-end;min-height:155px}
+.sus-kicker{font-size:8px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase;color:#a7f3d0;margin-bottom:6px}
+.sus-content h3{margin:0 0 5px;color:#fff;font-size:17px;line-height:1.08;letter-spacing:-.3px}
+.sus-content p{margin:0;color:rgba(255,255,255,.74);font-size:10.5px;line-height:1.45;max-width:300px}
+.sus-live{position:absolute;right:15px;top:14px;display:inline-flex;align-items:center;gap:5px;padding:5px 8px;border-radius:999px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(8px);font-size:7.5px;font-weight:900;letter-spacing:.8px}
+.sus-live i{width:5px;height:5px;border-radius:50%;background:#5eead4;box-shadow:0 0 0 4px rgba(94,234,212,.10);animation:pulseDot 1.6s infinite}
+.sus-dots{display:flex;gap:4px;margin-top:10px}
+.sus-dots i{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.32);transition:.25s}
+.sus-dots i.active{width:16px;border-radius:8px;background:#a7f3d0}
+
+/* Team hero: cleaner hierarchy and stronger visual treatment. */
+#team_dashboard .team-hero{min-height:240px!important;margin-bottom:18px!important;border-radius:24px!important}
+#team_dashboard .team-hero-content{padding:30px 32px!important;max-width:720px!important}
+#team_dashboard .team-hero h2{font-size:clamp(30px,3vw,42px)!important;line-height:1.05!important;letter-spacing:-1.4px!important;margin:12px 0 8px!important}
+#team_dashboard .team-hero p{max-width:560px!important;font-size:12px!important;line-height:1.55!important}
+#team_dashboard .team-hero-meta{display:flex!important;gap:8px!important;flex-wrap:wrap!important;margin-top:16px!important}
+#team_dashboard .team-hero-meta span{padding:7px 10px!important;border-radius:999px!important;background:rgba(255,255,255,.11)!important;border:1px solid rgba(255,255,255,.14)!important;font-size:9px!important}
+
+@media(max-width:900px){
+  #dashboard .nature-banner{height:300px!important;min-height:300px!important}
+  #dashboard .nature-banner-content{padding:68px 22px 24px!important}
+  #dashboard .nature-banner h2{font-size:31px!important}
+  #dashboard .hero-top-meta{right:14px!important;top:12px!important;gap:6px!important}
+  #dashboard .hero-user-name{display:none!important}
+  #dashboard .nature-stat{right:16px!important;bottom:16px!important;width:155px!important;padding:10px!important}
+  .sustainability-visual-strip{grid-template-columns:1fr;gap:10px}
+  .sus-visual-card,.sus-content{min-height:145px}
+}
+@media(max-width:520px){
+  #dashboard .nature-banner{height:335px!important;min-height:335px!important;border-radius:20px!important}
+  #dashboard .nature-banner-content{padding:62px 18px 20px!important}
+  #dashboard .nature-banner h2{font-size:29px!important;max-width:310px!important}
+  #dashboard .nature-banner p{font-size:10.5px!important;max-width:285px!important}
+  #dashboard .nature-actions{margin-top:13px!important}
+  #dashboard .nature-stat{left:18px!important;right:auto!important;bottom:15px!important;width:145px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  .sus-visual-card .sus-bg{animation:none!important}
+}
+</style>
+
 </head>  
 <body>  
 
@@ -3288,6 +3422,42 @@ html,body{overflow-x:hidden!important}
     <div class="nature-leaf leaf-2">🌿</div>
   </div>
 </div>
+
+
+
+<!-- V15: Three rotating sustainability visual banners -->
+<section class="sustainability-visual-strip" id="sustainabilityVisualStrip" aria-label="Sustainability highlights">
+  <article class="sus-visual-card" data-sus-index="0">
+    <div class="sus-bg"></div>
+    <div class="sus-live"><i></i> LIVE VISUAL</div>
+    <div class="sus-content">
+      <span class="sus-kicker">Clean Energy</span>
+      <h3>Energi Bersih untuk Masa Depan</h3>
+      <p>Peralihan menuju energi yang lebih efisien dan rendah emisi.</p>
+      <div class="sus-dots" aria-hidden="true"></div>
+    </div>
+  </article>
+  <article class="sus-visual-card" data-sus-index="1">
+    <div class="sus-bg"></div>
+    <div class="sus-live"><i></i> LIVE VISUAL</div>
+    <div class="sus-content">
+      <span class="sus-kicker">Nature & Biodiversity</span>
+      <h3>Menjaga Hutan, Menjaga Kehidupan</h3>
+      <p>Alam yang sehat menjadi bagian penting dari keberlanjutan.</p>
+      <div class="sus-dots" aria-hidden="true"></div>
+    </div>
+  </article>
+  <article class="sus-visual-card" data-sus-index="2">
+    <div class="sus-bg"></div>
+    <div class="sus-live"><i></i> LIVE VISUAL</div>
+    <div class="sus-content">
+      <span class="sus-kicker">Circular Action</span>
+      <h3>Kurangi, Gunakan Kembali, Pulihkan</h3>
+      <p>Setiap keputusan kecil dapat memperpanjang siklus sumber daya.</p>
+      <div class="sus-dots" aria-hidden="true"></div>
+    </div>
+  </article>
+</section>
 
 <div class="grid-kpi">
         <div class="kpi-main dark">  
@@ -6616,6 +6786,55 @@ document.addEventListener('DOMContentLoaded',function(){
   document.addEventListener('DOMContentLoaded',function(){
     setTimeout(()=>{if(typeof window.startTeamHeroMotion==='function')window.startTeamHeroMotion()},200);
   });
+})();
+</script>
+
+
+<script id="v15-sustainability-visuals">
+(function(){
+  const VISUALS=[
+    [
+      'https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=1200&q=88',
+      'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1200&q=88',
+      'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1200&q=88'
+    ],
+    [
+      'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=88',
+      'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=88',
+      'https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=1200&q=88'
+    ],
+    [
+      'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1200&q=88',
+      'https://images.unsplash.com/photo-1528323273322-d81458248d40?auto=format&fit=crop&w=1200&q=88',
+      'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=88'
+    ]
+  ];
+  let timer=null, index=0;
+  function applyCard(card, cardIndex, imageIndex, immediate){
+    const bg=card.querySelector('.sus-bg'), dots=card.querySelector('.sus-dots');
+    if(!bg)return;
+    const apply=()=>{
+      bg.style.setProperty('--sus-bg',`url("${VISUALS[cardIndex][imageIndex]}")`);
+      if(dots)dots.innerHTML=VISUALS[cardIndex].map((_,i)=>`<i class="${i===imageIndex?'active':''}"></i>`).join('');
+    };
+    if(immediate){apply();return;}
+    card.classList.add('changing');
+    setTimeout(()=>{apply();card.classList.remove('changing')},280);
+  }
+  function renderVisuals(){
+    document.querySelectorAll('.sus-visual-card').forEach((card,i)=>applyCard(card,i,index%VISUALS[i].length,true));
+  }
+  function rotateVisuals(){
+    index=(index+1)%3;
+    document.querySelectorAll('.sus-visual-card').forEach((card,i)=>applyCard(card,i,index%VISUALS[i].length,false));
+  }
+  function init(){
+    if(!document.getElementById('sustainabilityVisualStrip'))return;
+    renderVisuals();
+    clearInterval(timer);
+    timer=setInterval(rotateVisuals,6500);
+  }
+  document.addEventListener('DOMContentLoaded',()=>setTimeout(init,120));
 })();
 </script>
 
