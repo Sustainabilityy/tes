@@ -1137,6 +1137,66 @@ body{
 </style>
 
 
+<style id="dashboard-clean-v8">
+#dashboard > .dashboard-hero-wrap{margin-top:0!important}
+#dashboard .nature-banner{min-height:210px!important;height:210px!important;border-radius:24px!important;box-shadow:0 16px 36px rgba(4,73,52,.14)!important}
+#dashboard .nature-banner-overlay{background:linear-gradient(100deg,rgba(2,48,36,.97) 0%,rgba(3,76,56,.90) 55%,rgba(3,76,56,.38) 100%)!important}
+#dashboard .nature-banner-content{padding:28px 32px!important;max-width:760px!important}
+#dashboard .nature-welcome{color:#b9f8df;font-size:11px;font-weight:800;margin-bottom:7px}
+#dashboard .nature-banner h2{margin:0 0 7px!important;font-size:clamp(32px,3.4vw,48px)!important;letter-spacing:-1.8px!important}
+#dashboard .nature-banner p{max-width:610px!important;font-size:12.5px!important;line-height:1.5!important}
+#dashboard .nature-actions{margin-top:15px!important}
+#dashboard .nature-btn{padding:9px 13px!important}
+#dashboard .nature-stat{right:28px!important;bottom:24px!important;width:190px!important;padding:15px 17px!important}
+#dashboard .nature-stat strong{font-size:38px!important;line-height:1!important}
+#dashboard .nature-stat small{font-size:9.5px!important}
+#dashboard .nature-leaf{display:none!important}
+#dashboard .hero-top-meta{position:absolute;right:22px;top:18px;z-index:7;display:flex;align-items:center;gap:9px}
+#dashboard .hero-top-meta > #dashboardTodayLabel{padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.86);font-size:10px;font-weight:800}
+#dashboard .hero-notification{padding:7px 10px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.15);color:#fff;font-size:10px}
+#dashboard .hero-avatar-btn{width:38px;height:38px;padding:0;border-radius:50%;background:rgba(255,255,255,.16);border:2px solid rgba(255,255,255,.7);overflow:hidden;cursor:pointer}
+#dashboard .hero-avatar-btn img{width:100%;height:100%;object-fit:cover}
+#dashboard .hero-user-name{background:transparent;border:0;color:#fff;font-size:11px;font-weight:800;padding:0 2px;max-width:150px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer}
+#dashboard .hero-user-name:hover{color:#a7f3d0}
+#dashboard .dashboard-insights-grid{margin-top:18px!important}
+#dashboard .team-preview-name{display:flex;flex-direction:column;gap:2px}
+#dashboard .team-preview-name b{font-size:10.5px}
+#dashboard .team-preview-name small{font-size:8px;color:#81918b;font-weight:700}
+@media(max-width:1050px){#dashboard .nature-stat{right:20px!important;width:165px!important}}
+@media(max-width:760px){
+#dashboard .nature-banner{height:270px!important;min-height:270px!important}
+#dashboard .nature-banner-content{padding:22px 19px!important}
+#dashboard .nature-banner h2{font-size:30px!important}
+#dashboard .nature-banner p{max-width:285px!important;font-size:11px!important}
+#dashboard .nature-stat{right:15px!important;bottom:15px!important;width:145px!important;padding:10px!important}
+#dashboard .nature-stat strong{font-size:26px!important}
+#dashboard .hero-top-meta{right:14px;top:12px;gap:6px}
+#dashboard .hero-user-name{display:none}
+#dashboard .hero-top-meta > #dashboardTodayLabel{display:none}
+}
+</style>
+<style id="ranking-fresh-v8">
+.ranking-podium{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:0 0 18px}
+.ranking-podium-card{position:relative;overflow:hidden;padding:18px 16px;border-radius:20px;background:linear-gradient(145deg,#fff,#f1faf6);border:1px solid rgba(8,127,91,.10);box-shadow:0 10px 28px rgba(8,60,44,.07);display:grid;grid-template-columns:auto 1fr auto;grid-template-rows:auto auto auto;column-gap:12px;align-items:center;transition:.25s ease}
+.ranking-podium-card:hover{transform:translateY(-4px);box-shadow:0 18px 35px rgba(8,60,44,.11)}
+.ranking-podium-card:before{content:"";position:absolute;right:-35px;top:-45px;width:120px;height:120px;border-radius:50%;background:rgba(16,185,129,.08)}
+.ranking-podium-card img{grid-row:1/4;width:52px;height:52px;border-radius:16px;object-fit:cover;border:3px solid #fff;box-shadow:0 5px 14px rgba(8,60,44,.12);background:#e7f3ee}
+.ranking-podium-card .podium-medal{font-size:22px;grid-row:1/4;align-self:center}
+.ranking-podium-card strong{font-size:13px;color:#103c30;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ranking-podium-card span{font-size:9.5px;color:#72847d;font-weight:700}
+.ranking-podium-card b{font-size:14px;color:#087f5b}.ranking-podium-card b small{font-size:8px;color:#83928c}
+.ranking-podium-card em{position:absolute;right:12px;top:10px;font-style:normal;font-size:8px;font-weight:900;color:#087f5b;background:#e7f8f0;padding:5px 7px;border-radius:999px}
+.ranking-podium-card.rank-1{background:linear-gradient(145deg,#ecfff8,#d8f8e9);border-color:#a7ebcf}
+.ranking-podium-card.rank-2{background:linear-gradient(145deg,#fff,#f4f8fa)}
+.ranking-podium-card.rank-3{background:linear-gradient(145deg,#fffaf5,#fff)}
+.ranking-empty{grid-column:1/-1;padding:20px;text-align:center;color:#94a3b8}
+@media(max-width:900px){.ranking-podium{grid-template-columns:1fr}.ranking-podium-card{min-height:84px}}
+</style>
+<style id="live-news-v8">
+.news-period-filter{border:1px solid #dfe9e4;background:#fff;color:#31564a;border-radius:10px;padding:7px 9px;font-size:9.5px;font-weight:800;cursor:pointer}
+.news-live{white-space:nowrap}
+@media(max-width:760px){.news-period-filter{font-size:9px;padding:6px 8px}}
+</style>
 <style id="sustainability-showcase-v4">
 .sustainability-showcase{margin:0 0 26px}
 .nature-banner{
@@ -2493,60 +2553,6 @@ html,body{overflow-x:hidden!important}
 }
 </style>
 
-
-<style id="jejak-ui-polish-v7">
-.sidebar-profile-link{position:relative;cursor:pointer;user-select:none;transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
-.sidebar-profile-link:hover{transform:translateY(-2px);border-color:rgba(5,150,105,.25);box-shadow:0 12px 28px rgba(8,60,44,.10)}
-.sidebar-profile-link:focus-visible{outline:3px solid rgba(16,185,129,.22);outline-offset:2px}
-.sidebar-profile-arrow{margin-left:auto;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:#087f5b;background:#e8f8f1;font-size:13px;font-weight:900;flex:0 0 auto}
-.sidebar-user-info span{text-transform:none!important;letter-spacing:.25px!important}
-
-/* Dashboard starts directly with the hero */
-#dashboard>.topline{display:none!important}
-#dashboard{padding-top:28px!important}
-#dashboard .dashboard-hero-wrap{margin-top:0!important}
-#dashboard .dashboard-hero-wrap .nature-banner{min-height:355px!important;border-radius:28px!important;box-shadow:0 25px 60px rgba(3,75,53,.20)!important}
-#dashboard .dashboard-hero-wrap .nature-banner-content{max-width:780px!important;padding:34px 38px!important}
-#dashboard .dashboard-welcome{display:inline-flex;align-items:center;gap:7px;margin-bottom:5px;color:rgba(255,255,255,.78);font-size:13px;font-weight:600}
-#dashboard .dashboard-banner-greeting{margin:0 0 7px!important;color:#fff!important;font-size:clamp(32px,4vw,52px)!important;line-height:1.02!important;font-weight:900!important;letter-spacing:-2px!important}
-#dashboard .dashboard-banner-subtitle{max-width:650px!important;margin:0 0 17px!important;color:rgba(255,255,255,.80)!important;font-size:13.5px!important;line-height:1.55!important}
-#dashboard .dashboard-hero-wrap .nature-banner h2{margin-top:11px!important;font-size:clamp(29px,3.5vw,46px)!important}
-#dashboard .dashboard-hero-wrap .nature-stat{width:235px!important;min-height:122px;right:28px!important;bottom:25px!important;padding:18px 19px!important;border-radius:20px!important}
-#dashboard .dashboard-hero-wrap .nature-stat span{font-size:9px!important;letter-spacing:1.25px!important}
-#dashboard .dashboard-hero-wrap .nature-stat strong{font-size:45px!important;line-height:1!important;margin:8px 0 5px!important;letter-spacing:-1.5px!important;text-shadow:0 3px 16px rgba(0,0,0,.16)}
-#dashboard .dashboard-hero-wrap .nature-stat small{font-size:10.5px!important}
-#dashboard .dashboard-hero-wrap .nature-banner:before{content:"";position:absolute;width:240px;height:240px;right:170px;bottom:-125px;border-radius:50%;border:1px solid rgba(255,255,255,.10);box-shadow:0 0 0 28px rgba(255,255,255,.025),0 0 0 60px rgba(255,255,255,.016);z-index:1;pointer-events:none}
-#dashboard .dashboard-hero-wrap .nature-leaf{animation:floatLeaf 7s ease-in-out infinite}
-#dashboard .dashboard-hero-wrap .leaf-2{animation-delay:-2.5s}
-@keyframes floatLeaf{0%,100%{transform:translate3d(0,0,0) rotate(-18deg)}50%{transform:translate3d(-8px,-10px,0) rotate(-11deg)}}
-
-/* Contribution: keep only one hero/banner */
-#contrib>.topline{margin-bottom:18px!important}
-#contrib .impact-action-hero{margin-top:0!important;min-height:250px!important;border-radius:26px!important}
-#contrib .impact-action-total strong{font-size:32px!important}
-#contrib .impact-action-grid{margin-top:12px!important}
-#dashboard .quick-access-section,#dashboard .quick-access-grid,#dashboard .quick-card{display:none!important}
-
-@media(max-width:900px){
-  #dashboard{padding-top:18px!important}
-  #dashboard .dashboard-hero-wrap .nature-banner{min-height:390px!important;border-radius:22px!important}
-  #dashboard .dashboard-hero-wrap .nature-banner-content{padding:25px 21px!important}
-  #dashboard .dashboard-banner-greeting{font-size:34px!important;letter-spacing:-1.5px!important}
-  #dashboard .dashboard-banner-subtitle{font-size:11.5px!important;max-width:340px!important}
-  #dashboard .dashboard-hero-wrap .nature-banner h2{font-size:30px!important}
-  #dashboard .dashboard-hero-wrap .nature-stat{left:21px!important;right:auto!important;bottom:18px!important;width:180px!important;min-height:105px}
-  #dashboard .dashboard-hero-wrap .nature-stat strong{font-size:36px!important}
-  .sidebar-profile-arrow{display:none}
-}
-@media(max-width:430px){
-  #dashboard .dashboard-hero-wrap .nature-banner{min-height:405px!important}
-  #dashboard .dashboard-banner-greeting{font-size:29px!important}
-  #dashboard .dashboard-banner-subtitle{max-width:290px!important}
-  #dashboard .dashboard-hero-wrap .nature-stat{width:170px!important;padding:14px!important}
-  #dashboard .dashboard-hero-wrap .nature-stat strong{font-size:32px!important}
-}
-</style>
-
 </head>  
 <body>  
 
@@ -2782,16 +2788,13 @@ html,body{overflow-x:hidden!important}
       <span>Great Giant Foods</span>  
     </div>  
 
-    <div class="sidebar-user sidebar-profile-link" role="button" tabindex="0"
-         onclick="navigateToPage('profile')" onkeydown="if(event.key==='Enter'||event.key===' ') navigateToPage('profile')"
-         title="Buka profil pengguna">
-      <img id="sbAvatarImg" src="" alt="Foto profil">
+    <div class="sidebar-user">
+      <img id="sbAvatarImg" src="">
       <div class="placeholder" id="sbAvatarPh">👤</div>
       <div class="sidebar-user-info">
-        <b id="sbName">Pengguna</b>
-        <span id="sbRole">ID Pengguna</span>
+        <b id="sbName"></b>
+        <span id="sbRole"></span>
       </div>
-      <span class="sidebar-profile-arrow">↗</span>
     </div>
 
     <nav class="nav desk-nav">  
@@ -2828,7 +2831,9 @@ html,body{overflow-x:hidden!important}
     </header>  
 
     <!-- TAB DASHBOARD PERSONAL -->
-    <section id="dashboard" class="page active"><div class="dashboard-hero-wrap">
+    <section id="dashboard" class="page active">  
+
+      <div class="dashboard-hero-wrap">
 <div class="nature-banner">
     <div class="nature-banner-overlay"></div>
 
@@ -2838,14 +2843,12 @@ html,body{overflow-x:hidden!important}
       <button type="button" class="hero-avatar-btn" onclick="navigateToPage('profile')" aria-label="Buka profil">
         <img id="heroAvatarImg" src="" alt="Profil">
       </button>
+      <button type="button" class="hero-user-name" onclick="navigateToPage('profile')" id="heroUserName">Pengguna</button>
     </div>
     <div class="nature-banner-content">
-      <div class="dashboard-welcome">Selamat datang kembali, 🌿</div>
-      <h1 class="dashboard-banner-greeting">Halo, <span id="dashName">Ivo Audio</span>!</h1>
-      <p class="dashboard-banner-subtitle">Pantau jejak karbon harian dan ubah setiap aktivitas menjadi langkah nyata untuk energi, lingkungan, dan masa depan.</p>
-      <div class="nature-eyebrow"><span class="nature-dot"></span> JEJAKKARBONKU · IMPACT DASHBOARD</div>
-      <h2>Let’s make<br><em>impact visible.</em></h2>
-      <p>Setiap aktivitas yang kamu catat membantu mengubah data menjadi aksi nyata untuk energi, lingkungan, dan masa depan.</p>
+      <div class="nature-welcome">Selamat datang kembali 👋</div>
+      <h2>Halo, <span id="dashName">Pengguna</span>!</h2>
+      <p>Pantau jejak karbon harian dan ubah setiap aktivitas menjadi langkah nyata untuk energi, lingkungan, dan masa depan.</p>
       <div class="nature-actions">
         <button type="button" class="nature-btn primary" onclick="navigateToPage('input')">⚡ Catat Aktivitas</button>
         <button type="button" class="nature-btn ghost" onclick="document.getElementById('sustainabilityNews')?.scrollIntoView({behavior:'smooth'})">📰 Baca Insight</button>
@@ -2956,8 +2959,8 @@ html,body{overflow-x:hidden!important}
         <section class="dashboard-panel team-pulse-panel">
           <div class="dashboard-panel-head">
             <div>
-              <span class="section-kicker">Team Pulse</span>
-              <h3>Performa Tim</h3>
+              <span class="section-kicker">Company Leaderboard</span>
+              <h3>Leaderboard Perusahaan</h3>
             </div>
             <button type="button" class="panel-link-btn" onclick="navigateToPage('team_dashboard')">Lihat detail <span>→</span></button>
           </div>
@@ -2965,7 +2968,7 @@ html,body{overflow-x:hidden!important}
             <div class="team-pulse-icon">👥</div>
             <div>
               <strong id="dashTeamMembers">0</strong>
-              <span>anggota terpantau</span>
+              <span>pengguna dari seluruh departemen</span>
             </div>
             <div class="team-live"><i></i> LIVE</div>
           </div>
@@ -3068,10 +3071,15 @@ html,body{overflow-x:hidden!important}
             <p>Insight energi, iklim, teknologi hijau, dan aksi keberlanjutan yang berganti otomatis.</p>
           </div>
           <div class="news-controls">
-            <span class="news-live"><i></i> AUTO ROTATE</span>
+            <span class="news-live"><i></i> LIVE FEED</span>
+            <select id="newsPeriodFilter" class="news-period-filter" onchange="setNewsPeriod(this.value)">
+              <option value="day">Hari ini</option>
+              <option value="week" selected>Minggu ini</option>
+              <option value="month">Bulan ini</option>
+            </select>
             <button type="button" class="news-control-btn" onclick="changeNews(-1)" aria-label="Berita sebelumnya">←</button>
             <button type="button" class="news-control-btn" onclick="changeNews(1)" aria-label="Berita berikutnya">→</button>
-            <a class="news-all-link" href="https://unfccc.int/news" target="_blank" rel="noopener noreferrer">Lihat semua ↗</a>
+            <a class="news-all-link" href="https://news.google.com/" target="_blank" rel="noopener noreferrer">Live News ↗</a>
           </div>
         </div>
         <div id="newsGrid" class="news-grid news-carousel-grid"></div>
@@ -3177,6 +3185,7 @@ html,body{overflow-x:hidden!important}
            </select>
          </div>
          
+         <div id="rankingPodium" class="ranking-podium" aria-label="Top ranking perusahaan"></div>
          <div class="rank-tabs">
            <button class="rank-tab active">Total emission</button>
            <button class="rank-tab">Individual activity</button>
@@ -3313,7 +3322,16 @@ html,body{overflow-x:hidden!important}
           <h1>Aksi Kontribusi Hijau</h1>  
           <p>Catat langkah progresif Anda dalam menekan jejak karbon operasional.</p>  
         </div>  
-      </div><div class="impact-action-hero">
+      </div>  
+        
+      <div class="card" style="background: var(--esg-dark); color: white; border: none; text-align: center; padding: 32px 24px; margin-bottom: 24px;">  
+        <div style="font-size: 13.5px; color: #a7f3d0; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">Total Pengurangan Karbon (Offset)</div>  
+        <div style="font-size: 44px; font-weight: 900; margin: 12px 0; letter-spacing: -1px;"><span id="offsetTotal">0.00</span> <small style="font-size: 20px; font-weight: 700;">kgCO₂e</small></div>  
+        <div style="font-size: 15px; font-weight: 500;">Setara penyerapan hingga <strong style="color: #34d399;"><span id="offsetTreeEq">0.00</span> pohon</strong>/tahun</div>  
+      </div>  
+
+
+      <div class="impact-action-hero">
         <div class="impact-action-copy">
           <span class="impact-kicker">IMPACT ACTION CENTER</span>
           <h2>Setiap aksi kecil punya<br><em>dampak yang terukur.</em></h2>
@@ -3327,9 +3345,6 @@ html,body{overflow-x:hidden!important}
           <strong><span id="impactHeroOffset">0.00</span></strong>
           <span>kgCO₂e</span>
         </div>
-        <!-- Data targets retained for the original contribution logic -->
-        <span id="offsetTotal" hidden>0.00</span>
-        <span id="offsetTreeEq" hidden>0.00</span>
       </div>
 
       <div class="impact-action-grid" aria-label="Pilih jenis aksi kontribusi">
@@ -4832,6 +4847,23 @@ function renderRankingDataView() {
   const isLowest = (sortFilter === 'total_lowest' || sortFilter === 'avg_lowest' || sortFilter === 'lowest');
   const isHighest = (sortFilter === 'total_highest' || sortFilter === 'avg_highest' || sortFilter === 'highest');
 
+  const podiumBox = $('rankingPodium');
+  if(podiumBox){
+    const podiumUsers = sortedUsers.slice(0,3);
+    const podiumIcons = ['🥇','🥈','🥉'];
+    podiumBox.innerHTML = podiumUsers.length ? podiumUsers.map((u,i)=>{
+      const photoSrc = (u.photo && u.photo.startsWith('data:image')) ? u.photo : defaultAvatarSvg;
+      return `<div class="ranking-podium-card rank-${i+1}">
+        <div class="podium-medal">${podiumIcons[i]}</div>
+        <img src="${photoSrc}" alt="">
+        <strong>${esc(u.name||'Anonim')}</strong>
+        <span>${esc(u.dept||'Lainnya')}</span>
+        <b>${fmt(u.total)} <small>kgCO₂e</small></b>
+        <em>${i===0?'Paling hemat':i===1?'Posisi 2':'Posisi 3'}</em>
+      </div>`;
+    }).join('') : '<div class="ranking-empty">Belum ada data ranking.</div>';
+  }
+
   $('rt_performance_body').innerHTML = sortedUsers.length > 0 ? sortedUsers.map((u, i) => {
       const rank = i + 1;
       const photoSrc = (u.photo && u.photo.startsWith('data:image')) ? u.photo : defaultAvatarSvg;
@@ -4959,7 +4991,7 @@ function toggleSort(type) {
 let currentNewsIndex = 0;
 let newsRotationTimer = null;
 
-const DASHBOARD_NEWS = [
+let DASHBOARD_NEWS = [
   {
     category:'ENERGI TERBARUKAN',
     source:'ANTARA NEWS',
@@ -5015,6 +5047,49 @@ const DASHBOARD_NEWS = [
     url:'https://www.antaranews.com/tag/isu-keberlanjutan'
   }
 ];
+let newsPeriod='week';
+const LIVE_NEWS_FEEDS=[
+ {name:'Google News · Energi',url:'https://news.google.com/rss/search?q=energi%20terbarukan%20OR%20efisiensi%20energi&hl=id&gl=ID&ceid=ID:id'},
+ {name:'Google News · Iklim',url:'https://news.google.com/rss/search?q=perubahan%20iklim%20OR%20climate%20action&hl=id&gl=ID&ceid=ID:id'},
+ {name:'Google News · Sustainability',url:'https://news.google.com/rss/search?q=sustainability%20OR%20keberlanjutan&hl=id&gl=ID&ceid=ID:id'},
+ {name:'Google News · Teknologi Hijau',url:'https://news.google.com/rss/search?q=teknologi%20hijau%20OR%20green%20technology&hl=id&gl=ID&ceid=ID:id'}
+];
+function newsPeriodStart(period){
+ const now=new Date(),s=new Date(now);
+ if(period==='day') s.setHours(0,0,0,0);
+ else if(period==='month'){s.setDate(1);s.setHours(0,0,0,0)}
+ else {s.setDate(s.getDate()-6);s.setHours(0,0,0,0)}
+ return s;
+}
+function stripHtml(v){return String(v||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim()}
+function newsImageForCategory(key){
+ return ({energi:'https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85',iklim:'https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=1200&q=85',sustainability:'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=85',teknologi:'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1200&q=85'})[key];
+}
+async function fetchLiveNews(){
+ const start=newsPeriodStart(newsPeriod),all=[];
+ for(const feed of LIVE_NEWS_FEEDS){
+  try{
+   const res=await fetch('https://api.rss2json.com/v1/api.json?rss_url='+encodeURIComponent(feed.url),{cache:'no-store'});
+   if(!res.ok) continue;
+   const json=await res.json();
+   (json.items||[]).forEach(item=>{
+    const pub=new Date(item.pubDate||item.isoDate||0); if(isNaN(pub)||pub<start)return;
+    const title=stripHtml(item.title),desc=stripHtml(item.description||item.content||''),low=(title+' '+desc).toLowerCase();
+    let cat='SUSTAINABILITY',key='sustainability';
+    if(/energi|listrik|renewable|terbarukan|efisiensi/.test(low)){cat='ENERGI & EFISIENSI';key='energi'}
+    else if(/iklim|climate|emisi|karbon/.test(low)){cat='IKLIM & KARBON';key='iklim'}
+    else if(/teknologi|technology|solar|hidrogen|green tech/.test(low)){cat='TEKNOLOGI HIJAU';key='teknologi'}
+    all.push({category:cat,source:feed.name,date:pub.toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'}),title:title.replace(/\s+-\s+[^-]+$/,''),desc:(desc.slice(0,180)+(desc.length>180?'…':'')),image:newsImageForCategory(key),url:item.link||'#',pubTime:pub.getTime()});
+   });
+  }catch(e){console.warn('Live news feed error',feed.name,e)}
+ }
+ const unique=new Map(); all.sort((a,b)=>b.pubTime-a.pubTime).forEach(n=>{if(!unique.has(n.title))unique.set(n.title,n)});
+ const live=Array.from(unique.values()).slice(0,18);
+ if(live.length){DASHBOARD_NEWS=live;currentNewsIndex=0;renderFreshNews();restartNewsRotation();const el=document.querySelector('.news-live');if(el)el.innerHTML='<i></i> LIVE · diperbarui otomatis'}
+}
+function setNewsPeriod(period){newsPeriod=period||'week';fetchLiveNews()}
+function scheduleLiveNews(){fetchLiveNews();clearInterval(window.liveNewsRefreshTimer);window.liveNewsRefreshTimer=setInterval(fetchLiveNews,6*60*60*1000)}
+
 
 function navigateToPage(pageId){
   const page = document.getElementById(pageId);
@@ -5059,10 +5134,11 @@ function renderDashboardTeamPreview(){
   data.forEach(item=>{
     if(!item || !item.userId) return;
     const id=String(item.userId);
-    if(!users[id]) users[id]={userId:id,userName:item.userName||'Anonim',photo:item.photo||'',totalEmission:0};
+    if(!users[id]) users[id]={userId:id,userName:item.userName||'Anonim',photo:item.photo||'',department:item.department||'Lainnya',totalEmission:0};
     users[id].totalEmission += Math.max(0,num(item.emission));
     if(item.userName) users[id].userName=item.userName;
     if(item.photo) users[id].photo=item.photo;
+    if(item.department) users[id].department=item.department;
   });
   const sorted=Object.values(users).sort((a,b)=>a.totalEmission-b.totalEmission);
   const totalUsers=sorted.length;
@@ -5077,7 +5153,10 @@ function renderDashboardTeamPreview(){
     return `<div class="team-preview-item">
       <div class="team-preview-rank">${i<3?['🥇','🥈','🥉'][i]:`#${i+1}`}</div>
       <img class="team-preview-avatar" src="${photo}" alt="">
-      <div class="team-preview-name">${esc(u.userName||'Anonim')}</div>
+      <div class="team-preview-name">
+        <b>${esc(u.userName||'Anonim')}</b>
+        <small>${esc(u.department||'Departemen')}</small>
+      </div>
       <div class="team-preview-value">${fmt(u.totalEmission)}<small>kgCO₂e</small></div>
     </div>`;
   }).join('');
@@ -5154,9 +5233,11 @@ function syncDashboardMeta(){
   const label=now.toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'});
   if($('dashboardTodayLabel')) $('dashboardTodayLabel').textContent=label;
   const photo=state?.profile?.photo||'';
+  const displayName = state?.profile?.userName || 'Pengguna';
   if($('heroAvatarImg')){
     $('heroAvatarImg').src=photo || "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23dff8ee'/%3E%3Ccircle cx='32' cy='25' r='10' fill='%23087f5b'/%3E%3Cpath d='M15 53c2-12 10-18 17-18s15 6 17 18' fill='%23087f5b'/%3E%3C/svg%3E";
   }
+  if($('heroUserName')) $('heroUserName').textContent = displayName;
   const unread=(typeof allChatMessages!=='undefined' && Array.isArray(allChatMessages) && state?.profile?.userId)
     ? allChatMessages.filter(m=>m.timestamp>state.lastChatReadTimestamp && String(m.senderId).trim()!==String(state.profile.userId).trim()).length : 0;
   if($('chatMetaCount')) $('chatMetaCount').textContent=unread>99?'99+':String(unread);
@@ -5217,7 +5298,7 @@ function renderDashboard() {
   renderDashboardTeamPreview();
   drawCategoryDonut(filteredGrandRecords);
   syncDashboardMeta();
-  if($('newsGrid') && !$('newsGrid').children.length) { renderFreshNews(); restartNewsRotation(); }
+  if($('newsGrid') && !$('newsGrid').children.length) { renderFreshNews(); restartNewsRotation(); scheduleLiveNews(); }
   renderHistory(); renderContribUI(); updateAvatarsUI();
 }  
   
@@ -5469,10 +5550,7 @@ function loadProfile() {
 
 function updateAvatarsUI() {
   const p = state.profile, photo = p.photo;
-  const loggedName = String(p.userName || '').trim();
-  const loggedId = String(p.userId || '').trim();
-  $('sbName').textContent = loggedName || loggedId || 'Pengguna';
-  $('sbRole').textContent = loggedId ? `ID: ${loggedId}` : 'ID Pengguna';
+  $('sbName').textContent = p.userName ? p.userName : ''; $('sbRole').textContent = p.department ? p.department : '';
   if(photo) {
     $('profAvatarImg').src = $('sbAvatarImg').src = $('moAvatarImg').src = photo;
     $('profAvatarImg').style.display = $('sbAvatarImg').style.display = $('moAvatarImg').style.display = 'block';
@@ -5581,17 +5659,8 @@ function bind() {
     if(confirm('Logout dan putuskan jembatan data lokal?')) { localStorage.removeItem(BASE_KEY); localStorage.removeItem(SESSION_AUTH_KEY); location.reload(); }
   };
 
-  $('userName').addEventListener('input', function() {
-    const val = this.value.trim();
-    const uid = String(state.profile.userId || $('userId')?.value || '').trim();
-    $('sbName').textContent = val || uid || 'Pengguna';
-    $('sbRole').textContent = uid ? `ID: ${uid}` : 'ID Pengguna';
-    $('dashName').textContent = val || uid || 'Pengguna';
-  });
-  $('department').addEventListener('input', function() {
-    const uid = String(state.profile.userId || $('userId')?.value || '').trim();
-    $('sbRole').textContent = uid ? `ID: ${uid}` : 'ID Pengguna';
-  });
+  $('userName').addEventListener('input', function() { const val = this.value.trim(); $('sbName').textContent = val ? val : ''; $('dashName').textContent = val ? val : ''; });
+  $('department').addEventListener('input', function() { const val = this.value.trim(); $('sbRole').textContent = val ? val : ''; });
   $('refreshLeaderboardBtn').onclick = fetchLeaderboard;
   setupSwipeListener();
 }  
