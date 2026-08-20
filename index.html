@@ -1428,6 +1428,208 @@ html,body{overflow-x:hidden!important}
 }
 </style>
 
+
+<style id="dashboard-reference-ui">
+/* =========================================================
+   JEJAKKARBONKU — REFERENCE DASHBOARD UI
+   Clean hierarchy, no overlapping, desktop/tablet/mobile
+   ========================================================= */
+:root{
+  --ref-bg:#f5f9f7;
+  --ref-card:#ffffff;
+  --ref-ink:#10261f;
+  --ref-muted:#71837c;
+  --ref-green:#079568;
+  --ref-green-dark:#064b38;
+  --ref-mint:#e5f8f0;
+  --ref-line:rgba(8,83,59,.10);
+  --ref-shadow:0 10px 30px rgba(7,72,52,.07);
+  --ref-shadow-hover:0 18px 42px rgba(7,72,52,.11);
+}
+html,body{background:var(--ref-bg)!important;color:var(--ref-ink)}
+body:before{opacity:.35}
+.app{grid-template-columns:255px minmax(0,1fr)!important}
+.sidebar{
+  padding:20px 14px!important;
+  background:rgba(255,255,255,.94)!important;
+  border-right:1px solid var(--ref-line)!important;
+}
+.brand{padding:8px 8px 18px!important}
+.brand-logo{max-width:118px!important}
+.brand h2{font-size:18px!important}
+.sidebar-user{
+  border-radius:17px!important;
+  background:linear-gradient(135deg,#fff,#f0fbf6)!important;
+  border:1px solid var(--ref-line)!important;
+}
+.main{min-width:0!important;overflow-x:hidden!important}
+.page{
+  max-width:1480px!important;
+  margin:0 auto!important;
+  padding:27px clamp(18px,3vw,42px)!important;
+}
+.topline{margin-bottom:17px!important;border:0!important;padding:0!important}
+.topline h1{font-size:clamp(25px,2.7vw,36px)!important;letter-spacing:-1.4px!important}
+.topline p{font-size:13px!important;color:var(--ref-muted)!important}
+
+/* Hero */
+.dashboard-hero-wrap{margin-bottom:17px}
+.dashboard-hero-wrap .nature-banner{
+  min-height:255px!important;
+  border-radius:25px!important;
+  box-shadow:0 20px 48px rgba(3,75,53,.18)!important;
+}
+.dashboard-hero-wrap .nature-banner-overlay{
+  background:linear-gradient(90deg,rgba(1,52,37,.96) 0%,rgba(2,75,53,.84) 44%,rgba(2,72,51,.30) 100%)!important;
+}
+.dashboard-hero-wrap .nature-banner-content{
+  max-width:680px!important;
+  padding:31px 34px!important;
+}
+.dashboard-hero-wrap .nature-banner h2{
+  font-size:clamp(33px,3.6vw,49px)!important;
+  line-height:.98!important;
+  letter-spacing:-2px!important;
+  margin:14px 0 9px!important;
+}
+.dashboard-hero-wrap .nature-banner p{
+  max-width:550px!important;font-size:12.5px!important;
+}
+.dashboard-hero-wrap .nature-actions{margin-top:18px!important}
+.dashboard-hero-wrap .nature-btn{padding:10px 14px!important;border-radius:11px!important}
+.dashboard-hero-wrap .nature-stat{
+  width:190px!important;right:27px!important;bottom:22px!important;
+}
+
+/* KPI */
+.grid-kpi{
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  gap:14px!important;
+  margin-bottom:17px!important;
+}
+.grid-kpi .kpi-main{min-height:158px!important;border-radius:20px!important}
+.grid-kpi .kpi-main .val{font-size:34px!important}
+.grid-kpi .kpi-box{min-height:112px!important}
+
+/* Quick actions */
+.quick-access-section{margin:2px 0 19px}
+.section-heading-row{
+  display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:11px
+}
+.section-heading-row h3{margin:6px 0 3px;font-size:19px;color:var(--ref-ink);letter-spacing:-.5px}
+.section-heading-row p{margin:0;color:var(--ref-muted);font-size:10.5px}
+.quick-access-grid{
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:11px
+}
+.quick-card{
+  min-width:0;display:flex;align-items:center;gap:10px;text-align:left;
+  background:#fff;border:1px solid var(--ref-line);border-radius:17px;
+  padding:13px 12px;box-shadow:0 6px 20px rgba(7,72,52,.045);
+  color:var(--ref-ink);transition:.22s ease;
+}
+.quick-card:hover{transform:translateY(-3px);box-shadow:var(--ref-shadow-hover);border-color:rgba(8,127,91,.20)}
+.quick-icon{
+  flex:0 0 38px;width:38px;height:38px;border-radius:12px;
+  display:grid;place-items:center;background:var(--ref-mint);font-size:19px
+}
+.quick-card span:nth-child(2){min-width:0;display:flex;flex-direction:column;gap:3px}
+.quick-card b{font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.quick-card small{font-size:8.5px;line-height:1.3;color:var(--ref-muted)}
+.quick-card i{margin-left:auto;font-style:normal;color:var(--ref-green);font-weight:900}
+
+/* All cards / sections */
+.card,.team-card-white,.rank-table-wrapper{
+  border:1px solid var(--ref-line)!important;
+  box-shadow:var(--ref-shadow)!important;
+  border-radius:20px!important;
+}
+.card:hover,.team-card-white:hover{box-shadow:var(--ref-shadow-hover)!important}
+.visual-section{margin:17px 0!important;gap:14px!important}
+.visual-card,.image-card{border-radius:20px!important;box-shadow:var(--ref-shadow)!important}
+.team-card-green{border-radius:20px!important}
+.team-grid-top,.team-grid-mid{gap:14px!important}
+.rank-table-wrapper{overflow:auto!important}
+
+/* News must be LAST */
+.dashboard-news-bottom{
+  margin-top:23px!important;
+  padding-top:5px!important;
+}
+.dashboard-news-bottom .sustainability-news-head{
+  margin:0 2px 12px!important;
+}
+.dashboard-news-bottom .news-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:12px!important;
+}
+.dashboard-news-bottom .news-feature{
+  grid-column:span 2!important;
+  display:grid!important;
+  grid-template-columns:1.05fr .95fr!important;
+}
+.dashboard-news-bottom .news-card{border-radius:18px!important}
+.dashboard-news-bottom .news-image{min-height:145px!important}
+.dashboard-news-bottom .news-feature .news-image{min-height:195px!important}
+.dashboard-news-bottom .news-body{padding:13px!important}
+.dashboard-news-bottom .news-feature .news-body{padding:18px!important}
+.dashboard-news-bottom .news-feature .news-body h4{font-size:16px!important}
+
+/* Remove duplicate name in showcase JS target if it somehow remains */
+#natureUserName{display:none!important}
+
+/* Other tabs: common professional hierarchy */
+#team_dashboard .topline,#ranking_data .topline,#input .topline,#contrib .topline,#chat .topline,#profile .topline{
+  margin-bottom:18px!important;
+}
+#team_dashboard .team-card-green{
+  background:linear-gradient(135deg,#056b4d,#14b981)!important;
+  box-shadow:0 15px 35px rgba(8,127,91,.16)!important;
+}
+#team_dashboard .team-card-white,#ranking_data .rank-table-wrapper,#input .card,#contrib .card,#profile .card{
+  background:rgba(255,255,255,.96)!important;
+}
+#team_dashboard .team-grid-top{grid-template-columns:1.6fr 1fr 1fr!important}
+#team_dashboard .team-grid-mid{grid-template-columns:1.35fr .65fr!important}
+
+/* Mobile */
+@media(max-width:1100px){
+  .grid-kpi{grid-template-columns:1fr 1fr!important}
+  .grid-kpi .kpi-main{grid-column:span 1!important}
+  .quick-access-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .dashboard-news-bottom .news-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .dashboard-news-bottom .news-feature{grid-column:1/-1!important}
+}
+@media(max-width:900px){
+  .app{grid-template-columns:1fr!important}
+  .page{padding:20px 16px 90px!important}
+  .grid-kpi{grid-template-columns:1fr!important}
+  .grid-kpi .kpi-main{grid-column:auto!important}
+  .quick-access-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #team_dashboard .team-grid-top,#team_dashboard .team-grid-mid{grid-template-columns:1fr!important}
+  .dashboard-news-bottom .news-grid{grid-template-columns:1fr!important}
+  .dashboard-news-bottom .news-feature{display:block!important;grid-column:auto!important}
+  .dashboard-news-bottom .news-feature .news-image{min-height:180px!important}
+  .dashboard-hero-wrap .nature-banner{min-height:310px!important}
+  .dashboard-hero-wrap .nature-banner-content{padding:23px 20px!important}
+  .dashboard-hero-wrap .nature-banner h2{font-size:32px!important;letter-spacing:-1.4px!important}
+  .dashboard-hero-wrap .nature-stat{right:16px!important;bottom:15px!important;width:150px!important;padding:11px!important}
+}
+@media(max-width:520px){
+  .page{padding:15px 11px 92px!important}
+  .topline h1{font-size:24px!important}
+  .topline p{font-size:11px!important}
+  .dashboard-hero-wrap .nature-banner{min-height:340px!important;border-radius:20px!important}
+  .dashboard-hero-wrap .nature-banner-content{padding:20px 17px!important}
+  .dashboard-hero-wrap .nature-banner h2{font-size:29px!important}
+  .dashboard-hero-wrap .nature-banner p{font-size:10.5px!important;max-width:285px!important}
+  .dashboard-hero-wrap .nature-stat{left:17px!important;right:auto!important;bottom:14px!important}
+  .quick-access-grid{grid-template-columns:1fr!important}
+  .quick-card{padding:12px!important}
+  .visual-section{display:block!important}
+  .visual-card,.image-card{min-height:205px!important;margin-bottom:10px}
+}
+</style>
+
 </head>  
 <body>  
 
@@ -1713,16 +1915,18 @@ html,body{overflow-x:hidden!important}
           <p>Pantau jejak karbon harian untuk mencapai target penghematan energi perusahaan secara akurat.</p>  
         </div>
 
-<!-- ===== SUSTAINABILITY HERO + NEWS HUB ===== -->
-<section class="sustainability-showcase" aria-label="Sustainability showcase">
-  <div class="nature-banner">
+
+      </div>  
+
+      <div class="dashboard-hero-wrap">
+<div class="nature-banner">
     <div class="nature-banner-overlay"></div>
     <div class="nature-banner-content">
-      <div class="nature-eyebrow"><span class="nature-dot"></span> JEJAKKARBONKU · SUSTAINABILITY HUB</div>
-      <h2>Halo, <span id="natureUserName">Sahabat Bumi</span>.<br><em>Let’s make impact visible.</em></h2>
-      <p>Data kecil hari ini bisa menjadi perubahan besar untuk energi, lingkungan, dan masa depan.</p>
+      <div class="nature-eyebrow"><span class="nature-dot"></span> JEJAKKARBONKU · IMPACT DASHBOARD</div>
+      <h2>Let’s make<br><em>impact visible.</em></h2>
+      <p>Setiap aktivitas yang kamu catat membantu mengubah data menjadi aksi nyata untuk energi, lingkungan, dan masa depan.</p>
       <div class="nature-actions">
-        <button type="button" class="nature-btn primary" onclick="document.querySelector('[data-page=&quot;input&quot;]')?.click()">⚡ Catat Aktivitas</button>
+        <button type="button" class="nature-btn primary" onclick="document.querySelector('[data-page="input"]')?.click()">⚡ Catat Aktivitas</button>
         <button type="button" class="nature-btn ghost" onclick="document.getElementById('sustainabilityNews')?.scrollIntoView({behavior:'smooth'})">📰 Baca Insight</button>
       </div>
     </div>
@@ -1734,95 +1938,9 @@ html,body{overflow-x:hidden!important}
     <div class="nature-leaf leaf-1">🍃</div>
     <div class="nature-leaf leaf-2">🌿</div>
   </div>
+</div>
 
-  <div class="sustainability-news-head" id="sustainabilityNews">
-    <div>
-      <span class="section-kicker">Sustainability Feed</span>
-      <h3>Berita & Insight Keberlanjutan</h3>
-      <p>Update energi bersih, iklim, teknologi hijau, dan aksi keberlanjutan.</p>
-    </div>
-    <a class="news-all-link" href="https://unfccc.int/news" target="_blank" rel="noopener noreferrer">Lihat semua ↗</a>
-  </div>
-
-  <div class="news-grid">
-    <a class="news-card news-feature" href="https://www.antaranews.com/tag/renewable-energy-sources" target="_blank" rel="noopener noreferrer">
-      <div class="news-image" style="background-image:url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85')">
-        <span class="news-category">ENERGI TERBARUKAN</span>
-        <span class="news-read">Baca ↗</span>
-      </div>
-      <div class="news-body">
-        <small>ANTARA · Renewable Energy</small>
-        <h4>Indonesia terus mempercepat pengembangan energi terbarukan.</h4>
-        <p>Ikuti perkembangan potensi energi bersih, hidrogen, PLTS, dan transisi energi Indonesia.</p>
-      </div>
-    </a>
-
-    <a class="news-card" href="https://unfccc.int/news/renewable-power-generation-records-its-fastest-growth-ever" target="_blank" rel="noopener noreferrer">
-      <div class="news-image" style="background-image:url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=900&q=85')">
-        <span class="news-category">CLEAN ENERGY</span>
-        <span class="news-read">Baca ↗</span>
-      </div>
-      <div class="news-body">
-        <small>UN CLIMATE CHANGE · 14 JUL 2026</small>
-        <h4>Energi terbarukan mencatat pertumbuhan pembangkitan yang sangat cepat.</h4>
-        <p>Renewables menyumbang 31,7% pembangkitan listrik global pada 2024.</p>
-      </div>
-    </a>
-
-    <a class="news-card" href="https://www.unep.org/news-and-stories/news/spotlight-climate-action" target="_blank" rel="noopener noreferrer">
-      <div class="news-image" style="background-image:url('https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=900&q=85')">
-        <span class="news-category">CLIMATE ACTION</span>
-        <span class="news-read">Baca ↗</span>
-      </div>
-      <div class="news-body">
-        <small>UNEP · CLIMATE ACTION</small>
-        <h4>Climate action: dari kebijakan hingga solusi nyata di lapangan.</h4>
-        <p>Ikuti perkembangan solusi iklim, resilience, finance, dan inovasi hijau.</p>
-      </div>
-    </a>
-
-    <a class="news-card" href="https://www.greenpeace.org/indonesia/news-stories/?category=iklim-dan-energi" target="_blank" rel="noopener noreferrer">
-      <div class="news-image" style="background-image:url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=900&q=85')">
-        <span class="news-category">IKLIM & ENERGI</span>
-        <span class="news-read">Baca ↗</span>
-      </div>
-      <div class="news-body">
-        <small>GREENPEACE INDONESIA</small>
-        <h4>Melihat perkembangan isu iklim dan energi di Indonesia.</h4>
-        <p>Berita, riset, kampanye, dan perspektif tentang transisi energi serta lingkungan.</p>
-      </div>
-    </a>
-
-    <a class="news-card" href="https://news.mongabay.com/list/renewable-energy/" target="_blank" rel="noopener noreferrer">
-      <div class="news-image" style="background-image:url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=900&q=85')">
-        <span class="news-category">NATURE & ENERGY</span>
-        <span class="news-read">Baca ↗</span>
-      </div>
-      <div class="news-body">
-        <small>MONGABAY · RENEWABLE ENERGY</small>
-        <h4>Energi bersih, konservasi, dan tantangan lingkungan global.</h4>
-        <p>Eksplorasi berita tentang energi, biodiversitas, hutan, dan solusi berbasis alam.</p>
-      </div>
-    </a>
-
-    <a class="news-card" href="https://www.antaranews.com/tag/isu-keberlanjutan" target="_blank" rel="noopener noreferrer">
-      <div class="news-image" style="background-image:url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=900&q=85')">
-        <span class="news-category">SUSTAINABILITY</span>
-        <span class="news-read">Baca ↗</span>
-      </div>
-      <div class="news-body">
-        <small>ANTARA · ISU KEBERLANJUTAN</small>
-        <h4>Praktik keberlanjutan semakin dekat dengan aktivitas sehari-hari.</h4>
-        <p>Temukan perkembangan green office, transportasi, energi, dan aksi lingkungan.</p>
-      </div>
-    </a>
-  </div>
-</section>
-
-  
-      </div>  
-
-      <div class="grid-kpi">
+<div class="grid-kpi">
         <div class="kpi-main dark">  
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px;">
@@ -1871,6 +1989,34 @@ html,body{overflow-x:hidden!important}
           <div class="sub">Total dikurangi aksi kontribusi Anda</div>  
         </div>  
       </div>
+
+      <section class="quick-access-section" aria-label="Akses cepat">
+        <div class="section-heading-row">
+          <div>
+            <span class="section-kicker">Quick Actions</span>
+            <h3>Akses cepat</h3>
+            <p>Jalankan aktivitas utama JejakKarbonKu tanpa harus mencari menu.</p>
+          </div>
+        </div>
+        <div class="quick-access-grid">
+          <button class="quick-card" type="button" onclick="document.querySelector('[data-page="input"]')?.click()">
+            <span class="quick-icon">📝</span><span><b>Catat Aktivitas</b><small>Tambah aktivitas & hitung emisi</small></span><i>→</i>
+          </button>
+          <button class="quick-card" type="button" onclick="document.querySelector('[data-page="input"]')?.click()">
+            <span class="quick-icon">⚡</span><span><b>Kalkulator Emisi</b><small>Hitung dampak aktivitas harian</small></span><i>→</i>
+          </button>
+          <button class="quick-card" type="button" onclick="document.querySelector('[data-page="team_dashboard"]')?.click()">
+            <span class="quick-icon">👥</span><span><b>Team Dashboard</b><small>Pantau performa tim</small></span><i>→</i>
+          </button>
+          <button class="quick-card" type="button" onclick="document.querySelector('[data-page="ranking_data"]')?.click()">
+            <span class="quick-icon">🏆</span><span><b>Ranking Data</b><small>Lihat peringkat & performa</small></span><i>→</i>
+          </button>
+          <button class="quick-card" type="button" onclick="document.querySelector('[data-page="contrib"]')?.click()">
+            <span class="quick-icon">🌱</span><span><b>Aksi Kontribusi</b><small>Catat aksi untuk bumi</small></span><i>→</i>
+          </button>
+        </div>
+      </section>
+
 
       <div class="card" style="background: white; border: 1px solid #e2e8f0; margin-bottom: 24px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
@@ -2012,7 +2158,93 @@ html,body{overflow-x:hidden!important}
         <div id="chartSubtitle" style="font-size: 12.5px; font-weight: 700; color: var(--text-muted); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.5px;"></div>
         <canvas class="chart" id="trendChart"></canvas>  
       </div>  
-    </section>  
+    
+<div class="dashboard-news-bottom">
+<div class="sustainability-news-head" id="sustainabilityNews">
+    <div>
+      <span class="section-kicker">Sustainability Feed</span>
+      <h3>Berita & Insight Keberlanjutan</h3>
+      <p>Update energi bersih, iklim, teknologi hijau, dan aksi keberlanjutan.</p>
+    </div>
+    <a class="news-all-link" href="https://unfccc.int/news" target="_blank" rel="noopener noreferrer">Lihat semua ↗</a>
+  </div>
+
+  <div class="news-grid">
+    <a class="news-card news-feature" href="https://www.antaranews.com/tag/renewable-energy-sources" target="_blank" rel="noopener noreferrer">
+      <div class="news-image" style="background-image:url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=85')">
+        <span class="news-category">ENERGI TERBARUKAN</span>
+        <span class="news-read">Baca ↗</span>
+      </div>
+      <div class="news-body">
+        <small>ANTARA · Renewable Energy</small>
+        <h4>Indonesia terus mempercepat pengembangan energi terbarukan.</h4>
+        <p>Ikuti perkembangan potensi energi bersih, hidrogen, PLTS, dan transisi energi Indonesia.</p>
+      </div>
+    </a>
+
+    <a class="news-card" href="https://unfccc.int/news/renewable-power-generation-records-its-fastest-growth-ever" target="_blank" rel="noopener noreferrer">
+      <div class="news-image" style="background-image:url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=900&q=85')">
+        <span class="news-category">CLEAN ENERGY</span>
+        <span class="news-read">Baca ↗</span>
+      </div>
+      <div class="news-body">
+        <small>UN CLIMATE CHANGE · 14 JUL 2026</small>
+        <h4>Energi terbarukan mencatat pertumbuhan pembangkitan yang sangat cepat.</h4>
+        <p>Renewables menyumbang 31,7% pembangkitan listrik global pada 2024.</p>
+      </div>
+    </a>
+
+    <a class="news-card" href="https://www.unep.org/news-and-stories/news/spotlight-climate-action" target="_blank" rel="noopener noreferrer">
+      <div class="news-image" style="background-image:url('https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=900&q=85')">
+        <span class="news-category">CLIMATE ACTION</span>
+        <span class="news-read">Baca ↗</span>
+      </div>
+      <div class="news-body">
+        <small>UNEP · CLIMATE ACTION</small>
+        <h4>Climate action: dari kebijakan hingga solusi nyata di lapangan.</h4>
+        <p>Ikuti perkembangan solusi iklim, resilience, finance, dan inovasi hijau.</p>
+      </div>
+    </a>
+
+    <a class="news-card" href="https://www.greenpeace.org/indonesia/news-stories/?category=iklim-dan-energi" target="_blank" rel="noopener noreferrer">
+      <div class="news-image" style="background-image:url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?auto=format&fit=crop&w=900&q=85')">
+        <span class="news-category">IKLIM & ENERGI</span>
+        <span class="news-read">Baca ↗</span>
+      </div>
+      <div class="news-body">
+        <small>GREENPEACE INDONESIA</small>
+        <h4>Melihat perkembangan isu iklim dan energi di Indonesia.</h4>
+        <p>Berita, riset, kampanye, dan perspektif tentang transisi energi serta lingkungan.</p>
+      </div>
+    </a>
+
+    <a class="news-card" href="https://news.mongabay.com/list/renewable-energy/" target="_blank" rel="noopener noreferrer">
+      <div class="news-image" style="background-image:url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=900&q=85')">
+        <span class="news-category">NATURE & ENERGY</span>
+        <span class="news-read">Baca ↗</span>
+      </div>
+      <div class="news-body">
+        <small>MONGABAY · RENEWABLE ENERGY</small>
+        <h4>Energi bersih, konservasi, dan tantangan lingkungan global.</h4>
+        <p>Eksplorasi berita tentang energi, biodiversitas, hutan, dan solusi berbasis alam.</p>
+      </div>
+    </a>
+
+    <a class="news-card" href="https://www.antaranews.com/tag/isu-keberlanjutan" target="_blank" rel="noopener noreferrer">
+      <div class="news-image" style="background-image:url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=900&q=85')">
+        <span class="news-category">SUSTAINABILITY</span>
+        <span class="news-read">Baca ↗</span>
+      </div>
+      <div class="news-body">
+        <small>ANTARA · ISU KEBERLANJUTAN</small>
+        <h4>Praktik keberlanjutan semakin dekat dengan aktivitas sehari-hari.</h4>
+        <p>Temukan perkembangan green office, transportasi, energi, dan aksi lingkungan.</p>
+      </div>
+    </a>
+  </div>
+</div>
+
+</section>  
 
     <!-- TAB TEAM DASHBOARD -->
     <section id="team_dashboard" class="page">
@@ -4431,28 +4663,15 @@ document.addEventListener('DOMContentLoaded', init);
   setInterval(syncHero,1500);
 })();
 </script>
-
-
 <script id="sustainability-showcase-behavior">
 (function(){
-  function syncSustainabilityShowcase(){
-    var nameSource=document.getElementById('dashName') || document.getElementById('userName');
-    var nameTarget=document.getElementById('natureUserName');
-    if(nameTarget){
-      var name=(nameSource && (nameSource.textContent || nameSource.value || '').trim()) || 'Sahabat Bumi';
-      nameTarget.textContent=name;
-    }
-    var carbonSource=document.getElementById('todayTotal');
-    var carbonTarget=document.getElementById('natureCarbonPulse');
-    if(carbonTarget){
-      carbonTarget.textContent=(carbonSource && carbonSource.textContent.trim()) || '0.00';
-    }
+  function syncSustainabilityPulse(){
+    const s=document.getElementById('todayTotal'), t=document.getElementById('natureCarbonPulse');
+    if(s && t) t.textContent=(s.textContent||'0.00').trim();
   }
-  document.addEventListener('DOMContentLoaded',syncSustainabilityShowcase);
-  setTimeout(syncSustainabilityShowcase,700);
-  setInterval(syncSustainabilityShowcase,1200);
+  document.addEventListener('DOMContentLoaded',syncSustainabilityPulse);
+  setInterval(syncSustainabilityPulse,1500);
 })();
 </script>
-
 </body>  
 </html>
